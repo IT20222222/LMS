@@ -2806,3 +2806,153 @@ ul.the-icons {
 
 
 /* Theme Styler :: End */
+.RegContainer{
+	background-color : white;
+	box-shadow : 0 4px 8px 0 rgba(0,0,0,2) , 0 6px 20px 0 rgba(0 , 0 , 0 , 0.19);
+	border-radius : 10px;
+	padding : 20px 20px 20px 20px;
+	vertical-align : top;
+	position : relative;
+	left : 200px;
+	top : 10px;
+}
+
+.ContactContainer{
+	background-color : white;
+	border-radius : 10px;
+	padding : 20px 20px 20px 20px;
+	vertical-align : top;
+}
+.ProfileContainer{
+	width : 60%;
+	padding : 20px 20px 20px 20px;
+	background-color : #e6f7ff;
+	display: flex;
+	min-width: 0;
+	word-wrap: break-word;
+	border: 1px solid rgba(0, 0, 0, .05);
+	border-radius: .375rem;
+	background-clip: border-box;
+	position: relative;
+	padding-right: 15px;
+	padding-left: 15px;
+	position : relative;
+	left : 20px;
+	bottom : 10px;
+}
+
+.heading-user {
+  font-size: .75rem;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: #8898aa;
+}
+
+.form-label {
+  font-size: .875rem;
+  font-weight: 600;
+  color: #525f7f;
+}
+
+.EditButton{
+  font-size: 1rem;
+  color : white;
+  font-weight: 600;
+  line-height: 1.5;
+  display: inline-block;
+  padding: .625rem 1.25rem;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  border-radius: .375rem;
+  background-color :  #80aaff;
+  position : relative;
+}
+.EditButton:hover{
+	background-color : #3399ff;
+	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.EditButton:focus {
+  outline: 0;
+  box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
+}
+.UnregButton{
+  font-size: 1rem;
+  color : white;
+  font-weight: 600;
+  line-height: 1.5;
+  display: inline-block;
+  padding: .625rem 1.25rem;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  border-radius: .375rem;
+  background-color :  #80aaff;
+  position : relative;
+}
+.UnregButton:hover{
+	background-color :#ff6666;
+	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.UnregButton:focus {
+  outline: 0;
+  box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
+}
+
+.UnregContainer{
+	width : 60%;
+	padding : 20px 20px 20px 20px;
+	background-color : #e6f7ff;
+	display: flex;
+	min-width: 0;
+	word-wrap: break-word;
+	border: 1px solid rgba(0, 0, 0, .05);
+	border-radius: .375rem;
+	background-clip: border-box;
+	position: relative;
+	padding-right: 15px;
+	padding-left: 15px;
+	position : relative;
+	left : 250px;
+	bottom : 10px;
+	top : 40px
+}
+
+
+
+.select selected {
+  background-color: DodgerBlue;
+}
+.select items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.RegisterButton{
+	width: 150px;
+	height : 40px;
+	color : white;
+	font-weight: 600;
+	border: 1px solid transparent;
+    border-radius: .375rem;
+    background-color :  #80aaff;
+	
+}
+
+.RegisterButton:hover{
+	background-color : #3399ff;
+	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.RegisterButton:focus {
+  outline: 0;
+  box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
+}
