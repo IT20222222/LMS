@@ -160,13 +160,23 @@
 	<table>
 	<tr>
 	<td>Select Unregister Reason<br>
-	<div class = "selectReason" style = "width : 200px"><select name = "reason"><option>Unsatisfied with a service</option><option>Too expensive</option><option>Not User Friendly</option><option>Other</option></select>
+	<script type = text/javascript >
+	function DescOpt($i){
+			if ($i == 1 || $i == 2 || $i == 3){
+			document.getElementById('desc').disabled = true;
+			}
+			else
+			document.getElementById('desc').disabled = false;
+			
+	}
+	</script>
+	<div class = "selectReason" style = "width : 200px"><select name = "reason" onchange = "DescOpt(value)"><option value = "1">Unsatisfied with a service</option><option value = "2">Too expensive</option><option value = "3">Not User Friendly</option><option value = "4">Other</option></select>
 	</div>
 	</td>
 	</tr>
 	<tr>
 	<td>Describe Reason if other<br>
-	<textarea name = "description"></textarea>
+	<textarea name = "description" id = "desc"></textarea>
 	</td>
 	<tr>
 	</table>
