@@ -146,7 +146,13 @@
     </section><br><br>
 	<div class = "ProfileContainer">
 	
-	
+	<script type = text/javascript>
+	function displayPackage(){
+		if(document.getElementbyId('cusType') == "Prepaid"){
+			document.getElementbyId('pack').disabled = true;
+		}
+	}
+	</script>
 	<form>
 	<h6 class = "heading-user">User Information</h6>
 	<table>
@@ -171,8 +177,8 @@
 	<h6 class = "heading-user"> Package Information</h6>
 	<table>
 	<tr>
-	<td class = "form-label">Customer Type<br><input type = "text" name = "CusType"></td>
-	<td class = "form-label" style = "padding-left:100px">Package(Postpaid Customers)<br><input type = "text" name = "Package"></td>
+	<td class = "form-label">Customer Type<br><input type = "text" name = "CusType" id = "cusType" onchange = "displayPackage()" /></td>
+	<td class = "form-label" style = "padding-left:100px">Package(Postpaid Customers)<br><input type = "text" name = "Package" id ="pack"></td>
 	</tr>
 	</table>
 	</form>
@@ -180,7 +186,7 @@
 	<br><br>
 	<div class = "ProfileContainer">
 	<button onclick="document.location='EditProfile.jsp'" style = "left : 15px" class = "EditButton" >Edit Profile</button>
-	<button onclick="document.location = 'customize-plan.jsp'" style = "left : 310px"class = "EditButton" >Change Package</button>
+	<button onclick="document.location = 'customize-plan.jsp'" style = "left : 290px"class = "EditButton" >Customize Package</button>
 	<button onclick="document.location = 'Unregister_Profile.jsp'" style = "left : 350px"class = "UnregButton" >Unregister</button>
 	
 	</div>
