@@ -101,7 +101,7 @@
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-              <h2>Customize Plan <span  class="icon-edit"></span></h2> 
+              <h2>Monthly Payment <span  class="icon-money"></span></h2> 
             </div>
           </div>
           <div class="span8">
@@ -129,7 +129,7 @@
 							  		<table width="100%">
 								  		<tr>
 								  			<td colspan=2 style="padding:15px 10px 10px 10px">
-								  				<h6>Enter Credit/Debit Card Details</h6>
+								  				<h6>Select Payment Method</h6>
 								  				
 								  			</td>
 								  		</tr>
