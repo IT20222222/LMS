@@ -140,7 +140,7 @@
 			                  		<td>2</td>
 			                  	</tr>
 			                  	<tr>
-			                  		<td><b>Monthly Due (LKR)</b></td>
+			                  		<td><b>Monthly Payment (LKR)</b></td>
 			                  		<td>4999.99</td>
 			                  	</tr>
 			                  	<tr>
