@@ -153,7 +153,7 @@
 	<tr>
 	<td class = "form-label">Username <br> <input type = "text" name = "username"> </td>
 	<td class = "form-label" style = "padding-left:100px">Email Address <br> <input type = "text" name = "Email"> </td>
-	</tr><br>
+	</tr>
 	<tr>
 	<td class = "form-label">First Name<br><input type = "text" name = "firstname"></td>
 	<td class = "form-label" style = "padding-left:100px">Last Name <br><input type = "text" name = "lastname"></td>
@@ -175,12 +175,13 @@
 	<td class = "form-label" style = "padding-left:100px">Package(Postpaid Customers)<br><input type = "text" name = "Package"></td>
 	</tr>
 	</table>
+	</form>
 	</div>
 	<br><br>
 	<div class = "ProfileContainer">
-	<a href = "EditProfile.jsp"<button style = "left : 15px" class = "EditButton" >Edit Profile</button></a>
-	<button style = "left : 310px"class = "EditButton" onclick = "ChangePackage.jsp">Change Package</button>
-	<button style = "left : 350px"class = "UnregButton" onclick = "Unregister.jsp">Unregister</button>
+	<button onclick="document.location='EditProfile.jsp'" style = "left : 15px" class = "EditButton" >Edit Profile</button>
+	<button onclick="document.location = 'customize-plan.jsp'" style = "left : 310px"class = "EditButton" >Change Package</button>
+	<button onclick="document.location = 'Unregister_Profile.jsp'" style = "left : 350px"class = "UnregButton" >Unregister</button>
 	
 	</div>
 
