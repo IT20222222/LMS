@@ -2956,3 +2956,42 @@ ul.the-icons {
   outline: 0;
   box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
 }
+
+.SaveButton{
+	padding:5px 10px 5px 10px;
+	color : white;
+	font-weight: 600;
+	font-size:14px;
+	border: 1px solid transparent;
+    border-radius: .375rem;
+    background-color :  #80aaff;
+	
+}
+
+.SaveButton:hover{
+	background-color : #3399ff;
+	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+}
+
+.SaveButton:focus {
+  outline: 0;
+  box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
+}
+
+.CustomizePlanAccordion{
+	/*MUKUTH NA*/
+}
+
+.CustomizePlanAccordion:hover{
+	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+	color: #80aaff;
+}
+
+.form{
+	padding:10px 20px 10px 20px;
+	background-color:white;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-radius:10px;
+	vertical-align:top;
+}
+
