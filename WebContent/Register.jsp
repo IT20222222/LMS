@@ -173,7 +173,7 @@
 				  <input type = "text" style = "width : 40%;" name = "username" placeholder = "Enter a username">
 				  
 				  <input type = "text" style = "width : 40% ; float :right" name = "Password" placeholder = "Enter password"><br><br>
-				  <input type = "text" style = "width : 40%; position : relative ; left : 438px;" name = "Password" placeholder = "Re-Enter password"><br><br>
+				  <input type = "text" style = "width : 40%; position : relative ; left : 348px;" name = "Password" placeholder = "Re-Enter password"><br><br>
 				  
 
 					<button class = "RegisterButton" type = "reset">Reset</button>

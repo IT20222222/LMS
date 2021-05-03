@@ -167,14 +167,7 @@
 	<td class = "form-label" style = "padding-left:100px">Phone Number<br><input type = "text" name = "number"></td>
 	</tr>
 	</table>
-	<hr>
-	<h6 class = "heading-user"> Package Information</h6>
-	<table>
-	<tr>
-	<td class = "form-label">Customer Type<br><input type = "text" name = "CusType"></td>
-	<td class = "form-label" style = "padding-left:100px">Package(Postpaid Customers)<br><input type = "text" name = "Package"></td>
-	</tr>
-	</table>
+	
 	</div>
 	<br><br>
 	
