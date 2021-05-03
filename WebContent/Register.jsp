@@ -125,25 +125,26 @@
 
             
 				  
-				  <input type = "text" style = "width : 40% ; padding-left : 20px " name = "Firstname" placeholder = "Enter your first name" > 
-				  <input type = "text" style = "width : 40%; float : right" name = "Lastname" placeholder = "Enter your last name"><br><br>
-				  <input type = "text" style = "width : 40%" name = "NIC" placeholder = "Enter your NIC"> 
-				  <input type = "text" style = "width : 40%; float : right" name = "Email" placeholder = "Enter your email"><br><br>
-				  <input type = "text" style = "width : 40%; height: 60px" name = "Address" placeholder = "Enter your address"><br><br>
-				  <input type = "radio" id = "gender" checked> Male
-				  <input type = "radio" id = "gender" > Female
-				  <input type = "radio" id = "gender" > Would not like to specify <br><br><br>
-				  <input type = "text" style = "width : 40%;"  name = "mobile" placeholder = "Enter mobile number"><br><br>
+				  <input type = "text" style = "width : 40% ; padding-left : 20px " name = "Firstname" placeholder = "Enter your first name" required > 
+				  <input type = "text" style = "width : 40%; float : right" name = "Lastname" placeholder = "Enter your last name" required><br><br>
+				  <input type = "text" style = "width : 40%" name = "NIC" placeholder = "Enter your NIC" required> 
+				  <input type = "text" style = "width : 40%; float : right" name = "Email" placeholder = "Enter your email" required><br><br>
+				  <input type = "text" style = "width : 40%; height: 60px" name = "Address" placeholder = "Enter your address" required><br><br>
+				  <label>Select Gender</label>
+				  <input type = "radio" id = "gender" name = "gender"  checked> Male
+				  <input type = "radio" id = "gender" name = "gender" > Female
+				  <input type = "radio" id = "gender" name = "gender" > Would not like to specify <br><br><br>
+				  <input type = "text" style = "width : 40%;"  name = "mobile" placeholder = "Enter mobile number" required><br><br>
 				  <label>Date of Birth</label>
 				  <input type = "date" name = "dob"><br><br>
-				  <input type = "text" style = "width : 40%;" name = "username" placeholder = "Enter a username">
+				  <input type = "text" style = "width : 40%;" name = "username" placeholder = "Enter a username" required>
 				  
-				  <input type = "text" style = "width : 40% ; float :right" name = "Password" placeholder = "Enter password"><br><br>
-				  <input type = "text" style = "width : 40%; position : relative ; left : 348px;" name = "Password" placeholder = "Re-Enter password"><br><br>
+				  <input type = "password" style = "width : 40% ; float :right" name = "Password" placeholder = "Enter password" required><br><br>
+				  <input type = "password" style = "width : 40%; position : relative ; left : 348px;" name = "Password" placeholder = "Re-Enter password" required><br><br>
 				  
 
 					<button class = "RegisterButton" type = "reset">Reset</button>
-                    <button class="RegisterButton" type="submit " style = "float : right">Register</button>
+                    <button class="RegisterButton" type= "submit" style = "float : right">Register</button>
 					
                    
                   
