@@ -5,7 +5,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Customize Plan</title>
+  <title>My Plan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Your page description here" />
   <meta name="author" content="" />
@@ -81,8 +81,8 @@
                     <li><a href="index.jsp">Home</a></li>
                     <li><a href="dashboard.jsp">Dashboard</a></li>
                     <li><a href="index.html">Place Order</a></li>
-                    <li class="dropdown active"><a href="my-plan-regular.jsp">My Plan</a></li>
-                    <li><a href="UserProfile.jsp">My Account</a></li>
+                    <li class="dropdown active"><a href="my-plan-normal.jsp">My Plan</a></li>
+                    <li><a href="index.html">My Account</a></li>
                     <li><a href="index.html">Log Out</a></li>
                   </ul>
                 </nav>
@@ -100,14 +100,13 @@
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-              <h2>Customize Plan <span  class="icon-edit"></span></h2> 
+              <h2>My Plan  <span  class="font-icon-file"></span></h2>
             </div>
           </div>
           <div class="span8">
             <ul class="breadcrumb">
-              <li><a href="index.jsp">Home</a> <i class="icon-angle-right"></i></li>
-              <li><a href="my-plan.jsp">My Plan</a> <i class="icon-angle-right"></i></li>
-              <li class="active">Customize Plan</li>
+              <li><a href="index.html">Home</a> <i class="icon-angle-right"></i></li>
+              <li class="active">My Plan</li>
             </ul>
           </div>
         </div>
@@ -121,151 +120,64 @@
 
 					<div class="row">
 					  <div class="span12">
-					  <table align="center">
-					  <tr><td class="form">
-					  <form action="" method="">
-					  <br>
-					  <h4>Your Plan</h4>
-					  <table>
-					  <tr>
-					  	<td style="background-color:white;padding:10px 10px 0px 0px">
-						  	Maximum orders for a month:<br>
-							<select name="maxOrders">
-							  <option value="10">10</option>
-							  <option value="11">11</option>
-							  <option value="12">12</option>
-							  <option value="13">13</option>
-							  <option value="14">14</option>
-							  <option value="15">15</option>
-							  <option value="16">16</option>
-							  <option value="17">17</option>
-							  <option value="18">18</option>
-							  <option value="19">19</option>
-							  <option value="20">20</option>
-							</select>
-						</td>
-						<td style="background-color:white;padding:10px 0px 0px 10px">
-							Maximum weight for an order (KG):<br>
-							<select name="maxWeight">
-							  <option value="1">1</option>
-							  <option value="2">2</option>
-							  <option value="3">3</option>
-							  <option value="4">4</option>
-							  <option value="5">5</option>
-							  <option value="6">6</option>
-							  <option value="7">7</option>
-							  <option value="8">8</option>
-							  <option value="9">9</option>
-							  <option value="10">10</option>
-							  <option value="11">11</option>
-							  <option value="12">12</option>
-							  <option value="13">13</option>
-							  <option value="14">14</option>
-							  <option value="15">15</option>
-							  <option value="16">16</option>
-							  <option value="17">17</option>
-							  <option value="18">18</option>
-							  <option value="19">19</option>
-							  <option value="20">20</option>
-							</select>
-						</td>
-						</tr>
-						</table>
-						<br>
-						<b>Select Services You Want</b>
-						<br>
-						<table class="table table-bordered" >
-						<tr><th >Service</th><th></th></tr>
-						<tr><td>Pressing</td><td><input type="checkbox" name="press"></td></tr>
-						<tr><td>Dry Cleaning</td><td><input type="checkbox" name="dryClean"></td></tr>
-						<tr><td>Mending Service</td><td><input type="checkbox" name="mending"></td></tr>
-						<tr><td>Pickup & Delivery</td><td><input type="checkbox" name="pickDelivery"></td></tr>
-						<tr><td>One Day Service</td><td><input type="checkbox" name="oneDay"></td></tr>
-						</table>
-						<br>
-						<div class="accordion" id="accordion2">
-							<div class="accordion-group">
-			                    <div class="accordion-heading">
-			                      <a class="CustomizePlanAccordion accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-											<i class="icon-minus"></i> Pressing </a>
-			                    </div>
-			                    <div id="collapseOne" class="accordion-body collapse in">
-			                      <div class="accordion-inner">
-			                        Our steam Pressing Service will give the perfect finished look to<br>your clothes.Not only are your clothes pressed well, 
-			                        using some<br> of the best equipment, 
-			                        but they are also carefully packed using <br>supporting add-ons so that their finished shape and form are <br>retained.
-			                      </div>
-			                    </div>
-		                  	</div>
-		                  	<div class="accordion-group">
-			                    <div class="accordion-heading">
-			                      <a class="CustomizePlanAccordion accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-											<i class="icon-plus"></i> Dry Cleaning </a>
-			                    </div>
-			                    <div id="collapseTwo" class="accordion-body collapse">
-			                      <div class="accordion-inner">
-			                        Our Dry Cleaning Service is a solvent based washing process, <br>
-			                        which utilizes advanced chemistry to remove organic & inorganic<br>
-			                        stains. When it comes to soil removal, our Dry Cleaning Service <br>
-			                        is one of our most effective cleaning options.
-			                     
-			                      </div>
-			                    </div>
-			                  </div>
-			                  <div class="accordion-group">
-			                    <div class="accordion-heading">
-			                      <a class="CustomizePlanAccordion accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-											<i class="icon-plus"></i> Mending Service </a>
-			                    </div>
-			                    <div id="collapseThree" class="accordion-body collapse">
-			                      <div class="accordion-inner">
-			                       We offer our clients basic Mending Services for their garments<br>
-			                       on a selective basis.
-			                     
-			                      </div>
-			                    </div>
-			                  </div>
-			                  <div class="accordion-group">
-			                    <div class="accordion-heading">
-			                      <a class="CustomizePlanAccordion accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
-											<i class="icon-plus"></i> Pickup & Delivery </a>
-			                    </div>
-			                    <div id="collapseFour" class="accordion-body collapse">
-			                      <div class="accordion-inner">
-			                       We offer a Pick-Up and Delivery service! We want to make your<br>
-			                       life easier by offering an inclusive service and keep you from<br>
-			                       running around the city for different chores.
-			                     
-			                      </div>
-			                    </div>
-			                  </div>
-			                  <div class="accordion-group">
-			                    <div class="accordion-heading">
-			                      <a class="CustomizePlanAccordion accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
-											<i class="icon-plus"></i> One Day Service </a>
-			                    </div>
-			                    <div id="collapseFive" class="accordion-body collapse">
-			                      <div class="accordion-inner">
-			                       We provide One-Day Services for when you need that extra quick<br> cleaning.
-			                     
-			                      </div>
-			                    </div>
-			                  </div>
-	                  	</div>
-							<br>
-							<table>
-								<tr>
-									<td style="padding-top:10px"><a href="my-plan.jsp" class="btn btn-inverse">Cancel</a></td>
-									<td><input type="submit" name="savePlan"class="SaveButton" value="Save"></td>
-								</tr>
-							</table>
-                		</form>
-                		</td></tr>
-                		</table>
-                		
+						<h4>Details</h4>
+							<table class="table table-bordered">
+			                  <tbody>
+			                  	<tr>
+			                  		<td><b>Type</b></td>
+			                  		<td>Normal User</td>
+			                  	</tr>
+			                  	<tr>
+			                  		<td><b>Registered Date</b></td>
+			                  		<td>24/01/2021</td>
+			                  	</tr>
+			                  	<tr>
+			                  		<td><b>Maximum orders for a month</b></td>
+			                  		<td>20</td>
+			                  	</tr>
+			                  	<tr>
+			                  		<td><b>Maximum weight for an order (KG)</b></td>
+			                  		<td>2</td>
+			                  	</tr>
+			                  	<tr>
+			                  		<td colspan=2 style="background-color:whitesmoke;"><center><b>Available Services</b></center></td>
+			                  	</tr>
+			                  	<tr>
+			                  		<td style="background-color:whitesmoke;"><b>Service</b></td>
+			                  		<td style="background-color:whitesmoke;"><b>Availability</b></td>
+			                  	</tr>
+			                  	<tr>
+			                  		<td><b>Pressing</b></td>
+			                  		<td>No</td>
+			                  	</tr>
+			                  	<tr>
+			                  		<td><b>Dry Cleaning</b></td>
+			                  		<td>Yes</td>
+			                  	</tr>
+			                  	<tr>
+			                  		<td><b>Mending Service</b></td>
+			                  		<td>No</td>
+			                  	</tr>
+			                  	<tr>
+			                  		<td><b>Pickup & Delivery</b></td>
+			                  		<td>Yes</td>
+			                  	</tr>
+			                  	<tr>
+			                  		<td><b>One Day Service</b></td>
+			                  		<td>Yes</td>
+			                  	</tr>
+			                  </tbody>
+                			</table>
 					  </div>
 					</div>
 
+					<!-- divider -->
+					<div class="row">
+					  <div class="span12">
+						<div class="solidline"></div>
+					  </div>
+					</div>
+					
 				</div>	
 			</div>
 		</div>

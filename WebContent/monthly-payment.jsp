@@ -82,7 +82,7 @@
                     <li><a href="index.jsp">Home</a></li>
                     <li><a href="dashboard.jsp">Dashboard</a></li>
                     <li><a href="index.html">Place Order</a></li>
-                    <li class="dropdown active"><a href="my-plan.jsp">My Plan</a></li>
+                    <li class="dropdown active"><a href="my-plan-regular.jsp">My Plan</a></li>
                     <li><a href="UserProfile.jsp">My Account</a></li>
                     <li><a href="index.html">Log Out</a></li>
                   </ul>

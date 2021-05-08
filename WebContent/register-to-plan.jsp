@@ -1,11 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <title>Dashboard</title>
+  <title>Remember - Multipurpose bootstrap site template</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Your page description here" />
   <meta name="author" content="" />
@@ -78,12 +76,46 @@
               <div class="navigation">
                 <nav>
                   <ul class="nav topnav">
-                    <li><a href="index.jsp">Home</a></li>
-                    <li class="dropdown active"><a href="dashboard.jsp">Dashboard</a></li>
-                    <li><a href="index.html">Place Order</a></li>
-                    <li><a href="my-plan-normal.jsp">My Plan</a></li>
-                    <li><a href="UserProfile.jsp">My Account</a></li>
-                    <li><a href="index.html">Log Out</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                      <a href="#">Features <i class="icon-angle-down"></i></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="typography.html">Typography</a></li>
+                        <li><a href="components.html">Components</a></li>
+                        <li><a href="icons.html">Icons</a></li>
+                        <li><a href="icon-variations.html">Icon variations</a></li>
+
+                      </ul>
+                    </li>
+                    <li class="dropdown active">
+                      <a href="#">Pages <i class="icon-angle-down"></i></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="about.html">About us</a></li>
+                        <li><a href="pricingbox.html">Pricing boxes</a></li>
+                        <li><a href="404.html">404</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#">Portfolio <i class="icon-angle-down"></i></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="portfolio-2cols.html">Portfolio 2 columns</a></li>
+                        <li><a href="portfolio-3cols.html">Portfolio 3 columns</a></li>
+                        <li><a href="portfolio-4cols.html">Portfolio 4 columns</a></li>
+                        <li><a href="portfolio-detail.html">Portfolio detail</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#">Blog <i class="icon-angle-down"></i></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="blog-left-sidebar.html">Blog left sidebar</a></li>
+                        <li><a href="blog-right-sidebar.html">Blog right sidebar</a></li>
+                        <li><a href="post-left-sidebar.html">Post left sidebar</a></li>
+                        <li><a href="post-right-sidebar.html">Post right sidebar</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="contact.html">Contact </a>
+                    </li>
                   </ul>
                 </nav>
               </div>
@@ -100,13 +132,14 @@
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-              <h2>Dashboard <span  class="font-icon-dashboard"></span></h2>
+              <h2>Register To A Plan</h2>
             </div>
           </div>
           <div class="span8">
             <ul class="breadcrumb">
-              <li><a href="index.jsp">Home</a> <i class="icon-angle-right"></i></li>
-              <li class="active">Dashboard</li>
+              <li><a href="index.html">Home</a> <i class="icon-angle-right"></i></li>
+              <li><a href="#">Create Account</a> <i class="icon-angle-right"></i></li>
+              <li class="active">Register To A Plan</li>
             </ul>
           </div>
         </div>
@@ -114,134 +147,83 @@
     </section>
 
     <section id="content">
-		<div class="container">
-			<div class="row demobtn">
-				<div class="span12">
+      <div class="container">
 
-					<div class="row">
-					  <div class="span12">
-						<h4>Summary (this month)</h4>
-							<div id="summary">
-			                  <table border="0px" width = "100%" >
-				                  <tr>
-					                  <td style="background-color:#90ee90;border-radius: 15px;border:5px solid #F5F5F5;padding-bottom:10px;padding-right:10px;padding-top:10px" width="25%">
-					                  <h6 style="padding-left:10px;color:#008000">Total Orders</h6>
-					                  <p style="font-size:48px;padding-left:10px;padding-bottom:10px;color:#008000" name="totOrders"><b>0</b></p>
-					                  </td>
-					                  <td style="background-color:#add8e6;border-radius: 15px;border:5px solid #F5F5F5;padding-bottom:10px;padding-right:10px;padding-top:10px" width="25%">
-					                  <h6 style="padding-left:10px;color:#4682b4">Remaining Orders</h6>
-					                  <p style="font-size:48px;padding-left:10px;padding-bottom:10px;color:#4682b4" name="totOrders"><b>0</b></p>
-					                  </td>
-					                  <td style="background-color:#f08080;border-radius: 15px;border:5px solid #F5F5F5;padding-bottom:10px;padding-right:10px;padding-top:10px" width="25%">
-					                  <h6 style="padding-left:10px;color:#b22222">Total Money Spent</h6>
-					                  <p style="font-size:48px;padding-left:10px;padding-bottom:10px;color:#b22222" name="totOrders"><b>LKR 0.00</b></p>
-					                  </td>
-					                  <td style="background-color:#f5da50;border-radius: 15px;border:5px solid #F5F5F5;padding-bottom:10px;padding-right:10px;padding-top:10px">
-					                  <h6 style="padding-left:10px;color:#daa520">In Progress..</h6>
-					                  <p style="font-size:48px;padding-left:10px;padding-bottom:10px;color:#daa520" name="totOrders"><b>0</b></p>
-					                  </td>
-					                  
-				                  </tr>
-			                  </table>
-			                </div>
-					  </div>
-					</div>
-					
-					<!-- divider -->
-					<div class="row">
-					  <div class="span12">
-						<div class="solidline"></div>
-					  </div>
-					</div>
-					
-					<div class="row">
-					  <div class="span12">
-						<h4>Order History</h4>
-							<div id="OrderHistory">
-							                <table class="table">
-							                  <thead>
-							                  
-							                    <tr>
-							                      <th>
-							                        #
-							                      </th>
-							                      <th>
-							                        Date
-							                      </th>
-							                      <th>
-							                        Payment (LKR)
-							                      </th>
-							                      <th>
-							                        Status
-							                      </th>
-							                    </tr>
-							                  </thead>
-							                  <tbody>
-							                   <tr class="warning">
-							                      <td>
-							                        1
-							                      </td>
-							                      <td>
-							                        03/05/2021
-							                      </td>
-							                      <td>
-							                        1500.00
-							                      </td>
-							                      <td>
-							                        In Progress
-							                      </td>
-							                    </tr>
-							                    <tr class="success">
-							                      <td>
-							                        2
-							                      </td>
-							                      <td>
-							                        03/04/2021
-							                      </td>
-							                      <td>
-							                        900.00
-							                      </td>
-							                      <td>
-							                        Completed
-							                      </td>
-							                    </tr>
-							                    <tr class="error">
-							                      <td>
-							                        3
-							                      </td>
-							                      <td>
-													28/02/2021
-							                      </td>
-							                      <td>
-							                        2000.00
-							                      </td>
-							                      <td>
-							                        Canceled
-							                      </td>
-							                    </tr>
-							                    <tr class="success">
-							                      <td>
-							                        4
-							                      </td>
-							                      <td>
-							                        15/02/2021
-							                      </td>
-							                      <td>
-							                        1000.00
-							                      </td>
-							                      <td>
-							                        Completed
-							                      </td>
-							                    </tr>
-							                  </tbody>
-							                </table>
-			                </div>
-					  </div>
-					</div>
-					
-				</div>	
-			</div>
-		</div>
+		<table style="width:100%">
+			<tr>
+				<td>
+			        <div class="row">
+			          <div class="span12">
+			          </div>
+			          <div class="span4">
+			            <div class="pricing-box-wrap">
+			              <div class="pricing-heading">
+			                <h3><strong>Normal </strong>User</h3>
+			              </div>
+			              <div class="pricing-terms">
+			                <h6>Pay per order</h6>
+			              </div>
+			              <div class="pricing-content">
+			                <ul>
+			                  <li><i class="icon-ok"></i> 10 Maximum Orders per month</li>
+			                  <li><i class="icon-ok"></i> Maximum Weight 2kg per 1 order</li>
+			                  <li><i class="icon-remove"></i> Customizable</li>
+			                  <li><i><b>Available Services</b></i></li>
+			                  <li><i class="icon-remove"></i> Pressing and Mending</li>
+							  <li><i class="icon-ok"></i> One day service</li>
+							  <li><i class="icon-ok"></i> Pickup and delivery</li>
+							  <li><i class="icon-ok"></i> Dry Clean</li>
+			                </ul>
+			              </div>
+			              <div class="pricing-action">
+			                <a href="#" class="btn btn-primary"><i class="icon-bolt icon-white"></i> Register</a>
+			              </div>
+			            </div>
+			          </div>
+			          <div class="span4">
+			            <div class="pricing-box-wrap special" >
+			              <div class="pricing-heading" style="background-color:#3399ff">
+			                <h3><strong>Regular </strong>User</h3>
+			              </div>
+			              <div class="pricing-terms">
+			                <h6>From LKR 4000.00 / Month</h6>
+			              </div>
+			
+			              <div class="pricing-content">
+			                <ul>
+			                  <li><i class="icon-ok"></i> 20 Maximum Orders per month</li>
+			                  <li><i class="icon-ok"></i> Maximum Weight 10kg per 1 order</li>
+			                  <li><i class="icon-ok"></i> Customizable</li>
+			                  <li><i><b>Available Services</b></i></li>
+			                  <li><i class="icon-ok"></i> Pressing and Mending</li>
+							  <li><i class="icon-ok"></i> One day service</li>
+							  <li><i class="icon-ok"></i> Pickup and delivery</li>
+							  <li><i class="icon-ok"></i> Dry Clean</li>
+			                </ul>
+			              </div>
+			              <div class="pricing-action">
+			                <a href="#" class="btn btn-primary"><i class="icon-bolt icon-white"></i> Register</a>
+			              </div>
+			            </div>
+			          </div>
+			          
+			        </div>
+			        
+		        </td>
+	        </tr>
+        </table>
+
+        <!-- divider -->
+        <div class="row">
+          <div class="span12">
+            <div class="solidline"></div>
+          </div>
+        </div>
+        <!-- end divider -->
+
+        
+
+      </div>
     </section>
 
     <footer>
@@ -315,6 +297,7 @@
     </footer>
   </div>
   <a href="#" class="scrollup"><i class="icon-angle-up icon-rounded icon-bglight icon-2x"></i></a>
+
   <!-- javascript
     ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
@@ -331,7 +314,6 @@
 
   <!-- Template Custom JavaScript File -->
   <script src="js/custom.js"></script>
-
 
 </body>
 
