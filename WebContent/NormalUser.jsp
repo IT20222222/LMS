@@ -4,9 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Create Packages</title>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Your page description here" />
   <meta name="author" content="" />
 
@@ -35,7 +34,7 @@
   ======================================================= -->
 </head>
 <body>
-<div id="wrapper">
+	 <div id="wrapper">
     <!-- start header -->
     <header>
       <div class="top">
@@ -132,13 +131,13 @@
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-              <h2>Create Packages</h2>
+              <h2>Edit Packages (Normal User)</h2>
             </div>
           </div>
           <div class="span8">
             <ul class="breadcrumb">
               <li><a href="index.html">Home</a> <i class="icon-angle-right"></i></li>
-              <li class="active">Create Packages</li>
+              <li class="active">Edit Packages</li>
             </ul>
           </div>
         </div>
@@ -152,13 +151,10 @@
 	<table>
 	<tr>
 	<td class = "form-label">Package Name <br> <input type = "text" name = "pkgname"> </td>
-	<td class = "form-label" style = "padding-left:100px">Package Type <br> <input type = "text" name = "pkgtype"> </td>
 	<br> <td class = "form-label" style = "padding-left:100px">Maximum Oders per month <br> <input type = "text" name = "maxorders"> </td>
 	</tr><br>
 	<tr>
 	<td class = "form-label">Maximum Weight<br><input type = "text" name = "naxweight"></td>
-	<td class = "form-label" style = "padding-left:100px">Minimum Weight <br><input type = "text" name = "minweight"></td>
-	<td class = "form-label" style = "padding-left:100px">Customer Type <br><input type = "text" name = "custype"></td>
 	</tr>
 	</table>
 	<hr>
@@ -176,22 +172,8 @@
 	  <span class="checkmark"></span>
 	</label>
 
-	<label class="container">Washing + Drying + Pressing 
-	  <input type="checkbox">
-	  <span class="checkmark"></span>
-	</label>
-
-	<label class="container">4 in 1
-	  <input type="checkbox">
-	  <span class="checkmark"></span>
-	</label>
-	
 	</tr>
 	<tr><td>
-	<label class="container">Mending
-	  <input type="checkbox">
-	  <span class="checkmark"></span>
-	</label>
 	<label class="container">One Day Service
 	  <input type="checkbox">
 	  <span class="checkmark"></span>
@@ -205,7 +187,7 @@
 	</div>
 	<br><br>
 	<div class = "ProfileContainer">
-	<a href = ""<button style = "left : 15px" class = "EditButton" >Add</button></a>
+	<a href = ""<button style = "left : 15px" class = "EditButton" >Save</button></a>
 	
 	</div>
 
