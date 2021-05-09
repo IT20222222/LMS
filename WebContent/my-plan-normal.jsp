@@ -1,5 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page import="com.lms.model.User" %>
+    <% User user = (User) session.getAttribute("loggedUser");
+	    if(user == null){
+	    	response.sendRedirect("Login.jsp");
+	    }
+	    else{
+	    	if(user.getPlanId() == 2){
+	    		response.sendRedirect("my-plan-regular.jsp");
+	    	}
+	    }
+	%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -83,7 +94,7 @@
                     <li><a href="index.html">Place Order</a></li>
                     <li class="dropdown active"><a href="my-plan-normal.jsp">My Plan</a></li>
                     <li><a href="index.html">My Account</a></li>
-                    <li><a href="index.html">Log Out</a></li>
+                    <li><a href="/testWeb/LogOutServlet">Log Out</a></li>
                   </ul>
                 </nav>
               </div>
