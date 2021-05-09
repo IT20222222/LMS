@@ -10,14 +10,8 @@ import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.*;
 import javax.servlet.*;
 
@@ -43,10 +37,12 @@ public class LogInServlet extends HttpServlet {
 		
 		if (isTrue == true) {
 			User user = UserDBUtil.getUser(userName);
+			Plan plan = PlanDBUtil.getUserPlan(user);
 			
 			if(user != null) {
 				HttpSession session = request.getSession();
 				session.setAttribute("loggedUser", user);
+				session.setAttribute("userPlan", plan);
 				response.sendRedirect("dashboard.jsp");
 			}
 			

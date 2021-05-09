@@ -1,4 +1,4 @@
-package com.lms.user;
+package com.lms.model;
 
 import java.util.HashMap;
 

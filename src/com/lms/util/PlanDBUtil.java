@@ -1,4 +1,6 @@
-package com.lms.user;
+package com.lms.util;
+
+import com.lms.model.*;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
