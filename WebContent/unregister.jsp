@@ -106,7 +106,7 @@
           <div class="span8">
             <ul class="breadcrumb">
               <li><a href="index.jsp">Home</a> <i class="icon-angle-right"></i></li>
-              <li><a href="my-plan.jsp">My Plan</a> <i class="icon-angle-right"></i></li>
+              <li><a href="my-plan-regular.jsp">My Plan</a> <i class="icon-angle-right"></i></li>
               <li class="active">Unregister</li>
             </ul>
           </div>
@@ -138,7 +138,7 @@
 												<tr>
 													<td style="padding-top:10px;padding-right:10px"><input type="password" name="pwd"></td>
 													<td><input type="submit" name="unregister"class="btn btn-danger" value="Confirm"></td>
-													<td style="padding-top:10px"><a href="my-plan.jsp" class="btn btn-inverse">Cancel</a></td>
+													<td style="padding-top:10px"><a href="my-plan-regular.jsp" class="btn btn-inverse">Cancel</a></td>
 												</tr>
 											  </table>
 										  </form>

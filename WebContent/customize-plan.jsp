@@ -106,7 +106,7 @@
           <div class="span8">
             <ul class="breadcrumb">
               <li><a href="index.jsp">Home</a> <i class="icon-angle-right"></i></li>
-              <li><a href="my-plan.jsp">My Plan</a> <i class="icon-angle-right"></i></li>
+              <li><a href="my-plan-regular.jsp">My Plan</a> <i class="icon-angle-right"></i></li>
               <li class="active">Customize Plan</li>
             </ul>
           </div>
@@ -255,7 +255,7 @@
 							<br>
 							<table>
 								<tr>
-									<td style="padding-top:10px"><a href="my-plan.jsp" class="btn btn-inverse">Cancel</a></td>
+									<td style="padding-top:10px"><a href="my-plan-regular.jsp" class="btn btn-inverse">Cancel</a></td>
 									<td><input type="submit" name="savePlan"class="SaveButton" value="Save"></td>
 								</tr>
 							</table>
