@@ -83,7 +83,7 @@
                     <li><a href="index.html">Place Order</a></li>
                     <li class="dropdown active"><a href="my-plan-regular.jsp">My Plan</a></li>
                     <li><a href="UserProfile.jsp">My Account</a></li>
-                    <li><a href="index.html">Log Out</a></li>
+                    <li><a href="/testWeb/LogOutServlet">Log Out</a></li>
                   </ul>
                 </nav>
               </div>
@@ -125,18 +125,20 @@
 							  <table align="center">
 								  <tr>
 									  <td class="form">
-										  <form action="" method="">
+										  <form action="unregisterPlan" method="post">
 											  <br>
 											  <div class="alert alert-error">
 								                  
 								                  <strong>Note : </strong> 
-								                  When you are unregistering from the post-paid plan, you will be automatically registered to
-								                  pre-paid plan.
+								                  When you are unregistering from you current plan, you will be automatically registered to
+								                  normal user plan.
 								              </div>
 											  Enter your password to confirm<br>
 											  <table>
 												<tr>
-													<td style="padding-top:10px;padding-right:10px"><input type="password" name="pwd"></td>
+													<td style="padding-top:10px;padding-right:10px">
+													<input type="password" name="pwd">
+													</td>
 													<td><input type="submit" name="unregister"class="btn btn-danger" value="Confirm"></td>
 													<td style="padding-top:10px"><a href="my-plan-regular.jsp" class="btn btn-inverse">Cancel</a></td>
 												</tr>

@@ -1,14 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ page import="com.lms.model.User" %>
+    <%@ page import="com.lms.model.Plan" %>
     <% User user = (User) session.getAttribute("loggedUser");
+		Plan plan = (Plan) session.getAttribute("userPlan");
+		
 	    if(user == null){
 	    	response.sendRedirect("Login.jsp");
 	    }
 	    else{
-	    	if(user.getPlanId() == 2){
+	    	if(plan.isCustomizable()){
 	    		response.sendRedirect("my-plan-regular.jsp");
 	    	}
+	    	
 	    }
 	%>
 <!DOCTYPE html>
@@ -136,7 +140,7 @@
 			                  <tbody>
 			                  	<tr>
 			                  		<td><b>Type</b></td>
-			                  		<td>Normal User</td>
+			                  		<td><%= plan.getPlanName() %></td>
 			                  	</tr>
 			                  	<tr>
 			                  		<td><b>Registered Date</b></td>
@@ -144,11 +148,11 @@
 			                  	</tr>
 			                  	<tr>
 			                  		<td><b>Maximum orders for a month</b></td>
-			                  		<td>20</td>
+			                  		<td><%= plan.getMaxOrders() %></td>
 			                  	</tr>
 			                  	<tr>
 			                  		<td><b>Maximum weight for an order (KG)</b></td>
-			                  		<td>2</td>
+			                  		<td><%= plan.getMaxWeight() %></td>
 			                  	</tr>
 			                  	<tr>
 			                  		<td colspan=2 style="background-color:whitesmoke;"><center><b>Available Services</b></center></td>
@@ -159,23 +163,23 @@
 			                  	</tr>
 			                  	<tr>
 			                  		<td><b>Pressing</b></td>
-			                  		<td>No</td>
+			                  		<td><%= plan.getAvailableServices().get("pressing") %></td>
 			                  	</tr>
 			                  	<tr>
 			                  		<td><b>Dry Cleaning</b></td>
-			                  		<td>Yes</td>
+			                  		<td><%= plan.getAvailableServices().get("dryclean") %></td>
 			                  	</tr>
 			                  	<tr>
 			                  		<td><b>Mending Service</b></td>
-			                  		<td>No</td>
+			                  		<td><%= plan.getAvailableServices().get("mending") %></td>
 			                  	</tr>
 			                  	<tr>
 			                  		<td><b>Pickup & Delivery</b></td>
-			                  		<td>Yes</td>
+			                  		<td><%= plan.getAvailableServices().get("pickupDelivery") %></td>
 			                  	</tr>
 			                  	<tr>
 			                  		<td><b>One Day Service</b></td>
-			                  		<td>Yes</td>
+			                  		<td><%= plan.getAvailableServices().get("oneday") %></td>
 			                  	</tr>
 			                  </tbody>
                 			</table>

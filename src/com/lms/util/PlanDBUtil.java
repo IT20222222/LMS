@@ -74,4 +74,30 @@ public class PlanDBUtil {
 		
 		return plan; //return plan object
 	}
+	
+	public static boolean unregisterPlan(User user){
+		boolean isSuccess = false;
+		
+		try {
+			con = DBConnectorUtil.getConnection();
+			stmt = con.createStatement();
+			
+			String sql = "delete from customized_plan where Plan_ID="+user.getPlanId()+" and User_ID="+user.getId()+"";
+			int r = stmt.executeUpdate(sql);
+			if(r > 0) {
+				String sql2 = "update user_profile set Plan_ID=1 where User_ID="+user.getId();
+				stmt.executeUpdate(sql2);
+				
+				if(r > 0) {
+					isSuccess = true;
+				}
+			}
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return isSuccess;
+	}
 }
