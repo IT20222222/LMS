@@ -16,7 +16,7 @@
 	
 	<servlet>
 		<servlet-name>unregisterPlan</servlet-name>
-		<servlet-class>com.lms.user.PlanUnregisterServlet</servlet-class>
+		<servlet-class>com.lms.servlet.PlanUnregisterServlet</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
