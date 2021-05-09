@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Edit Normal User</title>
+<title>Edit Regular User</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Your page description here" />
   <meta name="author" content="" />
@@ -34,7 +34,7 @@
   ======================================================= -->
 </head>
 <body>
-	 <div id="wrapper">
+	<div id="wrapper">
     <!-- start header -->
     <header>
       <div class="top">
@@ -131,7 +131,7 @@
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-              <h2>Edit Packages (Normal User)</h2>
+              <h2>Edit Packages (Regular User)</h2>
             </div>
           </div>
           <div class="span8">
@@ -172,8 +172,17 @@
 	  <span class="checkmark"></span>
 	</label>
 
+	<label class="container">Washing + Drying + Pressing 
+	  <input type="checkbox">
+	  <span class="checkmark"></span>
+	</label>
+	
 	</tr>
 	<tr><td>
+	<label class="container">Mending
+	  <input type="checkbox">
+	  <span class="checkmark"></span>
+	</label>
 	<label class="container">One Day Service
 	  <input type="checkbox">
 	  <span class="checkmark"></span>
@@ -282,5 +291,6 @@
 
   <!-- Template Custom JavaScript File -->
   <script src="js/custom.js"></script>
+	
 </body>
 </html>
