@@ -69,13 +69,13 @@ public class UserDBUtil {
 			return user;	
 		}
 	
-	public static boolean addUser(String Firstname , String Lastname , String NIC , String email, String address, String gender , String mobile , String dob , String username , String password) {
+	public static boolean addUser(String Firstname , String Lastname , String NIC , String email, String address, String gender , int mobile , String dob , String username , String password) {
 		
 		isSuccess = false;
 		try {
 		con = DBConnectorUtil.getConnection();
 		stmt = con.createStatement();
-		String sql2 = "";
+		String sql2 = "INSERT INTO user_profile (0 , '"+Firstname+"' , '"+Lastname+"' , '"+NIC+"' , '"+email+"' , '"+address+"' , '"+gender+"' , '"+mobile+"' , '"+dob+"' , '"+username+"' , '"+password+"' )";
 		int rs2 = stmt.executeUpdate(sql2);
 		
 		if(rs2 > 0) {

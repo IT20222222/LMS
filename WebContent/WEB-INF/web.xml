@@ -23,5 +23,17 @@
 		<servlet-name>unregisterPlan</servlet-name>
 		<url-pattern>/unregisterPlan</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AddUser</servlet-name>
+		<servlet-class>com.lms.servlet.AddUserServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AddUser</servlet-name>
+		<url-pattern>/RegUser</url-pattern>
+		
+	</servlet-mapping>
+	
 </web-app>
 	

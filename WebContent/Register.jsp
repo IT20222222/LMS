@@ -121,7 +121,7 @@
 
 
 			
-            <form id="contactform" action="addCustomerServlet" method="post" role="form" class="contactForm">
+            <form id="contactform" action="RegUser" method="post" role="form" class="contactForm">
 
             
 				  

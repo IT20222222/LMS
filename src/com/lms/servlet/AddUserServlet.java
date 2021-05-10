@@ -28,17 +28,22 @@ public class AddUserServlet extends HttpServlet {
 		String email = request.getParameter("Email");
 		String address = request.getParameter("Address");
 		String gender = request.getParameter("gender");
-		String MobileNumber = request.getParameter("mobile");
+		int  MobileNumber = request.getParameter("mobile");
 		String DOB = request.getParameter("dob");
 		String username = request.getParameter("username");
 		String password = request.getParameter("Password");
 		
 		boolean isTrue;
 		
-		isTrue = UserDBUtil.addUser(firstName , lastName , NIC , email , address , gender , mobile , dob , username , password);
+		isTrue = UserDBUtil.addUser(firstName , lastName , NIC , email , address , gender , MobileNumber , DOB , username , password);
 		
 		if (isTrue == true) {
-			RequestDispatcher dis = request.
+			RequestDispatcher dis = request.getRequestDispatcher("regSuccess.jsp");
+			dis.forward(request,response);
+		}
+		else {
+			RequestDispatcher dis2 = request.getRequestDispatcher("regUnsuccess.jsp");
+			dis2.forward(request,response);
 		}
 		
 	}
