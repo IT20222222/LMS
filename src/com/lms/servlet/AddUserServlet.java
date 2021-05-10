@@ -33,7 +33,14 @@ public class AddUserServlet extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("Password");
 		
-		UserDBUtil.
+		boolean isTrue;
+		
+		isTrue = UserDBUtil.addUser(firstName , lastName , NIC , email , address , gender , mobile , dob , username , password);
+		
+		if (isTrue == true) {
+			RequestDispatcher dis = request.
+		}
+		
 	}
 
 }

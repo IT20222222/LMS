@@ -68,4 +68,32 @@ public class UserDBUtil {
 			
 			return user;	
 		}
+	
+	public static boolean addUser(String Firstname , String Lastname , String NIC , String email, String address, String gender , String mobile , String dob , String username , String password) {
+		
+		isSuccess = false;
+		try {
+		con = DBConnectorUtil.getConnection();
+		stmt = con.createStatement();
+		String sql2 = "";
+		int rs2 = stmt.executeUpdate(sql2);
+		
+		if(rs2 > 0) {
+			isSuccess = true;
+		}
+		
+		else {
+			isSuccess = false;
+			
+		}
+		
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
+	
 }
