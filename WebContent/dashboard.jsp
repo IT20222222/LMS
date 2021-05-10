@@ -1,7 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page import="com.lms.model.User" %>
+    <% User user = (User) session.getAttribute("loggedUser");
+    if(user == null){
+    	response.sendRedirect("Login.jsp");
+    }
+	%>
 <!DOCTYPE html>
 <html lang="en">
+
+
 
 <head>
   <meta charset="utf-8">
@@ -83,7 +91,7 @@
                     <li><a href="index.html">Place Order</a></li>
                     <li><a href="my-plan-normal.jsp">My Plan</a></li>
                     <li><a href="UserProfile.jsp">My Account</a></li>
-                    <li><a href="index.html">Log Out</a></li>
+                    <li><a href="/testWeb/LogOutServlet">Log Out</a></li>
                   </ul>
                 </nav>
               </div>
@@ -120,6 +128,7 @@
 
 					<div class="row">
 					  <div class="span12">
+					  <h4> Hello, <%= user.getFirstName() %></h4>
 						<h4>Summary (this month)</h4>
 							<div id="summary">
 			                  <table border="0px" width = "100%" >

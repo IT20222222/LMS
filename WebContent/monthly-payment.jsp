@@ -107,7 +107,7 @@
           <div class="span8">
             <ul class="breadcrumb">
               <li><a href="index.jsp">Home</a> <i class="icon-angle-right"></i></li>
-              <li><a href="my-plan.jsp">My Plan</a> <i class="icon-angle-right"></i></li>
+              <li><a href="my-plan-regular.jsp">My Plan</a> <i class="icon-angle-right"></i></li>
               <li class="active">Monthly Payment</li>
             </ul>
           </div>
@@ -190,7 +190,7 @@
 											<td style="padding:10px 10px 10px 10px">
 												<table>
 													<tr>
-														<td style="padding-top:10px"><a href="my-plan.jsp" class="btn btn-inverse">Cancel</a></td>
+														<td style="padding-top:10px"><a href="my-plan-regular.jsp" class="btn btn-inverse">Cancel</a></td>
 														<td><input type="submit" name="payMonthlyDue"class="btn btn-danger" value="Confirm Payment"></td>
 													</tr>
 												</table>
