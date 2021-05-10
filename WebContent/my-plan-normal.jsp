@@ -143,10 +143,6 @@
 			                  		<td><%= plan.getPlanName() %></td>
 			                  	</tr>
 			                  	<tr>
-			                  		<td><b>Registered Date</b></td>
-			                  		<td>24/01/2021</td>
-			                  	</tr>
-			                  	<tr>
 			                  		<td><b>Maximum orders for a month</b></td>
 			                  		<td><%= plan.getMaxOrders() %></td>
 			                  	</tr>

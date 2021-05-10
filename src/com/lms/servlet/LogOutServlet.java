@@ -22,6 +22,7 @@ public class LogOutServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.removeAttribute("loggedUser");
 		session.removeAttribute("userPlan");
+		session.removeAttribute("mpHistory");
 		response.sendRedirect("Login.jsp");
 	}
 

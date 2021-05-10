@@ -5,6 +5,7 @@ import com.lms.model.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -43,6 +44,12 @@ public class LogInServlet extends HttpServlet {
 				HttpSession session = request.getSession();
 				session.setAttribute("loggedUser", user);
 				session.setAttribute("userPlan", plan);
+				
+				if(plan.getPlanId() == 2) {
+					ArrayList<MonthlyPayment> mp = MonthlyPaymentDBUtil.getMonthlyPaymentHistory(user);
+					session.setAttribute("mpHistory", mp);
+				}
+				
 				response.sendRedirect("dashboard.jsp");
 			}
 			

@@ -35,5 +35,25 @@
 		
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>mPayment</servlet-name>
+		<servlet-class>com.lms.servlet.MonthlyPaymentServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>mPayment</servlet-name>
+		<url-pattern>/mPayment</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>saveUserPlan</servlet-name>
+		<servlet-class>com.lms.servlet.SaveUserPlanServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>saveUserPlan</servlet-name>
+		<url-pattern>/saveUserPlan</url-pattern>
+	</servlet-mapping>
+	
 </web-app>
 	
