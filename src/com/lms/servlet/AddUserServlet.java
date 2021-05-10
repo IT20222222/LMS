@@ -2,11 +2,14 @@ package com.lms.servlet;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.lms.util.UserDBUtil;
 
 /**
  * Servlet implementation class AddUser
@@ -28,7 +31,7 @@ public class AddUserServlet extends HttpServlet {
 		String email = request.getParameter("Email");
 		String address = request.getParameter("Address");
 		String gender = request.getParameter("gender");
-		int  MobileNumber = request.getParameter("mobile");
+		int  MobileNumber = Integer.parseInt(request.getParameter("mobile"));
 		String DOB = request.getParameter("dob");
 		String username = request.getParameter("username");
 		String password = request.getParameter("Password");

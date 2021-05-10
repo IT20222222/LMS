@@ -1,5 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page import="com.lms.model.User" %>
+    <%@ page import="com.lms.model.Plan" %>
+    <% User user = (User) session.getAttribute("loggedUser");
+       Plan plan = (Plan) session.getAttribute("userPlan");
+	    if(user == null){
+	    	response.sendRedirect("Login.jsp");
+	    }
+	%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -84,7 +92,7 @@
                     <li><a href="index.html">Place Order</a></li>
                     <li class="dropdown active"><a href="my-plan-regular.jsp">My Plan</a></li>
                     <li><a href="UserProfile.jsp">My Account</a></li>
-                    <li><a href="index.html">Log Out</a></li>
+                    <li><a href="/testWeb/LogOutServlet">Log Out</a></li>
                   </ul>
                 </nav>
               </div>
@@ -107,7 +115,7 @@
           <div class="span8">
             <ul class="breadcrumb">
               <li><a href="index.jsp">Home</a> <i class="icon-angle-right"></i></li>
-              <li><a href="my-plan-regular.jsp">My Plan</a> <i class="icon-angle-right"></i></li>
+              <li><a href="my-plan.jsp">My Plan</a> <i class="icon-angle-right"></i></li>
               <li class="active">Monthly Payment</li>
             </ul>
           </div>
@@ -122,10 +130,12 @@
 
 					<div class="row">
 					  <div class="span12">
+					  
 					  <table align="center">
 					  	<tr>
+					  	
 					  		<td  class="form">
-							  	<form action="" method="">
+							  		<form action="mPayment" method="post">
 							  		<table width="100%">
 								  		<tr>
 								  			<td colspan=2 style="padding:15px 10px 10px 10px">
@@ -157,7 +167,7 @@
 											</td>
 											<td style="padding:0px 10px 10px 10px;width:100%">
 											<br>
-											E-Mail*<br><input type="text" id="pemail" name="pemail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" disabled>
+											E-Mail*<br><input type="text" id="pemail" name="pemail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" disabled required>
 											</td>
 										</tr>
 										<tr>
@@ -166,24 +176,24 @@
 											</td>
 										</tr>
 										<tr>
-											<td style="padding:10px 10px 10px 10px">First Name*<br><input type="text" id="pfname" name="pfname" ></td>
-											<td style="padding:10px 10px 10px 10px">Last Name*<br><input type="text" id="plname" name="plname" ></td>
+											<td style="padding:10px 10px 10px 10px">First Name*<br><input type="text" id="pfname" name="pfname" required></td>
+											<td style="padding:10px 10px 10px 10px">Last Name*<br><input type="text" id="plname" name="plname" required></td>
 										</tr>
 										<tr>
 											<td colspan=2 style="padding:10px 10px 10px 10px;">
 											Card Number*
 											
-											<br><input type="text" id="cno" style="width:450px"; name="cno">
+											<br><input type="text" id="cno" style="width:450px"; name="cno" required>
 											</td>
 										</tr>
 										<tr>
 											<td style="padding:22px 10px 10px 10px">
 											Expiration Date*<br>
-											<input type="date" id="date" name="date">
+											<input type="date" id="date" name="date" required>
 											</td>
 											<td style="padding:0px 10px 10px 10px">
 											<br>
-											Security Code*<br><input type="password" id="code" name="code">
+											Security Code*<br><input type="password" id="code" name="code" required>
 											</td>
 										</tr>
 										<tr>
@@ -199,7 +209,9 @@
 								  		
 							  		</table>
 		                		</form>
+		                		
                 			</td>
+                			</form>
                 	  	</tr>
                 	  </table>
                 		

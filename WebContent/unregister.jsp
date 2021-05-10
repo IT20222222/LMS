@@ -137,7 +137,7 @@
 											  <table>
 												<tr>
 													<td style="padding-top:10px;padding-right:10px">
-													<input type="password" name="pwd">
+													<input type="password" name="pwd" required>
 													</td>
 													<td><input type="submit" name="unregister"class="btn btn-danger" value="Confirm"></td>
 													<td style="padding-top:10px"><a href="my-plan-regular.jsp" class="btn btn-inverse">Cancel</a></td>

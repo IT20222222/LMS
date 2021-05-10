@@ -2,8 +2,12 @@
     pageEncoding="ISO-8859-1"%>
     <%@ page import="com.lms.model.User" %>
     <%@ page import="com.lms.model.Plan" %>
+    <%@ page import="com.lms.model.MonthlyPayment" %>
+    <%@ page import="java.util.ArrayList" %>
     <% User user = (User) session.getAttribute("loggedUser");
        Plan plan = (Plan) session.getAttribute("userPlan");
+       ArrayList<MonthlyPayment> mph = (ArrayList<MonthlyPayment>) session.getAttribute("mpHistory");
+       
 	    if(user == null){
 	    	response.sendRedirect("Login.jsp");
 	    }
@@ -14,6 +18,16 @@
 	    	
 	    }
 	%>
+	<%!  String printTable(ArrayList<MonthlyPayment> mph){
+	    	String table = new String("");
+	    	int i = 1;
+	    	for(MonthlyPayment mp : mph){
+	    		table += "<tr class='success'><td>"+i+"</td><td>"+mp.getMonth()+"</td><td>"+mp.getDate()+"</td><td>"+mp.getAmount()+"</td><td>"+mp.getStatus()+"</td></tr>";
+				
+	    		i++;
+	    	}
+	    	return table;
+         } %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -142,10 +156,6 @@
 			                  		<td><%= plan.getPlanName() %></td>
 			                  	</tr>
 			                  	<tr>
-			                  		<td><b>Registered Date</b></td>
-			                  		<td>24/01/2021</td>
-			                  	</tr>
-			                  	<tr>
 			                  		<td><b>Maximum orders for a month</b></td>
 			                  		<td><%= plan.getMaxOrders() %></td>
 			                  	</tr>
@@ -210,6 +220,9 @@
 							                        #
 							                      </th>
 							                      <th>
+							                        Month
+							                      </th>
+							                      <th>
 							                        Date
 							                      </th>
 							                      <th>
@@ -221,62 +234,7 @@
 							                    </tr>
 							                  </thead>
 							                  <tbody>
-							                   <tr class="success">
-							                      <td>
-							                        1
-							                      </td>
-							                      <td>
-							                        01/05/2021
-							                      </td>
-							                      <td>
-							                        4500.00
-							                      </td>
-							                      <td>
-							                        Completed
-							                      </td>
-							                    </tr>
-							                    <tr class="success">
-							                      <td>
-							                        2
-							                      </td>
-							                      <td>
-							                        01/04/2021
-							                      </td>
-							                      <td>
-							                        3900.00
-							                      </td>
-							                      <td>
-							                        Completed
-							                      </td>
-							                    </tr>
-							                    <tr class="success">
-							                      <td>
-							                        3
-							                      </td>
-							                      <td>
-													01/03/2021
-							                      </td>
-							                      <td>
-							                        2000.00
-							                      </td>
-							                      <td>
-							                        Completed
-							                      </td>
-							                    </tr>
-							                    <tr class="success">
-							                      <td>
-							                        4
-							                      </td>
-							                      <td>
-							                        01/02/2021
-							                      </td>
-							                      <td>
-							                        4000.00
-							                      </td>
-							                      <td>
-							                        Completed
-							                      </td>
-							                    </tr>
+							                  <%= printTable(mph)%>
 							                  </tbody>
 							                </table>
 							                <a href="monthly-payment.jsp" class="btn btn-danger"><i class=" icon-credit-card icon-white"></i> Pay Monthly Due</a>

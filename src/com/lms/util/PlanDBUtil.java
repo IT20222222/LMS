@@ -100,4 +100,60 @@ public class PlanDBUtil {
 		
 		return isSuccess;
 	}
+	
+	public static boolean saveUserPlan(User user, int maxOrders, int maxWeight, int pressing, int mending, int oneday,
+			int dryclean, int pickupDelivery, double monthlyPayment) {
+		
+		boolean isSuccess = false;
+		
+		try {
+			con = DBConnectorUtil.getConnection();
+			stmt = con.createStatement();
+			String sql = "update customized_plan set pressing="+pressing+", mending="+mending+", oneday="+oneday+", dryclean="+dryclean+", pickup_delivery="+pickupDelivery+
+					", Max_Orders="+maxOrders+", Max_Weight="+maxWeight+", Monthly_Payment="+monthlyPayment+" where User_ID="+user.getId()+" and Plan_ID="+user.getPlanId();
+			
+			int r = stmt.executeUpdate(sql); //execute sql query
+			
+			if(r > 0) {
+				isSuccess = true;
+			}
+			else {
+				isSuccess = false;
+			}
+			
+		
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return isSuccess;
+	}
+	
+	public static double calculateMonthlyPayment(int maxOrders, int maxWeight, int pressing, int mending, int oneday,
+			int dryclean, int pickupDelivery) {
+		
+		double monthlyPayment = 0;
+		
+		if(pressing == 1) {
+			monthlyPayment += 200;
+		}
+		if(mending == 1) {
+			monthlyPayment += 200;
+		}
+		if(oneday == 1) {
+			monthlyPayment += 200;
+		}
+		if(dryclean == 1) {
+			monthlyPayment += 200;
+		}
+		if(pickupDelivery == 1) {
+			monthlyPayment += 200;
+		}
+		
+		monthlyPayment += 100 * maxOrders;
+		monthlyPayment += 100 * maxWeight;
+		
+		return monthlyPayment;
+	}
+
 }
