@@ -75,7 +75,7 @@ public class UserDBUtil {
 		try {
 		con = DBConnectorUtil.getConnection();
 		stmt = con.createStatement();
-		String sql2 = "INSERT INTO user_profile (0 , '"+Firstname+"' , '"+Lastname+"' , '"+NIC+"' , '"+email+"' , '"+address+"' , '"+gender+"' , '"+mobile+"' , '"+dob+"' , '"+username+"' , '"+password+"' )";
+		String sql2 = "INSERT INTO user_profile values (0 , '"+Firstname+"' , '"+Lastname+"' , '"+NIC+"' , '"+email+"' , '"+address+"' , '"+gender+"' , '"+mobile+"' , '"+dob+"' , '"+username+"' , '"+password+"' )";
 		int rs2 = stmt.executeUpdate(sql2);
 		
 		if(rs2 > 0) {
