@@ -14,6 +14,7 @@ public class User {
     private String password;
     private int planId;
     
+    //For users who are registered to a package.
 	public User(int id, String firstName, String lastName, String nIC, String email, String address, String gender,
 			int mobileNo, String dOB, String username, String password, int planId) {
 		super();
@@ -29,6 +30,25 @@ public class User {
 		this.username = username;
 		this.password = password;
 		this.planId = planId;
+	}
+	
+	
+	//For Users who are not registered to a package
+	public User(int id, String firstName, String lastName, String nIC, String email, String address, String gender,
+			int mobileNo, String dOB, String username, String password) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		NIC = nIC;
+		this.email = email;
+		this.address = address;
+		this.gender = gender;
+		this.mobileNo = mobileNo;
+		DOB = dOB;
+		this.username = username;
+		this.password = password;
+	
 	}
 
 	public int getId() {

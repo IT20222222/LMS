@@ -5,6 +5,8 @@ import com.lms.model.*;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserDBUtil {
 	private static boolean isSuccess;
@@ -95,6 +97,64 @@ public class UserDBUtil {
 		return isSuccess;
 		
 	}
+	
+	public static List<User> getProfileData (String  username){
+		
+		isSuccess = false;
+		
+		ArrayList<User> user = new ArrayList<User>();
+		
+		try {
+			con = DBConnectorUtil.getConnection();
+			stmt = con.createStatement();
+			String sql3 = "SELECT * FROM user_profile WHERE Username = '"+username+"'";
+			rs = stmt.executeQuery(sql3);
+			
+			int pid = rs.getInt(12);
+			
+			
+			while(rs.next()) {
+				
+				int uid = rs.getInt(1);
+				String fname = rs.getString(2);
+				String lname = rs.getString(3);
+				String NIC = rs.getString(4); 
+				String email = rs.getString(5);
+				String Address = rs.getString(6);
+				String gender = rs.getString(7);
+				int  mob = rs.getInt(8);
+				String dob = rs.getString(9);
+				String username = rs.getString(10);
+				String password = rs.getString(11); 
+				
+				if(pid > 0) {
+			
+						User u = new User(uid , fname , lname , NIC , email , Address , gender , mob , dob , username , password , pid);
+						user.add(u);
+						return user;
+						}
+				else  {
+					
+						User u2 = new User(uid , fname , lname , NIC , email , Address , gender , mob , dob , username , password);
+						user.add(u2);
+						return user;
+					}
+			
+				}
+			
+			
+			
+			}
+		
+		
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+	
 	
 	
 	

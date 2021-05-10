@@ -1,3 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@ page import="com.lms.model.User" %>
+
+<%@taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>    
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -120,9 +127,12 @@
 		}
 	}
 	</script>
+	
 	<form>
 	<h6 class = "heading-user">User Information</h6>
 	<table>
+	
+	
 	<tr>
 	<td class = "form-label">Username <br> <input type = "text" name = "username"> </td>
 	<td class = "form-label" style = "padding-left:100px">Email Address <br> <input type = "text" name = "Email"> </td>
@@ -147,6 +157,7 @@
 	<td class = "form-label">Customer Type<br><input type = "text" name = "CusType" id = "cusType" onchange = "displayPackage()" /></td>
 	<td class = "form-label" style = "padding-left:100px">Package(Postpaid Customers)<br><input type = "text" name = "Package" id ="pack"></td>
 	</tr>
+	
 	</table>
 	</form>
 	</div>
