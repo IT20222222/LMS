@@ -110,12 +110,13 @@
         </div>
       </div>
     </section><br><br>
+	
+	
 	<div class = "UnregContainer">
+	<form action = "delete" method = "post">
 	
-	
-	<form>
 	<h6 class = "heading-user"><b>Confirm Credentials</b></h6>
-	<form action = "">
+	
 	<table>
 	<tr>
 	<td class = "form-label">Username <br> <input type = "text" name = "username"> </td>
@@ -146,15 +147,10 @@
 	</td>
 	<tr>
 	</table>
-	</form>
-	
-	
-	</div>
 	<br><br>
-	
-	<button style = "left : 450px ; position : relative ; top : 10px ; width : 400px "class = "UnregButton" onclick = "Unregister.jsp">Unregister</button>
-	
-	
+	<button style = "left : 450px ; position : relative ; top : 10px ; width : 400px "class = "UnregButton" type = "submit">Unregister</button>
+	</form>
+	</div>
 	<br><br><br>
     <footer>
       <div class="container">

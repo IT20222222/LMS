@@ -186,6 +186,34 @@ public class UserDBUtil {
 	}
 
 	
+	public static boolean DeleteUser(int id) {
+		
+		
+		isSuccess = false;
+		try {
+			
+			con = DBConnectorUtil.getConnection();
+			stmt = con.createStatement();
+			String sql4 = "DELETE FROM user_profile WHERE User_ID = '"+id+"' ";
+			int rs = stmt.executeUpdate(sql4);
+			
+			if (rs > 0){
+				isSuccess = true;
+			}
+			else {
+				isSuccess = false;
+			}
+			
+			
+		}
+		
+		catch(Exception e ){
+			
+			e.printStackTrace();
+		}
+		
+		return isSuccess;
+	}
 	
 	
 	
