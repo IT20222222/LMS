@@ -32,7 +32,6 @@
 	<servlet-mapping>
 		<servlet-name>AddUser</servlet-name>
 		<url-pattern>/RegUser</url-pattern>
-		
 	</servlet-mapping>
 	
 	<servlet>
@@ -54,6 +53,8 @@
 		<servlet-name>saveUserPlan</servlet-name>
 		<url-pattern>/saveUserPlan</url-pattern>
 	</servlet-mapping>
+	
+	
 	
 
 	

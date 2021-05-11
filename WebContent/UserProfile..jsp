@@ -140,30 +140,29 @@
 	<h6 class = "heading-user">User Information</h6>
 	<table>
 	
-	
 	<tr>
-	<td class = "form-label">Username <br> <input type = "text" name = "username" value = "<%= user.getUsername() %>"> </td>
-	<td class = "form-label" style = "padding-left:100px">Email Address <br> <input type = "text" name = "Email" value = "<%= user.getEmail() %>"> </td>
+	<td class = "form-label">Username <br> <input type = "text" name = "username" value = "<%= user.getUsername() %>" readonly> </td>
+	<td class = "form-label" style = "padding-left:100px">Email Address <br> <input type = "text" name = "Email" value = "<%= user.getEmail() %>" readonly> </td>
 	</tr>
 	<tr>
-	<td class = "form-label">First Name<br><input type = "text" name = "firstname" value = "<%= user.getFirstName() %>"></td>
-	<td class = "form-label" style = "padding-left:100px">Last Name <br><input type = "text" name = "lastname" value = "<%= user.getLastName() %>"></td>
+	<td class = "form-label">First Name<br><input type = "text" name = "firstname" value = "<%= user.getFirstName() %>" readonly ></td>
+	<td class = "form-label" style = "padding-left:100px">Last Name <br><input type = "text" name = "lastname" value = "<%= user.getLastName() %>" readonly></td>
 	</tr>
 	</table>
 	<hr>
 	<h6 class = "heading-user">Contact Information</h6>
 	<table>
 	<tr>
-	<td class = "form-label">Address<br><input type = "text" name = "address" value = "<%= user.getAddress() %>"></td>
-	<td class = "form-label" style = "padding-left:100px">Phone Number<br><input type = "text" name = "number" value = "<%= user.getMobileNo() %>"></td>
+	<td class = "form-label">Address<br><input type = "text" name = "address" value = "<%= user.getAddress() %>" readonly></td>
+	<td class = "form-label" style = "padding-left:100px">Phone Number<br><input type = "text" name = "number" value = "<%= user.getMobileNo() %>" readonly></td>
 	</tr>
 	</table>
 	<hr>
 	<h6 class = "heading-user"> Package Information</h6>
 	<table>
 	<tr>
-	<td class = "form-label">Customer Type<br><input type = "text" name = "CusType" id = "cusType" onchange = "displayPackage()" /></td>
-	<td class = "form-label" style = "padding-left:100px">Package(Postpaid Customers)<br><input type = "text" name = "Package" id ="pack"></td>
+	<td class = "form-label">Customer Type<br><input type = "text" name = "CusType" id = "cusType" onchange = "displayPackage()" readonly></td>
+	<td class = "form-label" style = "padding-left:100px">Package(Postpaid Customers)<br><input type = "text" name = "Package" id ="pack" readonly></td>
 	</tr>
 	
 	</table>
