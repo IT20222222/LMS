@@ -4,6 +4,14 @@
 
 <%@taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>    
 
+ <% User user = (User) session.getAttribute("loggedUser");
+		
+		
+	    if(user == null){
+	    	response.sendRedirect("Login.jsp");
+	    }
+	    
+	%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -89,7 +97,7 @@
                     <li><a href="index.html">Place Order</a></li>
                     <li><a href="my-plan.jsp">My Plan</a></li>
                     <li class="dropdown active"><a href="UserProfile.jsp">My Account</a></li>
-                    <li><a href="index.html">Log Out</a></li>
+                    <li><a href="/testWeb/LogOutServlet">Log Out</a></li>
                   </ul>
                 </nav>
               </div>
@@ -134,20 +142,20 @@
 	
 	
 	<tr>
-	<td class = "form-label">Username <br> <input type = "text" name = "username"> </td>
-	<td class = "form-label" style = "padding-left:100px">Email Address <br> <input type = "text" name = "Email"> </td>
+	<td class = "form-label">Username <br> <input type = "text" name = "username" value = "<%= user.getUsername() %>"> </td>
+	<td class = "form-label" style = "padding-left:100px">Email Address <br> <input type = "text" name = "Email" value = "<%= user.getEmail() %>"> </td>
 	</tr>
 	<tr>
-	<td class = "form-label">First Name<br><input type = "text" name = "firstname"></td>
-	<td class = "form-label" style = "padding-left:100px">Last Name <br><input type = "text" name = "lastname"></td>
+	<td class = "form-label">First Name<br><input type = "text" name = "firstname" value = "<%= user.getFirstName() %>"></td>
+	<td class = "form-label" style = "padding-left:100px">Last Name <br><input type = "text" name = "lastname" value = "<%= user.getLastName() %>"></td>
 	</tr>
 	</table>
 	<hr>
 	<h6 class = "heading-user">Contact Information</h6>
 	<table>
 	<tr>
-	<td class = "form-label">Address<br><input type = "text" name = "address"></td>
-	<td class = "form-label" style = "padding-left:100px">Phone Number<br><input type = "text" name = "number"></td>
+	<td class = "form-label">Address<br><input type = "text" name = "address" value = "<%= user.getAddress() %>"></td>
+	<td class = "form-label" style = "padding-left:100px">Phone Number<br><input type = "text" name = "number" value = "<%= user.getMobileNo() %>"></td>
 	</tr>
 	</table>
 	<hr>
