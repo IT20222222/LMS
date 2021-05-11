@@ -1,5 +1,5 @@
 package com.lms.util;
-
+import com.lms.model.User;
 import com.lms.model.*;
 
 import java.sql.Connection;
@@ -13,6 +13,7 @@ public class UserDBUtil {
 	private static Connection con = null;
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
+	
 	
 	public static boolean validate(String username, String password) {
 			
@@ -74,11 +75,16 @@ public class UserDBUtil {
 	public static boolean addUser(String Firstname , String Lastname , String NIC , String email, String address, String gender , int mobile , String dob , String username , String password) {
 		
 		isSuccess = false;
+		
+		User user2 = new User();
+		user2.GenerateID();
+		int idno = user2.getId();
 		try {
 		con = DBConnectorUtil.getConnection();
 		stmt = con.createStatement();
-		String sql2 = "INSERT INTO user_profile values (0 , '"+Firstname+"' , '"+Lastname+"' , '"+NIC+"' , '"+email+"' , '"+address+"' , '"+gender+"' , '"+mobile+"' , '"+dob+"' , '"+username+"' , '"+password+"' )";
+		String sql2 = "INSERT INTO user_profile values ('"+idno+"', '"+Firstname+"' , '"+Lastname+"' , '"+NIC+"' , '"+email+"' , '"+address+"' , '"+gender+"' , '"+mobile+"' , '"+dob+"' , '"+username+"' , '"+password+"' , 0 )";
 		int rs2 = stmt.executeUpdate(sql2);
+		
 		
 		if(rs2 > 0) {
 			isSuccess = true;
@@ -124,20 +130,19 @@ public class UserDBUtil {
 				String gender = rs.getString(7);
 				int  mob = rs.getInt(8);
 				String dob = rs.getString(9);
-				String username = rs.getString(10);
+				String username1 = rs.getString(10);
 				String password = rs.getString(11); 
 				
 				if(pid > 0) {
 			
-						User u = new User(uid , fname , lname , NIC , email , Address , gender , mob , dob , username , password , pid);
+						User u = new User(uid , fname , lname , NIC , email , Address , gender , mob , dob , username1 , password , pid);
 						user.add(u);
-						return user;
+				
 						}
 				else  {
 					
-						User u2 = new User(uid , fname , lname , NIC , email , Address , gender , mob , dob , username , password);
+						User u2 = new User(uid , fname , lname , NIC , email , Address , gender , mob , dob , username1 , password);
 						user.add(u2);
-						return user;
 					}
 			
 				}
@@ -152,6 +157,7 @@ public class UserDBUtil {
 		}
 		
 		
+		return user;
 	}
 	
 	public static boolean updateCustomer(String username , String fname , String lname , String Address , String pnumber) {
@@ -178,7 +184,7 @@ public class UserDBUtil {
 		}
 		return isSuccess;
 	}
-	
+
 	
 	
 	

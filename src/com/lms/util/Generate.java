@@ -1,5 +1,5 @@
-
+package com.lms.util;
 public interface Generate {
 	
-	public int  GenerateID();
+	public void GenerateID();
 }

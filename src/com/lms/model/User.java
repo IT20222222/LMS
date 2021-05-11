@@ -1,6 +1,8 @@
 package com.lms.model;
 
-public class User {
+import com.lms.util.Generate;
+
+public class User implements Generate {
 	private int id;
     private String firstName;
     private String lastName;
@@ -14,6 +16,7 @@ public class User {
     private String password;
     private int planId;
     
+    private static int ID = 1000;
     //For users who are registered to a package.
 	public User(int id, String firstName, String lastName, String nIC, String email, String address, String gender,
 			int mobileNo, String dOB, String username, String password, int planId) {
@@ -50,6 +53,11 @@ public class User {
 		this.password = password;
 	
 	}
+
+	public User() {
+	
+	}
+
 
 	public int getId() {
 		return id;
@@ -97,6 +105,11 @@ public class User {
 
 	public int getPlanId() {
 		return planId;
+	}
+	
+	public void GenerateID() {
+		ID++;
+		this.id = ID;
 	}
     
 	

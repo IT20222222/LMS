@@ -131,7 +131,7 @@
     
     
 	<div class = "ProfileContainer">
-	<form action = "UpdateUser" method = "post"> 
+	<form action = "UpdateUserDetailsServlet" method = "post"> 
 	<h6 class = "heading-user">User Information</h6>
 	<table>
 	<tr>
