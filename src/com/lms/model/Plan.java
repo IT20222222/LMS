@@ -1,8 +1,8 @@
 package com.lms.model;
-import com.lms.util.Generate;
+
 import java.util.HashMap;
 
-public class Plan implements Generate {
+public class Plan {
 	private int planId;
 	private String planName;
 	private int maxOrders;
@@ -11,7 +11,7 @@ public class Plan implements Generate {
 	private boolean isCustomizable;
 	private HashMap<String, String> availableServices;
 	
-	private static int PID = 2000;
+
 	
 	public Plan(int planId, String planName, int maxOrders, int maxWeight, int pressing, int mending, int oneday,
 			int dryclean, int pickupDelivery, double monthlyPayment, boolean isCustomizable) {
@@ -95,11 +95,7 @@ public class Plan implements Generate {
 		
 	}
 	
-	public void GenerateID() {
-		PID++;
-		this.planId = PID;
-	}
-	
+
 	
 	
 }
