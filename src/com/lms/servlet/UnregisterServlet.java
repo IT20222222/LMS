@@ -32,7 +32,7 @@ public class UnregisterServlet extends HttpServlet {
 		//Getting Cancellation Information to insert them to the Database
 		
 		int mobileNo = user.getMobileNo();
-		String username = user.getUsername();
+		String username2 = user.getUsername();
 		String email = user.getEmail();
 		String reason = request.getParameter("reason");
 		String description = request.getParameter("description");
@@ -50,7 +50,7 @@ public class UnregisterServlet extends HttpServlet {
 			boolean isTrue = UserDBUtil.DeleteUser(id);
 			
 			//Sending User Cancellation Details to the Database
-			boolean isTrue2 = UserDBUtil.setCancellationDetails(mobileNo , username , email , reason , description);
+			boolean isTrue2 = UserDBUtil.setCancellationDetails(mobileNo, username2, email, reason, description);
 			
 		
 			//Checking whether the query works 

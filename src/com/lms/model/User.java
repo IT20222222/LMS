@@ -17,7 +17,7 @@ public class User implements Generate {
     private int planId;
     
     private static int ID = 1000;
-    //For users who are registered to a package.
+    //For users editing their profile
 	public User(int id, String firstName, String lastName, String nIC, String email, String address, String gender,
 			int mobileNo, String dOB, String username, String password, int planId) {
 		super();
@@ -37,22 +37,19 @@ public class User implements Generate {
 	
 	
 	//For Users who are not registered to a package
-	public User(int id, String firstName, String lastName, String nIC, String email, String address, String gender,
-			int mobileNo, String dOB, String username, String password) {
+	public User(String firstName, String lastName,String email, String address, int mobileNo, String username) {
 		super();
-		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		NIC = nIC;
 		this.email = email;
 		this.address = address;
-		this.gender = gender;
 		this.mobileNo = mobileNo;
-		DOB = dOB;
 		this.username = username;
-		this.password = password;
 	
 	}
+
+
+
 
 	public User() {
 	
@@ -110,6 +107,34 @@ public class User implements Generate {
 	public void GenerateID() {
 		ID++;
 		this.id = ID;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+
+	public void setMobileNo(int mobileNo) {
+		this.mobileNo = mobileNo;
+	}
+
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
     
 	

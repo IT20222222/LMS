@@ -29,13 +29,25 @@ public class UpdateUserDetailsServlet extends HttpServlet {
 		String username = request.getParameter("username");
 		String firstname = request.getParameter("firstname");
 		String lastname = request.getParameter("lastname");
+		String email = request.getParameter("Email");
 		String address = request.getParameter("address");
-		String number = request.getParameter("number");
+		int number = Integer.parseInt(request.getParameter("number"));
 		
-		boolean isTrue = UserDBUtil.updateCustomer(username, firstname, lastname, address, number);
+		boolean isTrue = UserDBUtil.updateCustomer(username, firstname, lastname, address, number , email);
+		
+		HttpSession session = request.getSession();
+		User user = (User)session.getAttribute("loggedUser");
+
+		
 		
 		if(isTrue == true) {
 			
+			user.setAddress(address);
+			user.setEmail(email);
+			user.setFirstName(firstname);
+			user.setLastName(lastname);
+			user.setMobileNo(number);
+			user.setUsername(username);
 			RequestDispatcher dis = request.getRequestDispatcher("Success.jsp");
 			dis.forward(request, response);
 		}
@@ -43,6 +55,13 @@ public class UpdateUserDetailsServlet extends HttpServlet {
 			RequestDispatcher dis = request.getRequestDispatcher("Unsuccess.jsp");
 			dis.forward(request, response);
 		}
+		
+	}
+
+
+
+	private void User(String firstname, String lastname, String email, String address, int number, String username) {
+		// TODO Auto-generated method stub
 		
 	}
 

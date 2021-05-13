@@ -160,7 +160,7 @@ public class UserDBUtil {
 		return user;
 	}
 	
-	public static boolean updateCustomer(String username , String fname , String lname , String Address , String pnumber) {
+	public static boolean updateCustomer(String username , String fname , String lname , String Address , int pnumber , String email) {
 		
 		isSuccess = false;
 		
@@ -168,7 +168,7 @@ public class UserDBUtil {
 			
 			con = DBConnectorUtil.getConnection();
 			stmt = con.createStatement();
-			String sql3 = "UPDATE user_info SET First_Name = '"+fname+"' , Username = '"+username+"' , Last_Name = '"+lname+"' , Address = '"+Address+"' , Mobile_Number = '"+pnumber+"'  WHERE Username = '"+username+"' ";
+			String sql3 = "UPDATE user_profile SET First_Name = '"+fname+"' , Username = '"+username+"' , Last_Name = '"+lname+"' ,Email = '"+email+"' , Address = '"+Address+"' , Mobile_Number = '"+pnumber+"'  WHERE Username = '"+username+"' ";
 			int rs = stmt.executeUpdate(sql3);
 			
 			if(rs > 0) {
@@ -215,7 +215,7 @@ public class UserDBUtil {
 		return isSuccess;
 	}
 	
-	public boolean setCancellationDetails(int mobileNo , String username , String email , String reason , String description ) {
+	public static boolean setCancellationDetails(int mobileNo , String username , String email , String reason , String description ) {
 		
 		isSuccess = false;
 		try {
