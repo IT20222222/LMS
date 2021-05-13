@@ -17,7 +17,7 @@ public class User implements Generate {
     private int planId;
     
     private static int ID = 1000;
-    //For users editing their profile
+    //For Users who are registered to a package
 	public User(int id, String firstName, String lastName, String nIC, String email, String address, String gender,
 			int mobileNo, String dOB, String username, String password, int planId) {
 		super();
@@ -36,7 +36,7 @@ public class User implements Generate {
 	}
 	
 	
-	//For Users who are not registered to a package
+	//For User Detail Update
 	public User(String firstName, String lastName,String email, String address, int mobileNo, String username) {
 		super();
 		this.firstName = firstName;
