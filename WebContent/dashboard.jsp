@@ -90,7 +90,7 @@
                     <li class="dropdown active"><a href="dashboard.jsp">Dashboard</a></li>
                     <li><a href="index.html">Place Order</a></li>
                     <li><a href="my-plan-normal.jsp">My Plan</a></li>
-                    <li><a href="UserProfile.jsp">My Account</a></li>
+                    <li><a href="UserProfile..jsp">My Account</a></li>
                     <li><a href="/testWeb/LogOutServlet">Log Out</a></li>
                   </ul>
                 </nav>
