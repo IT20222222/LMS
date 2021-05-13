@@ -24,10 +24,19 @@ public class UnregisterServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		PrintWriter out = response.getWriter();
-		
+		//Getting User information ID to delete user records.
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("loggedUser");
 		int id = user.getId();
+		
+		//Getting Cancellation Information to insert them to the Database
+		
+		int mobileNo = user.getMobileNo();
+		String username = user.getUsername();
+		String email = user.getEmail();
+		String reason = request.getParameter("reason");
+		String description = request.getParameter("description");
+		
 		
 		//Checking whether the credentials given are correct to process deletion.
 		
@@ -37,9 +46,15 @@ public class UnregisterServlet extends HttpServlet {
 		
 		if(credentials == true) {  //If credentials are correct , the deletion will take place.
 			
+			//Deleting User information
 			boolean isTrue = UserDBUtil.DeleteUser(id);
 			
-			if(isTrue == true) {
+			//Sending User Cancellation Details to the Database
+			boolean isTrue2 = UserDBUtil.setCancellationDetails(mobileNo , username , email , reason , description);
+			
+		
+			//Checking whether the query works 
+			if(isTrue == true && isTrue2 == true ) {
 				RequestDispatcher dis1 = request.getRequestDispatcher("Success.jsp");
 				dis1.forward(request, response);
 			}

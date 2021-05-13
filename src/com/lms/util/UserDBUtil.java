@@ -215,6 +215,34 @@ public class UserDBUtil {
 		return isSuccess;
 	}
 	
+	public boolean setCancellationDetails(int mobileNo , String username , String email , String reason , String description ) {
+		
+		isSuccess = false;
+		try {
+			
+			con = DBConnectorUtil.getConnection();
+			stmt = con.createStatement();
+			String sql5 = "INSERT into account_deletion values ('"+username+"' , '"+email+"' , '"+reason+"' , '"+description+"' )" ;
+			int rs = stmt.executeUpdate(sql5);		
+			
+			if (rs > 0) {
+				isSuccess = true;
+				}
+			
+			else {
+				isSuccess = false;
+				
+				}
+			
+			}
+		
+		catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+		
+		return isSuccess;
+	}
 	
 	
 }
