@@ -1,7 +1,7 @@
 package com.lms.util;
 import com.lms.model.User;
 import com.lms.model.*;
-
+import com.lms.model.Cancellation;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -243,6 +243,41 @@ public class UserDBUtil {
 		
 		return isSuccess;
 	}
+	
+	public static List<Cancellation> getCancellationDetails(){
+		
+		isSuccess = false;
+		
+		ArrayList<Cancellation> cancellation = new ArrayList<Cancellation>();
+		try {
+			
+			con = DBConnectorUtil.getConnection();
+			stmt = con.createStatement();
+			String sql6 = "SELECT * FROM account_deletion";
+			rs = stmt.executeQuery(sql6);
+			
+			while (rs.next()) {
+				String username = rs.getString(1);
+				String email = rs.getString(2);
+				String reason = rs.getString(3);
+				String description = rs.getString(4);
+				
+			
+			
+			Cancellation user = new Cancellation(username , email , reason , description);
+			cancellation.add(user);
+			
+			}
+			
+		}
+		
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		
+		return cancellation;
+		
+	} 
 	
 	
 }

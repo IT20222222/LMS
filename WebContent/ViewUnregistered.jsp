@@ -1,21 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+ 
   
-    <%@ page import="com.lms.model.User" %>
-    
-    <% User user = (User) session.getAttribute("loggedUser");
-  
-	    if(user == null){
-	    	response.sendRedirect("Login.jsp");
-	    }
-	%>
-
 <!DOCTYPE html>
 <html lang="en">
 
+
+
 <head>
   <meta charset="utf-8">
-  <title>Remember - Multipurpose bootstrap site template</title>
+  <title>Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Your page description here" />
   <meta name="author" content="" />
@@ -88,12 +82,11 @@
               <div class="navigation">
                 <nav>
                   <ul class="nav topnav">
-             
                     <li><a href="index.jsp">Home</a></li>
-                    <li><a href="dashboard.jsp">Dashboard</a></li>
+                    <li class="dropdown active"><a href="dashboard.jsp">Dashboard</a></li>
                     <li><a href="index.html">Place Order</a></li>
-                    <li><a href="my-plan.jsp">My Plan</a></li>
-                    <li class="dropdown active"><a href="UserProfile.jsp">My Account</a></li>
+                    <li><a href="my-plan-normal.jsp">My Plan</a></li>
+                    <li><a href="UserProfile..jsp">My Account</a></li>
                     <li><a href="/testWeb/LogOutServlet">Log Out</a></li>
                   </ul>
                 </nav>
@@ -111,67 +104,129 @@
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-              <h2>My Account</h2>
+              <h2>Dashboard <span  class="font-icon-dashboard"></span></h2>
             </div>
           </div>
           <div class="span8">
             <ul class="breadcrumb">
-              <li><a href="index.html">Home</a> <i class="icon-angle-right"></i></li>
-              <li class="active">My Account</li>
+              <li><a href="index.jsp">Home</a> <i class="icon-angle-right"></i></li>
+              <li class="active">Dashboard</li>
             </ul>
           </div>
         </div>
       </div>
-    </section><br><br>
-	<div class = "ProfileContainer">
-	
-	<script type = text/javascript>
-	function displayPackage(){
-		if(document.getElementbyId('cusType') == "Prepaid"){
-			document.getElementbyId('pack').disabled = true;
-		}
-	}
-	</script>
-	
-	<form>
-	<h6 class = "heading-user">User Information</h6>
-	<table>
-	
-	<tr>
-	<td class = "form-label">Username <br> <input type = "text" name = "username" value = "<%= user.getUsername() %>" readonly> </td>
-	<td class = "form-label" style = "padding-left:100px">Email Address <br> <input type = "text" name = "Email" value = "<%= user.getEmail() %>" readonly> </td>
-	</tr>
-	<tr>
-	<td class = "form-label">First Name<br><input type = "text" name = "firstname" value = "<%= user.getFirstName() %>" readonly ></td>
-	<td class = "form-label" style = "padding-left:100px">Last Name <br><input type = "text" name = "lastname" value = "<%= user.getLastName() %>" readonly></td>
-	</tr>
-	</table>
-	<hr>
-	<h6 class = "heading-user">Contact Information</h6>
-	<table>
-	<tr>
-	<td class = "form-label">Address<br><input type = "text" name = "address" value = "<%= user.getAddress() %>" readonly></td>
-	<td class = "form-label" style = "padding-left:100px">Phone Number<br><input type = "text" name = "number" value = "<%= user.getMobileNo() %>" readonly></td>
-	</tr>
-	</table>
-	<hr>
-	<h6 class = "heading-user"> Package Information</h6>
-	<table>
-	<tr>
-	<td class = "form-label">Customer Type<br><input type = "text" name = "CusType" id = "cusType" onchange = "displayPackage()" readonly></td>
-	<td class = "form-label" style = "padding-left:100px">Package(Postpaid Customers)<br><input type = "text" name = "Package" id ="pack" readonly></td>
-	</tr>
-	
-	</table>
-	</form>
-	</div>
-	<br><br>
-	<div class = "ProfileContainer">
-	<button onclick="document.location='EditProfile.jsp'" style = "left : 15px" class = "EditButton" >Edit Profile</button>
-	<button onclick="document.location = 'customize-plan.jsp'" style = "left : 290px"class = "EditButton" >Customize Package</button>
-	<button onclick="document.location = 'Unregister_Profile.jsp'" style = "left : 350px"class = "UnregButton" >Unregister</button>
-	
-	</div>
+    </section>
+
+    <section id="content">
+		<div class="container">
+			<div class="row demobtn">
+				<div class="span12">
+
+					
+					<div class="row">
+					  <div class="span12">
+						<h4>Unregistered Users</h4>
+							<div id="OrderHistory">
+							                <table class="table">
+							                  <thead>
+							                  
+							                    <tr>
+							                      <th>
+							                        #
+							                      </th>
+							                      <th>
+							                        Username
+							                      </th>
+							                      <th>
+							                        Email
+							                      </th>
+							                      <th>
+							                        Reason
+							                      </th>
+							                      <th>
+							                        Description
+							                      </th>
+							                    </tr>
+							                  </thead>
+							                  <tbody>
+							                   <tr class="error">
+							                      <td>
+							                        1
+							                      </td>
+							                      <td>
+							                        03/05/2021
+							                      </td>
+							                      <td>
+							                        1500.00
+							                      </td>
+							                      <td>
+							                        In Progress
+							                      </td>
+							                      <td>
+							                        In Progress
+							                      </td>
+							                    </tr>
+							                    <tr class="error">
+							                      <td>
+							                        2
+							                      </td>
+							                      <td>
+							                        03/04/2021
+							                      </td>
+							                      <td>
+							                        900.00
+							                      </td>
+							                      <td>
+							                        Completed
+							                      </td>
+							                      <td>
+							                        In Progress
+							                      </td>
+							                    </tr>
+							                    <tr class="error">
+							                      <td>
+							                        3
+							                      </td>
+							                      <td>
+													28/02/2021
+							                      </td>
+							                      <td>
+							                        2000.00
+							                      </td>
+							                      <td>
+							                        Canceled
+							                      </td>
+							                      <td>
+							                        In Progress
+							                      </td>
+							                    </tr>
+							                    <tr class="error">
+							                      <td>
+							                        4
+							                      </td>
+							                      <td>
+							                        15/02/2021
+							                      </td>
+							                      <td>
+							                        1000.00
+							                      </td>
+							                      <td>
+							                        Completed
+							                      </td>
+							                      <td>
+							                        In Progress
+							                      </td>
+							                    </tr>
+							                  </tbody>
+							                </table>
+			                </div>
+					  </div>
+					</div>
+					
+				</div>	
+			</div>
+		</div>
+    </section>
 
     <footer>
       <div class="container">
@@ -244,7 +299,6 @@
     </footer>
   </div>
   <a href="#" class="scrollup"><i class="icon-angle-up icon-rounded icon-bglight icon-2x"></i></a>
-
   <!-- javascript
     ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
@@ -259,11 +313,9 @@
   <script src="js/portfolio/setting.js"></script>
   <script src="js/animate.js"></script>
 
-  <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
-
   <!-- Template Custom JavaScript File -->
   <script src="js/custom.js"></script>
+
 
 </body>
 
