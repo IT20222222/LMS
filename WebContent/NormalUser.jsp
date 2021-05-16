@@ -150,6 +150,10 @@
 	<h6 class = "heading-user">Package Details</h6>
 	<table>
 	<tr>
+	<br> <td class = "form-label">Username <br> <input type = "text" name = "uid"> </td>
+	<br> <td class = "form-label" style = "padding-left:100px">Password <br> <input type = "text" name = "pw"> </td>
+	<tr>
+	</tr>
 	<br> <td class = "form-label">Maximum Orders per month <br> <input type = "text" name = "maxorders"> </td>
 	</tr><br>
 	<tr>
