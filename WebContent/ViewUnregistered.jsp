@@ -1,20 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ page import="com.lms.model.User" %>
-    <%@ page import="com.lms.model.Plan" %>
-    <% User user = (User) session.getAttribute("loggedUser");
-       Plan plan = (Plan) session.getAttribute("userPlan");
-	    if(user == null){
-	    	response.sendRedirect("Login.jsp");
-	    }
-	%>
+ 
+  
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
 
+
+<head>
   <meta charset="utf-8">
-  <title>Monthly Payment</title>
+  <title>Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Your page description here" />
   <meta name="author" content="" />
@@ -44,7 +39,7 @@
   ======================================================= -->
 </head>
 
-<body >
+<body>
 
   <div id="wrapper">
     <!-- start header -->
@@ -88,10 +83,10 @@
                 <nav>
                   <ul class="nav topnav">
                     <li><a href="index.jsp">Home</a></li>
-                    <li><a href="dashboard.jsp">Dashboard</a></li>
+                    <li class="dropdown active"><a href="dashboard.jsp">Dashboard</a></li>
                     <li><a href="index.html">Place Order</a></li>
-                    <li class="dropdown active"><a href="my-plan-regular.jsp">My Plan</a></li>
-                    <li><a href="UserProfile.jsp">My Account</a></li>
+                    <li><a href="my-plan-normal.jsp">My Plan</a></li>
+                    <li><a href="UserProfile..jsp">My Account</a></li>
                     <li><a href="/testWeb/LogOutServlet">Log Out</a></li>
                   </ul>
                 </nav>
@@ -109,14 +104,13 @@
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-              <h2>Monthly Payment <span  class="icon-money"></span></h2> 
+              <h2>Dashboard <span  class="font-icon-dashboard"></span></h2>
             </div>
           </div>
           <div class="span8">
             <ul class="breadcrumb">
               <li><a href="index.jsp">Home</a> <i class="icon-angle-right"></i></li>
-              <li><a href="my-plan.jsp">My Plan</a> <i class="icon-angle-right"></i></li>
-              <li class="active">Monthly Payment</li>
+              <li class="active">Dashboard</li>
             </ul>
           </div>
         </div>
@@ -128,96 +122,107 @@
 			<div class="row demobtn">
 				<div class="span12">
 
+					
 					<div class="row">
 					  <div class="span12">
-					  
-					  <table align="center">
-					  	<tr>
-					  	
-					  		<td  class="form">
-							  		<form action="mPayment" method="post">
-							  		<table width="100%">
-								  		<tr>
-								  			<td colspan=2 style="padding:15px 10px 10px 10px">
-								  				<h6>Select Payment Method</h6>
-								  				
-								  			</td>
-								  		</tr>
-						
-								  		<tr>
-											<td style="padding:0px 10px 10px 10px">
-											<input type="radio" id="card" name="option" onclick="document.getElementById('service').disabled = true;
-											document.getElementById('pemail').disabled = true;document.getElementById('pfname').disabled = false;document.getElementById('plname').disabled = false;
-											document.getElementById('cno').disabled = false;document.getElementById('date').disabled = false;document.getElementById('code').disabled = false;" checked> Credit/ Debit Card </td>
-											<td style="padding:0px 10px 10px 10px">
-											<input type="radio" id="other" name="option" onclick="document.getElementById('service').disabled = false;
-											document.getElementById('pemail').disabled = false;document.getElementById('pfname').disabled = true;document.getElementById('plname').disabled = true;
-											document.getElementById('cno').disabled = true;document.getElementById('date').disabled = true;document.getElementById('code').disabled = true;"> Other </td>
-										</tr>
-										<tr>
-											<td style="padding:0px 10px 10px 10px">
-											<br>
-											Select Service*<br>
-											<select id="service" disabled>
-												<option value="Paypal">Paypal</option>
-												<option value="Payoneer">Payoneer</option>
-												<option value="Google Pay">Google Pay</option>
-											</select>
-											
-											</td>
-											<td style="padding:0px 10px 10px 10px;width:100%">
-											<br>
-											E-Mail*<br><input type="text" id="pemail" name="pemail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" disabled required>
-											</td>
-										</tr>
-										<tr>
-											<td colspan=2 style="padding:0px 10px 0px 10px">
-											<hr>
-											</td>
-										</tr>
-										<tr>
-											<td style="padding:10px 10px 10px 10px">First Name*<br><input type="text" id="pfname" name="pfname" required></td>
-											<td style="padding:10px 10px 10px 10px">Last Name*<br><input type="text" id="plname" name="plname" required></td>
-										</tr>
-										<tr>
-											<td colspan=2 style="padding:10px 10px 10px 10px;">
-											Card Number*
-											
-											<br><input type="text" id="cno" style="width:450px"; name="cno" required>
-											</td>
-										</tr>
-										<tr>
-											<td style="padding:22px 10px 10px 10px">
-											Expiration Date*<br>
-											<input type="date" id="date" name="date" required>
-											</td>
-											<td style="padding:0px 10px 10px 10px">
-											<br>
-											Security Code*<br><input type="password" id="code" name="code" required>
-											</td>
-										</tr>
-										<tr>
-											<td style="padding:10px 10px 10px 10px">
-												<table>
-													<tr>
-														<td style="padding-top:10px"><a href="my-plan-regular.jsp" class="btn btn-inverse">Cancel</a></td>
-														<td><input type="submit" name="payMonthlyDue"class="btn btn-danger" value="Confirm Payment"></td>
-													</tr>
-												</table>
-											</td>
-										</tr>
-								  		
-							  		</table>
-		                		</form>
-		                		
-                			</td>
-                			</form>
-                	  	</tr>
-                	  </table>
-                		
+						<h4>Unregistered Users</h4>
+							<div id="OrderHistory">
+							                <table class="table">
+							                  <thead>
+							                  
+							                    <tr>
+							                      <th>
+							                        #
+							                      </th>
+							                      <th>
+							                        Username
+							                      </th>
+							                      <th>
+							                        Email
+							                      </th>
+							                      <th>
+							                        Reason
+							                      </th>
+							                      <th>
+							                        Description
+							                      </th>
+							                    </tr>
+							                  </thead>
+							                  <tbody>
+							                   <tr class="error">
+							                      <td>
+							                        1
+							                      </td>
+							                      <td>
+							                        03/05/2021
+							                      </td>
+							                      <td>
+							                        1500.00
+							                      </td>
+							                      <td>
+							                        In Progress
+							                      </td>
+							                      <td>
+							                        In Progress
+							                      </td>
+							                    </tr>
+							                    <tr class="error">
+							                      <td>
+							                        2
+							                      </td>
+							                      <td>
+							                        03/04/2021
+							                      </td>
+							                      <td>
+							                        900.00
+							                      </td>
+							                      <td>
+							                        Completed
+							                      </td>
+							                      <td>
+							                        In Progress
+							                      </td>
+							                    </tr>
+							                    <tr class="error">
+							                      <td>
+							                        3
+							                      </td>
+							                      <td>
+													28/02/2021
+							                      </td>
+							                      <td>
+							                        2000.00
+							                      </td>
+							                      <td>
+							                        Canceled
+							                      </td>
+							                      <td>
+							                        In Progress
+							                      </td>
+							                    </tr>
+							                    <tr class="error">
+							                      <td>
+							                        4
+							                      </td>
+							                      <td>
+							                        15/02/2021
+							                      </td>
+							                      <td>
+							                        1000.00
+							                      </td>
+							                      <td>
+							                        Completed
+							                      </td>
+							                      <td>
+							                        In Progress
+							                      </td>
+							                    </tr>
+							                  </tbody>
+							                </table>
+			                </div>
 					  </div>
 					</div>
-
+					
 				</div>	
 			</div>
 		</div>

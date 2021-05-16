@@ -11,6 +11,8 @@ public class Plan {
 	private boolean isCustomizable;
 	private HashMap<String, String> availableServices;
 	
+
+	
 	public Plan(int planId, String planName, int maxOrders, int maxWeight, int pressing, int mending, int oneday,
 			int dryclean, int pickupDelivery, double monthlyPayment, boolean isCustomizable) {
 		super();
@@ -93,6 +95,7 @@ public class Plan {
 		
 	}
 	
+
 	
 	
 }

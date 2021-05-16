@@ -110,12 +110,13 @@
         </div>
       </div>
     </section><br><br>
+	
+	
 	<div class = "UnregContainer">
+	<form action = "delete" method = "post">
 	
-	
-	<form>
 	<h6 class = "heading-user"><b>Confirm Credentials</b></h6>
-	<form action = "">
+	
 	<table>
 	<tr>
 	<td class = "form-label">Username <br> <input type = "text" name = "username"> </td>
@@ -128,7 +129,7 @@
 	<td>Select Unregister Reason<br>
 	<script type = text/javascript >
 	function DescOpt($i){
-			if ($i == 1 || $i == 2 || $i == 3){
+			if ($i == "Unsatisfied with a service" || $i == "Too expensive" || $i == "Not User Friendly"){
 			document.getElementById('desc').disabled = true;
 			}
 			else
@@ -136,7 +137,7 @@
 			
 	}
 	</script>
-	<div class = "selectReason" style = "width : 200px"><select name = "reason" onchange = "DescOpt(value)"><option value = "1">Unsatisfied with a service</option><option value = "2">Too expensive</option><option value = "3">Not User Friendly</option><option value = "4">Other</option></select>
+	<div class = "selectReason" style = "width : 200px"><select name = "reason" onchange = "DescOpt(value)"><option value = "Unsatisfied with a service">Unsatisfied with a service</option><option value = "Too expensive">Too expensive</option><option value = "Not User Friendly">Not User Friendly</option><option value = "Other">Other</option></select>
 	</div>
 	</td>
 	</tr>
@@ -146,15 +147,10 @@
 	</td>
 	<tr>
 	</table>
-	</form>
-	
-	
-	</div>
 	<br><br>
-	
-	<button style = "left : 450px ; position : relative ; top : 10px ; width : 400px "class = "UnregButton" onclick = "Unregister.jsp">Unregister</button>
-	
-	
+	<button style = "left : 450px ; position : relative ; top : 10px ; width : 400px "class = "UnregButton" type = "submit">Unregister</button>
+	</form>
+	</div>
 	<br><br><br>
     <footer>
       <div class="container">

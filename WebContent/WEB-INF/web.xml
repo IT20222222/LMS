@@ -23,5 +23,48 @@
 		<servlet-name>unregisterPlan</servlet-name>
 		<url-pattern>/unregisterPlan</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AddUser</servlet-name>
+		<servlet-class>com.lms.servlet.AddUserServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AddUser</servlet-name>
+		<url-pattern>/RegUser</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>mPayment</servlet-name>
+		<servlet-class>com.lms.servlet.MonthlyPaymentServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>mPayment</servlet-name>
+		<url-pattern>/mPayment</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>saveUserPlan</servlet-name>
+		<servlet-class>com.lms.servlet.SaveUserPlanServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>saveUserPlan</servlet-name>
+		<url-pattern>/saveUserPlan</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>DeleteUser</servlet-name>
+		<servlet-class>com.lms.servlet.UnregisterServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DeleteUser</servlet-name>
+		<url-pattern>/delete</url-pattern>
+	</servlet-mapping>
+
+	
 </web-app>
 	
