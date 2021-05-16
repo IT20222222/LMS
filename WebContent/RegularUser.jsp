@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
-<title>Edit Regular User</title>
+<title>Regular User</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Your page description here" />
   <meta name="author" content="" />
@@ -34,7 +34,7 @@
   ======================================================= -->
 </head>
 <body>
-	<div id="wrapper">
+<div id="wrapper">
     <!-- start header -->
     <header>
       <div class="top">
@@ -146,15 +146,17 @@
 	<div class = "ProfileContainer">
 	
 	
-	<form>
+	<form action="#" method="post">
 	<h6 class = "heading-user">Package Details</h6>
 	<table>
 	<tr>
-	<td class = "form-label">Package Name <br> <input type = "text" name = "pkgname"> </td>
-	<br> <td class = "form-label" style = "padding-left:100px">Maximum Oders per month <br> <input type = "text" name = "maxorders"> </td>
+	<br> <td class = "form-label">Username <br> <input type = "text" name = "uid"> </td>
+	<br> <td class = "form-label" style = "padding-left:100px">Password <br> <input type = "text" name = "pw"> </td>
+	<tr>
 	</tr><br>
 	<tr>
-	<td class = "form-label">Maximum Weight<br><input type = "text" name = "naxweight"></td>
+	<td class = "form-label">Maximum Weight<br><input type = "text" name = "maxweight"></td>
+	<br> <td class = "form-label" style = "padding-left:100px">Maximum Orders per month <br> <input type = "text" name = "maxorders"> </td>
 	</tr>
 	</table>
 	<hr>
@@ -196,10 +198,10 @@
 	</div>
 	<br><br>
 	<div class = "ProfileContainer">
-	<a href = ""<button style = "left : 15px" class = "EditButton" >Save</button></a>
+	<a href = "my-plan-regular.jsp"><button style = "left : 15px" class = "EditButton" >Save</button></a>
 	
 	</div>
-
+</form>
     <footer>
       <div class="container">
         <div class="row">
@@ -291,6 +293,5 @@
 
   <!-- Template Custom JavaScript File -->
   <script src="js/custom.js"></script>
-	
 </body>
 </html>
