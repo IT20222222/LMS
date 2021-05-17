@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
  
+ <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
   
 <!DOCTYPE html>
 <html lang="en">
@@ -129,7 +130,6 @@
 							<div id="OrderHistory">
 							                <table class="table">
 							                  <thead>
-							                  
 							                    <tr>
 							                      <th>
 							                        #
@@ -149,74 +149,26 @@
 							                    </tr>
 							                  </thead>
 							                  <tbody>
+							                  <c:forEach var = "canc" items = "${cancellationDetails}" var = "i" begin = "1" >
+							                  
 							                   <tr class="error">
 							                      <td>
-							                        1
+							                      <c:out value = "${i}"/>
 							                      </td>
 							                      <td>
-							                        03/05/2021
+							                        ${canc.getUsername} 
 							                      </td>
 							                      <td>
-							                        1500.00
+							                        ${canc.getEmail} 
 							                      </td>
 							                      <td>
-							                        In Progress
+							                        ${canc.getReason} 
 							                      </td>
 							                      <td>
-							                        In Progress
+							                        ${canc.getDescription} 
 							                      </td>
 							                    </tr>
-							                    <tr class="error">
-							                      <td>
-							                        2
-							                      </td>
-							                      <td>
-							                        03/04/2021
-							                      </td>
-							                      <td>
-							                        900.00
-							                      </td>
-							                      <td>
-							                        Completed
-							                      </td>
-							                      <td>
-							                        In Progress
-							                      </td>
-							                    </tr>
-							                    <tr class="error">
-							                      <td>
-							                        3
-							                      </td>
-							                      <td>
-													28/02/2021
-							                      </td>
-							                      <td>
-							                        2000.00
-							                      </td>
-							                      <td>
-							                        Canceled
-							                      </td>
-							                      <td>
-							                        In Progress
-							                      </td>
-							                    </tr>
-							                    <tr class="error">
-							                      <td>
-							                        4
-							                      </td>
-							                      <td>
-							                        15/02/2021
-							                      </td>
-							                      <td>
-							                        1000.00
-							                      </td>
-							                      <td>
-							                        Completed
-							                      </td>
-							                      <td>
-							                        In Progress
-							                      </td>
-							                    </tr>
+							                    </c:forEach>
 							                  </tbody>
 							                </table>
 			                </div>
