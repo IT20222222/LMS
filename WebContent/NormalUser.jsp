@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Edit Normal User</title>
+<title>Normal User</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Your page description here" />
   <meta name="author" content="" />
@@ -34,7 +34,7 @@
   ======================================================= -->
 </head>
 <body>
-	 <div id="wrapper">
+<div id="wrapper">
     <!-- start header -->
     <header>
       <div class="top">
@@ -146,12 +146,15 @@
 	<div class = "ProfileContainer">
 	
 	
-	<form>
+	<form action = "#" method = "post">
 	<h6 class = "heading-user">Package Details</h6>
 	<table>
 	<tr>
-	<td class = "form-label">Package Name <br> <input type = "text" name = "pkgname"> </td>
-	<br> <td class = "form-label" style = "padding-left:100px">Maximum Oders per month <br> <input type = "text" name = "maxorders"> </td>
+	<br> <td class = "form-label">Username <br> <input type = "text" name = "uid"> </td>
+	<br> <td class = "form-label" style = "padding-left:100px">Password <br> <input type = "text" name = "pw"> </td>
+	<tr>
+	</tr>
+	<br> <td class = "form-label">Maximum Orders per month <br> <input type = "text" name = "maxorders"> </td>
 	</tr><br>
 	<tr>
 	<td class = "form-label">Maximum Weight<br><input type = "text" name = "naxweight"></td>
@@ -187,10 +190,10 @@
 	</div>
 	<br><br>
 	<div class = "ProfileContainer">
-	<a href = ""<button style = "left : 15px" class = "EditButton" >Save</button></a>
-	
-	</div>
+	<a href = ""><button style = "left : 15px" class = "EditButton" >Save</button></a>
 
+	</div>
+</form>	
     <footer>
       <div class="container">
         <div class="row">
