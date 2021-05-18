@@ -1,9 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ page import="com.lms.model.User" %>
+    <%@ page import="com.lms.model.Order" %>
+    <%@ page import="java.util.ArrayList" %>
+    <%@ page import="com.lms.model.Plan" %>
     <% User user = (User) session.getAttribute("loggedUser");
+    Plan plan = (Plan) session.getAttribute("userPlan");
+    ArrayList<Order> order = (ArrayList<Order>) session.getAttribute("ordHistory");
+    String date = (String) session.getAttribute("date");
+    
     if(user == null){
     	response.sendRedirect("Login.jsp");
+    }
+    else{
+    	if(plan.isCustomizable()){
+    		response.sendRedirect("dashboard-regular.jsp");
+    	}
+    	
     }
 	%>
 <!DOCTYPE html>
@@ -87,7 +100,7 @@
                 <nav>
                   <ul class="nav topnav">
                     <li><a href="index.jsp">Home</a></li>
-                    <li class="dropdown active"><a href="dashboard.jsp">Dashboard</a></li>
+                    <li class="dropdown active"><a href="dashboard-normal.jsp">Dashboard</a></li>
                     <li><a href="index.html">Place Order</a></li>
                     <li><a href="my-plan-normal.jsp">My Plan</a></li>
                     <li><a href="UserProfile..jsp">My Account</a></li>
@@ -128,26 +141,58 @@
 
 					<div class="row">
 					  <div class="span12">
-					  <h4> Hello, <%= user.getFirstName() %></h4>
 						<h4>Summary (this month)</h4>
 							<div id="summary">
 			                  <table border="0px" width = "100%" >
 				                  <tr>
+				                  	  <td style="background-color:#add8e6;border-radius: 15px;border:5px solid #F5F5F5;padding-bottom:10px;padding-right:10px;padding-top:10px" width="25%">
+					                  <h6 style="padding-left:10px;color:#4682b4">Your Plan</h6>
+					                  <p style="font-size:36px;padding-left:10px;padding-bottom:10px;color:#4682b4" name="totOrders">
+					                  <b>
+					                  Normal User
+					                  </b>
+					                  </p>
+					                  </td>
 					                  <td style="background-color:#90ee90;border-radius: 15px;border:5px solid #F5F5F5;padding-bottom:10px;padding-right:10px;padding-top:10px" width="25%">
 					                  <h6 style="padding-left:10px;color:#008000">Total Orders</h6>
-					                  <p style="font-size:48px;padding-left:10px;padding-bottom:10px;color:#008000" name="totOrders"><b>0</b></p>
+					                  <p style="font-size:48px;padding-left:10px;padding-bottom:10px;color:#008000" name="totOrders"><b>
+					                  <%! int getTotalOrders (ArrayList<Order> ord, String date) {
+					                	  int total = 0;
+					                	  
+					                	  for(Order order : ord) {
+					                		  if(order.getMonth().equals(date)) {
+					                			  total++;
+					                		  }
+					                	  }
+					                	  return total;
+					                  }
+					                  %>
+					                  
+					                  <%= getTotalOrders(order, date) %>
+					                  </b></p>
 					                  </td>
-					                  <td style="background-color:#add8e6;border-radius: 15px;border:5px solid #F5F5F5;padding-bottom:10px;padding-right:10px;padding-top:10px" width="25%">
-					                  <h6 style="padding-left:10px;color:#4682b4">Remaining Orders</h6>
-					                  <p style="font-size:48px;padding-left:10px;padding-bottom:10px;color:#4682b4" name="totOrders"><b>0</b></p>
+					                  
+					                  <td style="background-color:#f5da50;border-radius: 15px;border:5px solid #F5F5F5;padding-bottom:10px;padding-right:10px;padding-top:10px">
+					                  <h6 style="padding-left:10px;color:#daa520">Remaining Orders</h6>
+					                  <p style="font-size:48px;padding-left:10px;padding-bottom:10px;color:#daa520" name="totOrders"><b><%= plan.getMaxOrders() - getTotalOrders(order, date) %></b></p>
 					                  </td>
 					                  <td style="background-color:#f08080;border-radius: 15px;border:5px solid #F5F5F5;padding-bottom:10px;padding-right:10px;padding-top:10px" width="25%">
 					                  <h6 style="padding-left:10px;color:#b22222">Total Money Spent</h6>
-					                  <p style="font-size:48px;padding-left:10px;padding-bottom:10px;color:#b22222" name="totOrders"><b>LKR 0.00</b></p>
-					                  </td>
-					                  <td style="background-color:#f5da50;border-radius: 15px;border:5px solid #F5F5F5;padding-bottom:10px;padding-right:10px;padding-top:10px">
-					                  <h6 style="padding-left:10px;color:#daa520">In Progress..</h6>
-					                  <p style="font-size:48px;padding-left:10px;padding-bottom:10px;color:#daa520" name="totOrders"><b>0</b></p>
+					                  <p style="font-size:48px;padding-left:10px;padding-bottom:10px;color:#b22222" name="totOrders">
+					                  <b>LKR 
+					                  <%! double getTotalPayment(ArrayList<Order> ord, String date) {
+					                	  
+					                	  double total = 0;
+					                	  
+					                	  for(Order order : ord) {
+					                		  if(order.getMonth().equals(date)) {
+					                			  total += order.getPayment();
+					                		  }
+					                	  }
+					                	  return total;
+					                  } %>
+					                  <%=  getTotalPayment(order, date)%>
+					                  </b></p>
 					                  </td>
 					                  
 				                  </tr>
@@ -186,62 +231,28 @@
 							                    </tr>
 							                  </thead>
 							                  <tbody>
-							                   <tr class="warning">
-							                      <td>
-							                        1
-							                      </td>
-							                      <td>
-							                        03/05/2021
-							                      </td>
-							                      <td>
-							                        1500.00
-							                      </td>
-							                      <td>
-							                        In Progress
-							                      </td>
-							                    </tr>
-							                    <tr class="success">
-							                      <td>
-							                        2
-							                      </td>
-							                      <td>
-							                        03/04/2021
-							                      </td>
-							                      <td>
-							                        900.00
-							                      </td>
-							                      <td>
-							                        Completed
-							                      </td>
-							                    </tr>
-							                    <tr class="error">
-							                      <td>
-							                        3
-							                      </td>
-							                      <td>
-													28/02/2021
-							                      </td>
-							                      <td>
-							                        2000.00
-							                      </td>
-							                      <td>
-							                        Canceled
-							                      </td>
-							                    </tr>
-							                    <tr class="success">
-							                      <td>
-							                        4
-							                      </td>
-							                      <td>
-							                        15/02/2021
-							                      </td>
-							                      <td>
-							                        1000.00
-							                      </td>
-							                      <td>
-							                        Completed
-							                      </td>
-							                    </tr>
+							                  	<%!  String printTable(ArrayList<Order> orderHistory){
+											    	String table = new String("");
+											    	int i = 1;
+											    	for(Order order : orderHistory){
+											    		if (order.getStatus().equals("Completed")) {
+											    			table += "<tr class='success'>";
+											    		}
+											    		else if (order.getStatus().equals("In Progress")) {
+											    			table += "<tr class='warning'>";
+											    		}
+											    		else if (order.getStatus().equals("Cancelled")) {
+											    			table += "<tr class='error'>";
+											    		}
+											    		
+											    		table += "<td>"+i+"</td><td>"+order.getDate()+"</td><td>"+order.getPayment()+"</td>";
+											    		table += "<td>"+order.getStatus()+"</td></tr>";
+														
+											    		i++;
+											    	}
+											    	return table;
+										         } %>
+										         <%= printTable(order)%>
 							                  </tbody>
 							                </table>
 			                </div>
