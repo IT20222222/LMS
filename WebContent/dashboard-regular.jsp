@@ -1,20 +1,34 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ page import="com.lms.model.User" %>
+    <%@ page import="com.lms.model.Order" %>
+    <%@ page import="java.util.ArrayList" %>
     <%@ page import="com.lms.model.Plan" %>
+    <%@ page import="com.lms.model.MonthlyPayment" %>
     <% User user = (User) session.getAttribute("loggedUser");
-       Plan plan = (Plan) session.getAttribute("userPlan");
-	    if(user == null){
-	    	response.sendRedirect("Login.jsp");
-	    }
+    Plan plan = (Plan) session.getAttribute("userPlan");
+    ArrayList<Order> order = (ArrayList<Order>) session.getAttribute("ordHistory");
+    String date = (String) session.getAttribute("date");
+    
+    if(user == null){
+    	response.sendRedirect("Login.jsp");
+    }
+    else{
+    	if(plan.isCustomizable() == false){
+    		response.sendRedirect("dashboard-normal.jsp");
+    	}
+    	
+    }
+    
 	%>
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
 
+
+<head>
   <meta charset="utf-8">
-  <title>Monthly Payment</title>
+  <title>Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Your page description here" />
   <meta name="author" content="" />
@@ -44,7 +58,7 @@
   ======================================================= -->
 </head>
 
-<body >
+<body>
 
   <div id="wrapper">
     <!-- start header -->
@@ -88,9 +102,9 @@
                 <nav>
                   <ul class="nav topnav">
                     <li><a href="index.jsp">Home</a></li>
-                    <li><a href="dashboard-regular.jsp">Dashboard</a></li>
+                    <li class="dropdown active"><a href="dashboard-regular.jsp">Dashboard</a></li>
                     <li><a href="index.html">Place Order</a></li>
-                    <li class="dropdown active"><a href="my-plan-regular.jsp">My Plan</a></li>
+                    <li><a href="my-plan-normal.jsp">My Plan</a></li>
                     <li><a href="UserProfile..jsp">My Account</a></li>
                     <li><a href="/testWeb/LogOutServlet">Log Out</a></li>
                   </ul>
@@ -109,14 +123,13 @@
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-              <h2>Monthly Payment <span  class="icon-money"></span></h2> 
+              <h2>Dashboard <span  class="font-icon-dashboard"></span></h2>
             </div>
           </div>
           <div class="span8">
             <ul class="breadcrumb">
               <li><a href="index.jsp">Home</a> <i class="icon-angle-right"></i></li>
-              <li><a href="my-plan.jsp">My Plan</a> <i class="icon-angle-right"></i></li>
-              <li class="active">Monthly Payment</li>
+              <li class="active">Dashboard</li>
             </ul>
           </div>
         </div>
@@ -130,94 +143,110 @@
 
 					<div class="row">
 					  <div class="span12">
-					  
-					  <table align="center">
-					  	<tr>
-					  	
-					  		<td  class="form">
-							  		<form action="mPayment" method="post">
-							  		<table width="100%">
-								  		<tr>
-								  			<td colspan=2 style="padding:15px 10px 10px 10px">
-								  				<h6>Select Payment Method</h6>
-								  				
-								  			</td>
-								  		</tr>
-						
-								  		<tr>
-											<td style="padding:0px 10px 10px 10px">
-											<input type="radio" id="card" name="option" onclick="document.getElementById('service').disabled = true;
-											document.getElementById('pemail').disabled = true;document.getElementById('pfname').disabled = false;document.getElementById('plname').disabled = false;
-											document.getElementById('cno').disabled = false;document.getElementById('date').disabled = false;document.getElementById('code').disabled = false;" checked> Credit/ Debit Card </td>
-											<td style="padding:0px 10px 10px 10px">
-											<input type="radio" id="other" name="option" onclick="document.getElementById('service').disabled = false;
-											document.getElementById('pemail').disabled = false;document.getElementById('pfname').disabled = true;document.getElementById('plname').disabled = true;
-											document.getElementById('cno').disabled = true;document.getElementById('date').disabled = true;document.getElementById('code').disabled = true;"> Other </td>
-										</tr>
-										<tr>
-											<td style="padding:0px 10px 10px 10px">
-											<br>
-											Select Service*<br>
-											<select id="service" disabled>
-												<option value="Paypal">Paypal</option>
-												<option value="Payoneer">Payoneer</option>
-												<option value="Google Pay">Google Pay</option>
-											</select>
-											
-											</td>
-											<td style="padding:0px 10px 10px 10px;width:100%">
-											<br>
-											E-Mail*<br><input type="text" id="pemail" name="pemail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" disabled required>
-											</td>
-										</tr>
-										<tr>
-											<td colspan=2 style="padding:0px 10px 0px 10px">
-											<hr>
-											</td>
-										</tr>
-										<tr>
-											<td style="padding:10px 10px 10px 10px">First Name*<br><input type="text" id="pfname" name="pfname" required></td>
-											<td style="padding:10px 10px 10px 10px">Last Name*<br><input type="text" id="plname" name="plname" required></td>
-										</tr>
-										<tr>
-											<td colspan=2 style="padding:10px 10px 10px 10px;">
-											Card Number*
-											
-											<br><input type="text" id="cno" style="width:450px"; name="cno" required>
-											</td>
-										</tr>
-										<tr>
-											<td style="padding:22px 10px 10px 10px">
-											Expiration Date*<br>
-											<input type="date" id="date" name="date" required>
-											</td>
-											<td style="padding:0px 10px 10px 10px">
-											<br>
-											Security Code*<br><input type="password" id="code" name="code" required>
-											</td>
-										</tr>
-										<tr>
-											<td style="padding:10px 10px 10px 10px">
-												<table>
-													<tr>
-														<td style="padding-top:10px"><a href="my-plan-regular.jsp" class="btn btn-inverse">Cancel</a></td>
-														<td><input type="submit" name="payMonthlyDue"class="btn btn-danger" value="Confirm Payment"></td>
-													</tr>
-												</table>
-											</td>
-										</tr>
-								  		
-							  		</table>
-		                		</form>
-		                		
-                			</td>
-                			</form>
-                	  	</tr>
-                	  </table>
-                		
+						<h4>Summary (this month)</h4>
+							<div id="summary">
+			                  <table border="0px" width = "100%" >
+				                   <tr>
+				                  	  <td style="background-color:#add8e6;border-radius: 15px;border:5px solid #F5F5F5;padding-bottom:10px;padding-right:10px;padding-top:10px" width="25%">
+					                  <h6 style="padding-left:10px;color:#4682b4">Your Plan</h6>
+					                  <p style="font-size:36px;padding-left:10px;padding-bottom:10px;color:#4682b4" name="totOrders">
+					                  <b>
+					                  Regular User
+					                  </b>
+					                  </p>
+					                  </td>
+					                  <td style="background-color:#90ee90;border-radius: 15px;border:5px solid #F5F5F5;padding-bottom:10px;padding-right:10px;padding-top:10px" width="25%">
+					                  <h6 style="padding-left:10px;color:#008000">Total Orders</h6>
+					                  <p style="font-size:48px;padding-left:10px;padding-bottom:10px;color:#008000" name="totOrders"><b>
+					                  <%! int getTotalOrders (ArrayList<Order> ord, String date) {
+					                	  int total = 0;
+					                	  
+					                	  for(Order order : ord) {
+					                		  if(order.getMonth().equals(date)) {
+					                			  total++;
+					                		  }
+					                	  }
+					                	  return total;
+					                  }
+					                  %>
+					                  
+					                  <%= getTotalOrders(order, date) %>
+					                  </b></p>
+					                  </td>
+					                  
+					                  <td style="background-color:#f5da50;border-radius: 15px;border:5px solid #F5F5F5;padding-bottom:10px;padding-right:10px;padding-top:10px">
+					                  <h6 style="padding-left:10px;color:#daa520">Remaining Orders</h6>
+					                  <p style="font-size:48px;padding-left:10px;padding-bottom:10px;color:#daa520" name="totOrders"><b><%= plan.getMaxOrders() - getTotalOrders(order, date) %></b></p>
+					                  </td>
+					                  <td style="background-color:#f08080;border-radius: 15px;border:5px solid #F5F5F5;padding-bottom:10px;padding-right:10px;padding-top:10px" width="25%">
+					                  <h6 style="padding-left:10px;color:#b22222">Monthly Payment</h6>
+					                  <p style="font-size:48px;padding-left:10px;padding-bottom:10px;color:#b22222" name="totOrders"><b>LKR <%= plan.getMonthlyPayment() %></b></p>
+					                  </td>
+					                  
+				                  </tr>
+			                  </table>
+			                </div>
 					  </div>
 					</div>
-
+					
+					<!-- divider -->
+					<div class="row">
+					  <div class="span12">
+						<div class="solidline"></div>
+					  </div>
+					</div>
+					
+					<div class="row">
+					  <div class="span12">
+						<h4>Order History</h4>
+							<div id="OrderHistory">
+							                <table class="table">
+							                  <thead>
+							                  
+							                    <tr>
+							                      <th>
+							                        #
+							                      </th>
+							                      <th>
+							                        Date
+							                      </th>
+							                      <th>
+							                        Payment (LKR)
+							                      </th>
+							                      <th>
+							                        Status
+							                      </th>
+							                    </tr>
+							                  </thead>
+							                  <tbody>
+							                  	<%!  String printTable(ArrayList<Order> orderHistory){
+											    	String table = new String("");
+											    	int i = 1;
+											    	for(Order order : orderHistory){
+											    		if (order.getStatus().equals("Completed")) {
+											    			table += "<tr class='success'>";
+											    		}
+											    		else if (order.getStatus().equals("In Progress")) {
+											    			table += "<tr class='warning'>";
+											    		}
+											    		else if (order.getStatus().equals("Cancelled")) {
+											    			table += "<tr class='error'>";
+											    		}
+											    		
+											    		table += "<td>"+i+"</td><td>"+order.getDate()+"</td><td>"+order.getPayment()+"</td>";
+											    		table += "<td>"+order.getStatus()+"</td></tr>";
+														
+											    		i++;
+											    	}
+											    	return table;
+										         } %>
+										         <%= printTable(order)%>
+							                  </tbody>
+							                </table>
+			                </div>
+					  </div>
+					</div>
+					
 				</div>	
 			</div>
 		</div>

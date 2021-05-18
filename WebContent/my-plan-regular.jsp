@@ -18,16 +18,7 @@
 	    	
 	    }
 	%>
-	<%!  String printTable(ArrayList<MonthlyPayment> mph){
-	    	String table = new String("");
-	    	int i = 1;
-	    	for(MonthlyPayment mp : mph){
-	    		table += "<tr class='success'><td>"+i+"</td><td>"+mp.getMonth()+"</td><td>"+mp.getDate()+"</td><td>"+mp.getAmount()+"</td><td>"+mp.getStatus()+"</td></tr>";
-				
-	    		i++;
-	    	}
-	    	return table;
-         } %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -107,10 +98,10 @@
                 <nav>
                   <ul class="nav topnav">
                     <li><a href="index.jsp">Home</a></li>
-                    <li><a href="dashboard.jsp">Dashboard</a></li>
+                    <li><a href="dashboard-regular.jsp">Dashboard</a></li>
                     <li><a href="index.html">Place Order</a></li>
                     <li class="dropdown active"><a href="my-plan-regular.jsp">My Plan</a></li>
-                    <li><a href="index.html">My Account</a></li>
+                    <li><a href="UserProfile..jsp">My Account</a></li>
                     <li><a href="/testWeb/LogOutServlet">Log Out</a></li>
                   </ul>
                 </nav>
@@ -234,6 +225,16 @@
 							                    </tr>
 							                  </thead>
 							                  <tbody>
+							                  	<%!  String printTable(ArrayList<MonthlyPayment> mph){
+											    	String table = new String("");
+											    	int i = 1;
+											    	for(MonthlyPayment mp : mph){
+											    		table += "<tr class='success'><td>"+i+"</td><td>"+mp.getMonth()+"</td><td>"+mp.getDate()+"</td><td>"+mp.getAmount()+"</td><td>"+mp.getStatus()+"</td></tr>";
+														
+											    		i++;
+											    	}
+											    	return table;
+										         } %>
 							                  <%= printTable(mph)%>
 							                  </tbody>
 							                </table>

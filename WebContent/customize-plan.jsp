@@ -14,71 +14,6 @@
 	    	
 	    }
 	%>
-	<!-- functions to generate user's current plan -->
-	<%!  String printMaxOrders(Plan plan){
-			String maxOrders = new String("");
-			int i;
-			for(i = 1; i<=20; i++){
-				if(i == plan.getMaxOrders()){
-					maxOrders += "<option value='"+i+"' selected>"+i+"</option>";
-				}
-				else{
-					maxOrders += "<option value='"+i+"'>"+i+"</option>";
-				}
-			}
-			return maxOrders;
-			}
-	
-		String printMaxWeight(Plan plan){
-			String maxWeight = new String("");
-			int i;
-			for(i = 1; i<=10; i++){
-				if(i == plan.getMaxWeight()){
-					maxWeight += "<option value='"+i+"' selected>"+i+"</option>";
-				}
-				else{
-					maxWeight += "<option value='"+i+"'>"+i+"</option>";
-				}
-			}
-			return maxWeight;
-			}
-		
-		String printServices(Plan plan){
-			String services = new String("");
-		
-			if(plan.getAvailableServices().get("pressing") == "Yes"){
-				services += "<tr><td>Pressing</td><td><input type='checkbox' name='services' value='press' checked></td></tr>";
-			} else {
-				services += "<tr><td>Pressing</td><td><input type='checkbox' name='services' value='press'></td></tr>";
-			}
-
-			if(plan.getAvailableServices().get("dryclean") == "Yes"){
-				services += "<tr><td>Dry Cleaning</td><td><input type='checkbox' name='services' value='dryclean' checked></td></tr>";
-			} else {
-				services += "<tr><td>Dry Cleaning</td><td><input type='checkbox' name='services' value='dryclean'></td></tr>";
-			}
-
-			if(plan.getAvailableServices().get("mending") == "Yes"){
-				services += "<tr><td>Mending Service</td><td><input type='checkbox' name='services' value='mending' checked></td></tr>";
-			} else {
-				services += "<tr><td>Mending Service</td><td><input type='checkbox' name='services' value='mending'></td></tr>";
-			}
-	
-			if(plan.getAvailableServices().get("pickupDelivery") == "Yes"){
-				services += "<tr><td>Pickup & Delivery</td><td><input type='checkbox' name='services' value='pickupDelivery' checked></td></tr>";
-			} else {
-				services += "<tr><td>Pickup & Delivery</td><td><input type='checkbox' name='services' value='pickupDelivery'></td></tr>";
-			}
-			
-			if(plan.getAvailableServices().get("oneday") == "Yes"){
-				services += "<tr><td>One Day Service</td><td><input type='checkbox' name='services' value='oneday' checked></td></tr>";
-			} else {
-				services += "<tr><td>One Day Service</td><td><input type='checkbox' name='services' value='oneday'></td></tr>";
-			}
-			
-			return services;
-			}
-          %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -158,10 +93,10 @@
                 <nav>
                   <ul class="nav topnav">
                     <li><a href="index.jsp">Home</a></li>
-                    <li><a href="dashboard.jsp">Dashboard</a></li>
+                    <li><a href="dashboard-regular.jsp">Dashboard</a></li>
                     <li><a href="index.html">Place Order</a></li>
                     <li class="dropdown active"><a href="my-plan-regular.jsp">My Plan</a></li>
-                    <li><a href="UserProfile.jsp">My Account</a></li>
+                    <li><a href="UserProfile..jsp">My Account</a></li>
                     <li><a href="/testWeb/LogOutServlet">Log Out</a></li>
                   </ul>
                 </nav>
@@ -210,12 +145,39 @@
 					  	<td style="background-color:white;padding:10px 10px 0px 0px">
 						  	Maximum orders for a month:<br>
 							<select name="maxOrders">
+							<%!String printMaxOrders(Plan plan){
+								String maxOrders = new String("");
+								int i;
+								for(i = 1; i<=20; i++){
+									if(i == plan.getMaxOrders()){
+										maxOrders += "<option value='"+i+"' selected>"+i+"</option>";
+									}
+									else{
+										maxOrders += "<option value='"+i+"'>"+i+"</option>";
+									}
+								}
+								return maxOrders;
+								} %>
 							  <%= printMaxOrders(plan) %>
 							</select>
 						</td>
 						<td style="background-color:white;padding:10px 0px 0px 10px">
 							Maximum weight for an order (KG):<br>
 							<select name="maxWeight">
+							<%!String printMaxWeight(Plan plan){
+								String maxWeight = new String("");
+								int i;
+								for(i = 1; i<=10; i++){
+									if(i == plan.getMaxWeight()){
+										maxWeight += "<option value='"+i+"' selected>"+i+"</option>";
+									}
+									else{
+										maxWeight += "<option value='"+i+"'>"+i+"</option>";
+									}
+								}
+								return maxWeight;
+								}
+							 %>
 							  <%= printMaxWeight(plan) %>
 							</select>
 						</td>
@@ -226,6 +188,41 @@
 						<br>
 						<table class="table table-bordered" >
 						<tr><th >Service</th><th></th></tr>
+						<%!String printServices(Plan plan){
+							String services = new String("");
+							
+							if(plan.getAvailableServices().get("pressing") == "Yes"){
+								services += "<tr><td>Pressing</td><td><input type='checkbox' name='services' value='press' checked></td></tr>";
+							} else {
+								services += "<tr><td>Pressing</td><td><input type='checkbox' name='services' value='press'></td></tr>";
+							}
+
+							if(plan.getAvailableServices().get("dryclean") == "Yes"){
+								services += "<tr><td>Dry Cleaning</td><td><input type='checkbox' name='services' value='dryclean' checked></td></tr>";
+							} else {
+								services += "<tr><td>Dry Cleaning</td><td><input type='checkbox' name='services' value='dryclean'></td></tr>";
+							}
+
+							if(plan.getAvailableServices().get("mending") == "Yes"){
+								services += "<tr><td>Mending Service</td><td><input type='checkbox' name='services' value='mending' checked></td></tr>";
+							} else {
+								services += "<tr><td>Mending Service</td><td><input type='checkbox' name='services' value='mending'></td></tr>";
+							}
+					
+							if(plan.getAvailableServices().get("pickupDelivery") == "Yes"){
+								services += "<tr><td>Pickup & Delivery</td><td><input type='checkbox' name='services' value='pickupDelivery' checked></td></tr>";
+							} else {
+								services += "<tr><td>Pickup & Delivery</td><td><input type='checkbox' name='services' value='pickupDelivery'></td></tr>";
+							}
+							
+							if(plan.getAvailableServices().get("oneday") == "Yes"){
+								services += "<tr><td>One Day Service</td><td><input type='checkbox' name='services' value='oneday' checked></td></tr>";
+							} else {
+								services += "<tr><td>One Day Service</td><td><input type='checkbox' name='services' value='oneday'></td></tr>";
+							}
+							
+							return services;
+							} %>
 						<%= printServices(plan) %>
 						</table>
 						<br>
