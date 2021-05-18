@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
  
- <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
-  
+ <%@ page import="com.lms.model.Cancellation" %>
+ <%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -149,14 +149,15 @@
 							                    </tr>
 							                  </thead>
 							                  <tbody>
-							                  <c:forEach var = "canc" items = "${cancellationDetails}" var = "i" begin = "1" >
+							                  <%ArrayList<Cancellation> can =  (ArrayList<Cancellation>)request.getAttribute("cancellationDetails");
+        									for(Cancellation canc :can){ %>
 							                  
 							                   <tr class="error">
 							                      <td>
-							                      <c:out value = "${i}"/>
+							               			1
 							                      </td>
 							                      <td>
-							                        ${canc.getUsername} 
+							                     <%=canc.getUsername()%>
 							                      </td>
 							                      <td>
 							                        ${canc.getEmail} 
@@ -168,7 +169,7 @@
 							                        ${canc.getDescription} 
 							                      </td>
 							                    </tr>
-							                    </c:forEach>
+							                    <%} %>
 							                  </tbody>
 							                </table>
 			                </div>

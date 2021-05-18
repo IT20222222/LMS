@@ -35,6 +35,28 @@ public class UserDBUtil {
 			
 			return isSuccess;
 		}
+	
+	
+	public static boolean validateUsername(String username) {
+		
+		try {
+			con = DBConnectorUtil.getConnection();
+			stmt = con.createStatement();
+			String sql = "select * from user_profile where username='"+username+"' ";
+			rs = stmt.executeQuery(sql);
+			
+			if (rs.next()) {
+				isSuccess = false;
+			} else {
+				isSuccess = true;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return isSuccess;
+	}
 		
 	public static User getUser(String userName) {
 			
@@ -244,7 +266,7 @@ public class UserDBUtil {
 		return isSuccess;
 	}
 	
-	public static List<Cancellation> getCancellationDetails(){
+	public static ArrayList<Cancellation> getCancellationDetails(){
 		
 		isSuccess = false;
 		

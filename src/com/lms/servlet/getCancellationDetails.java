@@ -1,8 +1,9 @@
 package com.lms.servlet;
 
 import java.io.IOException;
-import java.util.List;
+import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,8 +22,17 @@ public class getCancellationDetails extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		List<Cancellation> cancellationDetails = UserDBUtil.getCancellationDetails();
+		ArrayList<Cancellation> cancellationDetails = UserDBUtil.getCancellationDetails();
+		
+		if (cancellationDetails == null) {
+			response.sendRedirect("Unsuccess.jsp");
+		}
+		else {
+			response.sendRedirect("Success.jsp");
+		}
 		request.setAttribute("cancellationDetails", cancellationDetails);
+		RequestDispatcher dis = request.getRequestDispatcher("regSuccess.jsp");
+		dis.forward(request,response);
 	}
 
 }

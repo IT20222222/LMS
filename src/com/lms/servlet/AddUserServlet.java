@@ -1,6 +1,7 @@
 package com.lms.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -25,6 +26,8 @@ public class AddUserServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+		PrintWriter out = response.getWriter();
+		
 		String firstName = request.getParameter("Firstname");
 		String lastName = request.getParameter("Lastname");
 		String NIC = request.getParameter("NIC");
@@ -36,19 +39,28 @@ public class AddUserServlet extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("Password");
 		
-		boolean isTrue;
 		
-		isTrue = UserDBUtil.addUser(firstName , lastName , NIC , email , address , gender , MobileNumber , DOB , username , password);
-		
-		if (isTrue == true) {
-			RequestDispatcher dis = request.getRequestDispatcher("regSuccess.jsp");
-			dis.forward(request,response);
+		boolean exists = UserDBUtil.validateUsername(username);
+		if (exists == true) {
+			out.println("<script type='text/javascript'>");
+			out.println("alert('Username already exists , please enter a different username');");
+			out.println("</script>");
 		}
 		else {
-			RequestDispatcher dis2 = request.getRequestDispatcher("regUnsuccess.jsp");
-			dis2.forward(request,response);
-		}
 		
+			boolean isTrue;
+			isTrue = UserDBUtil.addUser(firstName , lastName , NIC , email , address , gender , MobileNumber , DOB , username , password);
+		
+				if (isTrue == true) {
+						RequestDispatcher dis = request.getRequestDispatcher("Success.jsp");
+						dis.forward(request,response);
+						}
+				else {
+						RequestDispatcher dis2 = request.getRequestDispatcher("Unsuccess.jsp");
+						dis2.forward(request,response);
+						}
+		
+		}
 	}
 
 }
