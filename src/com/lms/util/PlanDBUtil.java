@@ -67,6 +67,8 @@ public class PlanDBUtil {
 				}
 			}
 			
+			con.close();
+			
 		} catch (Exception e) {
 			e.printStackTrace(); 
 			
@@ -93,6 +95,7 @@ public class PlanDBUtil {
 				}
 			}
 			
+			con.close();
 			
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -121,6 +124,7 @@ public class PlanDBUtil {
 				isSuccess = false;
 			}
 			
+			con.close();
 		
 		}catch(Exception e) {
 			e.printStackTrace();
