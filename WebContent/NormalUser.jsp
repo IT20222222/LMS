@@ -187,13 +187,13 @@
 	</label>
 	</td></tr>
 	</table>
+	<div class = "ProfileContainer">
+	<input type = "submit" style = "left : 15px" class = "EditButton" name = "submit" value = "Submit">
+	</div>
+	</form>	
 	</div>
 	<br><br>
-	<div class = "ProfileContainer">
-	<a href = ""><button style = "left : 15px" class = "EditButton" >Save</button></a>
 
-	</div>
-</form>	
     <footer>
       <div class="container">
         <div class="row">
