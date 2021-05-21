@@ -3,6 +3,7 @@
  <%@taglib uri = "http://java.sun.com/jsp/jstl/core"  prefix = "c" %>
  <%@ page import="com.lms.model.Cancellation" %>
  <%@ page import="java.util.ArrayList" %>
+ <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -125,7 +126,7 @@
 					  <div class="span12">
 						<h4>Unregistered Users</h4>
 							<div id="OrderHistory">
-											<%ArrayList cancellation = (ArrayList)request.getAttribute("cancellation"); %>
+											
 							                <table class="table">
 							                  <thead>
 							                    <tr>
@@ -138,6 +139,9 @@
 							                      <th>
 							                        Email
 							                      </th>
+							                       <th>
+							                        Phone Number
+							                      </th>
 							                      <th>
 							                        Reason
 							                      </th>
@@ -147,25 +151,28 @@
 							                    </tr>
 							                  </thead>
 							                  <tbody>
-							                  					                  
+							                  	<c:forEach var = "can" items = "${cancellation}">				                  
 							                   <tr class="error">
 							                      <td>
 							               			1
 							                      </td>
 							                      <td>
-							                     <%= cancellation.size() %>
+							                     ${can.getUsername()} 
 							                      </td>
 							                      <td>
-							                       
+							                      ${can.getEmail()}
 							                      </td>
 							                      <td>
-							                      
+							                      ${can.getPhoneNumber()}
 							                      </td>
 							                      <td>
-							                       
+							                      ${can.getReason()}
+							                      </td>
+							                      <td>
+							                      ${can.getDescription()}
 							                      </td>
 							                    </tr>
-							                   
+							                   </c:forEach>
 							                  </tbody>
 							                </table>
 			                </div>

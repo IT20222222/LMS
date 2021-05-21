@@ -252,7 +252,7 @@ public class UserDBUtil {
 			
 			con = DBConnectorUtil.getConnection();
 			stmt = con.createStatement();
-			String sql5 = "INSERT into account_deletion values ('"+username+"' , '"+email+"' , '"+reason+"' , '"+description+"' )" ;
+			String sql5 = "INSERT into account_deletion values ('"+username+"' , '"+email+"' , '"+mobileNo+"' , '"+reason+"' , '"+description+"' )" ;
 			int rs = stmt.executeUpdate(sql5);		
 			
 			if (rs > 0) {
@@ -288,12 +288,13 @@ public class UserDBUtil {
 			while (rs.next()) {
 				String username = rs.getString(1);
 				String email = rs.getString(2);
-				String reason = rs.getString(3);
-				String description = rs.getString(4);
+				int phoneNumber = rs.getInt(3);
+				String reason = rs.getString(4);
+				String description = rs.getString(5);
 				
 			
 			
-			Cancellation user = new Cancellation(username , email , reason , description);
+			Cancellation user = new Cancellation(username , email , phoneNumber , reason , description);
 			cancellation.add(user);
 			
 			}

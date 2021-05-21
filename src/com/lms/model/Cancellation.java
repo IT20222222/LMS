@@ -4,14 +4,16 @@ public class Cancellation {
 		
 	String username;
 	String email;
+	int phoneNumber;
 	String reason;
 	String description;
 	
 	
-	public Cancellation(String username, String email, String reason, String description) {
+	public Cancellation(String username, String email, int phoneNumber , String reason, String description) {
 		
 		this.username = username;
 		this.email = email;
+		this.phoneNumber = phoneNumber;
 		this.reason = reason;
 		this.description = description;
 	}
@@ -41,7 +43,10 @@ public class Cancellation {
 		return description;
 	}
 
-
+	
+	public int getPhoneNumber() {
+		return phoneNumber;
+	}
 	
 	
 	
