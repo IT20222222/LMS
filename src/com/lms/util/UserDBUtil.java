@@ -47,11 +47,15 @@ public class UserDBUtil {
 			
 			if (rs.next()) {
 				isSuccess = false;
-			} else {
+			} 
+			
+			else {
 				isSuccess = true;
 			}
 			
-		} catch (Exception e) {
+		} 
+		
+		catch (Exception e) {
 			e.printStackTrace();
 		}
 		
@@ -94,7 +98,7 @@ public class UserDBUtil {
 			return user;	
 		}
 	
-	public static boolean addUser(String Firstname , String Lastname , String NIC , String email, String address, String gender , int mobile , String dob , String username , String password) {
+	public static boolean addUser(String Firstname , String Lastname , String NIC , String email, String address, String gender , int mobile , String dob , String username , String password , int pid) {
 		
 		isSuccess = false;
 		
@@ -104,7 +108,7 @@ public class UserDBUtil {
 		try {
 		con = DBConnectorUtil.getConnection();
 		stmt = con.createStatement();
-		String sql2 = "INSERT INTO user_profile values ('"+idno+"', '"+Firstname+"' , '"+Lastname+"' , '"+NIC+"' , '"+email+"' , '"+address+"' , '"+gender+"' , '"+mobile+"' , '"+dob+"' , '"+username+"' , '"+password+"' , 0 )";
+		String sql2 = "INSERT INTO user_profile values ('"+idno+"', '"+Firstname+"' , '"+Lastname+"' , '"+NIC+"' , '"+email+"' , '"+address+"' , '"+gender+"' , '"+mobile+"' , '"+dob+"' , '"+username+"' , '"+password+"' , '"+pid+"' )";
 		int rs2 = stmt.executeUpdate(sql2);
 		
 		
@@ -268,7 +272,6 @@ public class UserDBUtil {
 	
 	public static ArrayList<Cancellation> getCancellationDetails(){
 		
-		isSuccess = false;
 		
 		ArrayList<Cancellation> cancellation = new ArrayList<Cancellation>();
 		try {

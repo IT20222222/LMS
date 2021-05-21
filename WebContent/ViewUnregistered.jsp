@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
- 
+ <%@taglib uri = "http://java.sun.com/jsp/jstl/core"  prefix = "c" %>
  <%@ page import="com.lms.model.Cancellation" %>
  <%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
@@ -99,7 +99,7 @@
       </div>
     </header>
     <!-- end header -->
-
+	
     <section id="inner-headline">
       <div class="container">
         <div class="row">
@@ -117,17 +117,15 @@
         </div>
       </div>
     </section>
-
     <section id="content">
 		<div class="container">
 			<div class="row demobtn">
 				<div class="span12">
-
-					
 					<div class="row">
 					  <div class="span12">
 						<h4>Unregistered Users</h4>
 							<div id="OrderHistory">
+											<%ArrayList cancellation = (ArrayList)request.getAttribute("cancellation"); %>
 							                <table class="table">
 							                  <thead>
 							                    <tr>
@@ -149,27 +147,25 @@
 							                    </tr>
 							                  </thead>
 							                  <tbody>
-							                  <%ArrayList<Cancellation> can =  (ArrayList<Cancellation>)request.getAttribute("cancellationDetails");
-        									for(Cancellation canc :can){ %>
-							                  
+							                  					                  
 							                   <tr class="error">
 							                      <td>
 							               			1
 							                      </td>
 							                      <td>
-							                     <%=canc.getUsername()%>
+							                     <%= cancellation.size() %>
 							                      </td>
 							                      <td>
-							                        ${canc.getEmail} 
+							                       
 							                      </td>
 							                      <td>
-							                        ${canc.getReason} 
+							                      
 							                      </td>
 							                      <td>
-							                        ${canc.getDescription} 
+							                       
 							                      </td>
 							                    </tr>
-							                    <%} %>
+							                   
 							                  </tbody>
 							                </table>
 			                </div>

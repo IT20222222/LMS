@@ -61,7 +61,7 @@ public class LogInServlet extends HttpServlet {
 				session.setAttribute("mpHistory", mp);
 			}
 			
-			ArrayList<Order> orderHistory = OrderDBUtil.getOrderHistory(user);
+		/*	ArrayList<Order> orderHistory = OrderDBUtil.getOrderHistory(user);
 			session.setAttribute("ordHistory", orderHistory);
 			
 			 Date date = Calendar.getInstance().getTime();  
@@ -72,6 +72,7 @@ public class LogInServlet extends HttpServlet {
 			
 			response.sendRedirect("dashboard-normal.jsp");
 			
+			*/
 			
 			
 			

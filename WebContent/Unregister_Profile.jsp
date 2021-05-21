@@ -143,7 +143,7 @@
 	</tr>
 	<tr>
 	<td>Describe Reason if other<br>
-	<textarea name = "description" id = "desc"></textarea>
+	<textarea name = "description" id = "desc" disabled></textarea>
 	</td>
 	<tr>
 	</table>
