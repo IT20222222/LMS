@@ -13,6 +13,7 @@ public class RegularUserDBUtil {
 		ArrayList<RegularUser> ruser = new ArrayList<>();
 		
 		//create database connection
+		
 		String url = "jdbc:mysql://localhost:3306/packages";
 		String user = "root";
 		String pass = "oshan@0765649523";

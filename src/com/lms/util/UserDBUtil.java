@@ -29,6 +29,8 @@ public class UserDBUtil {
 					isSuccess = false;
 				}
 				
+				con.close();
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -89,6 +91,8 @@ public class UserDBUtil {
 					
 					user = new User(userId, firstName, lastName, NIC, email, address, gender, mobileNo, DOB, username, password, planId);
 				}
+				
+				con.close();
 				
 			} catch (Exception e) {
 				e.printStackTrace();
