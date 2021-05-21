@@ -64,7 +64,17 @@
 		<servlet-name>DeleteUser</servlet-name>
 		<url-pattern>/delete</url-pattern>
 	</servlet-mapping>
-
+	
+	
+	<servlet>
+		<servlet-name>viewUnreg</servlet-name>
+		<servlet-class>com.lms.servlet.getCancellationDetails</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>viewUnreg</servlet-name>
+		<url-pattern>/displayUnregDetails</url-pattern>
+	</servlet-mapping>
 	
 </web-app>
 	

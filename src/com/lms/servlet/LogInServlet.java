@@ -5,17 +5,27 @@ import com.lms.model.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
+import java.time.LocalDate;
 import java.util.List;
+import java.util.ArrayList;
+import java.text.DateFormat;  
+import java.text.SimpleDateFormat;  
+import java.util.Date;  
+import java.util.Calendar; 
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.*;
 import javax.servlet.*;
-
 /**
  * Servlet implementation class LogInControl
  */
@@ -39,19 +49,29 @@ public class LogInServlet extends HttpServlet {
 		if (isTrue == true) {
 			User user = UserDBUtil.getUser(userName);
 			Plan plan = PlanDBUtil.getUserPlan(user);
+
+	
+			HttpSession session = request.getSession();
 			
-			if(user != null) {
-				HttpSession session = request.getSession();
-				session.setAttribute("loggedUser", user);
-				session.setAttribute("userPlan", plan);
-				
-				if(plan.getPlanId() == 2) {
-					ArrayList<MonthlyPayment> mp = MonthlyPaymentDBUtil.getMonthlyPaymentHistory(user);
-					session.setAttribute("mpHistory", mp);
-				}
-				
-				response.sendRedirect("dashboard.jsp");
+			session.setAttribute("loggedUser", user);
+			session.setAttribute("userPlan", plan);
+			
+			if(plan.getPlanId() == 2) {
+				ArrayList<MonthlyPayment> mp = MonthlyPaymentDBUtil.getMonthlyPaymentHistory(user);
+				session.setAttribute("mpHistory", mp);
 			}
+			
+			ArrayList<Order> orderHistory = OrderDBUtil.getOrderHistory(user);
+			session.setAttribute("ordHistory", orderHistory);
+			
+			 Date date = Calendar.getInstance().getTime();  
+             DateFormat dateFormat = new SimpleDateFormat("yyyy-MM");  
+             String strDate = dateFormat.format(date);
+             
+			session.setAttribute("date", strDate);
+			
+			response.sendRedirect("dashboard-normal.jsp");
+			
 			
 			
 			

@@ -31,7 +31,7 @@ public class MonthlyPaymentDBUtil {
 				isSuccess = false;
 			}
 			
-		
+			con.close();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -57,7 +57,8 @@ public class MonthlyPaymentDBUtil {
 				
 				monthlyPaymentHistory.add(new MonthlyPayment(id, month, date, amount, status));
 			}
-		
+			
+			con.close();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

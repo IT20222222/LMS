@@ -119,7 +119,15 @@
 		   <div class = "RegContainer">
             <h3 align = "center">Register to a new Account</h3><hr><br><br><br>
 
-
+				<script type = text/javascript>
+				  function ValidatePassword(){
+				  var password = document.getElementById('Password').value;
+				  var repassword = document.getElementById('RePassword').value;
+				  if(password != repassword){
+					  alert('Passwords mismatched , please re-enter');
+				 	 }
+				  }
+				  </script>
 			
             <form id="contactform" action="RegUser" method="post" role="form" class="contactForm">
 
@@ -127,24 +135,24 @@
 				  
 				  <input type = "text" style = "width : 40% ; padding-left : 20px " name = "Firstname" placeholder = "Enter your first name" required > 
 				  <input type = "text" style = "width : 40%; float : right" name = "Lastname" placeholder = "Enter your last name" required><br><br>
-				  <input type = "text" style = "width : 40%" name = "NIC" placeholder = "Enter your NIC" required> 
-				  <input type = "text" style = "width : 40%; float : right" name = "Email" placeholder = "Enter your email" required><br><br>
+				  <input type = "text" style = "width : 40%" name = "NIC" placeholder = "Enter your NIC" pattern = "^([0-9]{9}[x|X|v|V]|[0-9]{12})$" title = "For OLD NIC - 9 numbers with either X or V. For New NIC - 12 digits starting from 20 or 19" required> 
+				  <input type = "email" style = "width : 40%; float : right" name = "Email" placeholder = "Enter your email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title = "Enter a valid email" required><br><br>
 				  <input type = "text" style = "width : 40%; height: 60px" name = "Address" placeholder = "Enter your address" required><br><br>
 				  <label>Select Gender</label>
 				  <input type = "radio" id = "gender" name = "gender"  checked> Male
 				  <input type = "radio" id = "gender" name = "gender" > Female
 				  <input type = "radio" id = "gender" name = "gender" > Would not like to specify <br><br><br>
-				  <input type = "text" style = "width : 40%;"  name = "mobile" placeholder = "Enter mobile number" required><br><br>
+				  <input type = "text" style = "width : 40%;"  name = "mobile" placeholder = "Enter mobile number" pattern = "^[0-9]{10}$" title = "Enter a 10 digit phone number starting with 0" required><br><br>
 				  <label>Date of Birth</label>
 				  <input type = "date" name = "dob"><br><br>
 				  <input type = "text" style = "width : 40%;" name = "username" placeholder = "Enter a username" required>
 				  
-				  <input type = "password" style = "width : 40% ; float :right" name = "Password" placeholder = "Enter password" required><br><br>
-				  <input type = "password" style = "width : 40%; position : relative ; left : 348px;" name = "Password" placeholder = "Re-Enter password" required><br><br>
+				  <input type = "password" style = "width : 40% ; float :right" name = "Password" placeholder = "Enter password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"required><br><br>
+				  <input type = "password" style = "width : 40%; position : relative ; left : 348px;" name = "RePassword" placeholder = "Re-Enter password" required><br><br>
 				  
 
-					<button class = "RegisterButton" type = "reset">Reset</button>
-                    <button class="RegisterButton" type= "submit" style = "float : right">Register</button>
+				  <button class = "RegisterButton" type = "reset">Reset</button>
+                  <button class="RegisterButton" type= "submit" style = "float : right" onclick = "ValidatePassword()">Register</button>
 					
                    
                   

@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
  
-  
+ <%@ page import="com.lms.model.Cancellation" %>
+ <%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -129,7 +130,6 @@
 							<div id="OrderHistory">
 							                <table class="table">
 							                  <thead>
-							                  
 							                    <tr>
 							                      <th>
 							                        #
@@ -149,74 +149,27 @@
 							                    </tr>
 							                  </thead>
 							                  <tbody>
+							                  <%ArrayList<Cancellation> can =  (ArrayList<Cancellation>)request.getAttribute("cancellationDetails");
+        									for(Cancellation canc :can){ %>
+							                  
 							                   <tr class="error">
 							                      <td>
-							                        1
+							               			1
 							                      </td>
 							                      <td>
-							                        03/05/2021
+							                     <%=canc.getUsername()%>
 							                      </td>
 							                      <td>
-							                        1500.00
+							                        ${canc.getEmail} 
 							                      </td>
 							                      <td>
-							                        In Progress
+							                        ${canc.getReason} 
 							                      </td>
 							                      <td>
-							                        In Progress
+							                        ${canc.getDescription} 
 							                      </td>
 							                    </tr>
-							                    <tr class="error">
-							                      <td>
-							                        2
-							                      </td>
-							                      <td>
-							                        03/04/2021
-							                      </td>
-							                      <td>
-							                        900.00
-							                      </td>
-							                      <td>
-							                        Completed
-							                      </td>
-							                      <td>
-							                        In Progress
-							                      </td>
-							                    </tr>
-							                    <tr class="error">
-							                      <td>
-							                        3
-							                      </td>
-							                      <td>
-													28/02/2021
-							                      </td>
-							                      <td>
-							                        2000.00
-							                      </td>
-							                      <td>
-							                        Canceled
-							                      </td>
-							                      <td>
-							                        In Progress
-							                      </td>
-							                    </tr>
-							                    <tr class="error">
-							                      <td>
-							                        4
-							                      </td>
-							                      <td>
-							                        15/02/2021
-							                      </td>
-							                      <td>
-							                        1000.00
-							                      </td>
-							                      <td>
-							                        Completed
-							                      </td>
-							                      <td>
-							                        In Progress
-							                      </td>
-							                    </tr>
+							                    <%} %>
 							                  </tbody>
 							                </table>
 			                </div>
