@@ -4,8 +4,9 @@
     <%@ page import="com.lms.model.Plan" %>
     <%@ page import="com.lms.model.MonthlyPayment" %>
     <%@ page import="java.util.ArrayList" %>
+    <%@ page import="com.lms.model.RegularPlan" %>
     <% User user = (User) session.getAttribute("loggedUser");
-       Plan plan = (Plan) session.getAttribute("userPlan");
+       RegularPlan plan = (RegularPlan) session.getAttribute("userPlan");
        ArrayList<MonthlyPayment> mph = (ArrayList<MonthlyPayment>) session.getAttribute("mpHistory");
        
 	    if(user == null){
@@ -101,7 +102,7 @@
                     <li><a href="dashboard-regular.jsp">Dashboard</a></li>
                     <li><a href="index.html">Place Order</a></li>
                     <li class="dropdown active"><a href="my-plan-regular.jsp">My Plan</a></li>
-                    <li><a href="UserProfile..jsp">My Account</a></li>
+                    <li><a href="index.html">My Account</a></li>
                     <li><a href="/testWeb/LogOutServlet">Log Out</a></li>
                   </ul>
                 </nav>

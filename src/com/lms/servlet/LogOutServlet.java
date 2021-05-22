@@ -23,6 +23,8 @@ public class LogOutServlet extends HttpServlet {
 		session.removeAttribute("loggedUser");
 		session.removeAttribute("userPlan");
 		session.removeAttribute("mpHistory");
+		session.removeAttribute("ordHistory");
+		session.removeAttribute("date");
 		response.sendRedirect("Login.jsp");
 	}
 

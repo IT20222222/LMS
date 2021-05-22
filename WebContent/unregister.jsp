@@ -1,5 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page import="com.lms.model.User" %>
+    <%@ page import="com.lms.model.RegularPlan" %>
+    <% User user = (User) session.getAttribute("loggedUser");
+       RegularPlan plan = (RegularPlan) session.getAttribute("userPlan");
+	    if(user == null){
+	    	response.sendRedirect("Login.jsp");
+	    }
+	    else{
+	    	if(plan.isCustomizable() == false){
+	    		response.sendRedirect("my-plan-normal.jsp");
+	    	}
+	    	
+	    }
+	%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -82,7 +96,7 @@
                     <li><a href="dashboard-regular.jsp">Dashboard</a></li>
                     <li><a href="index.html">Place Order</a></li>
                     <li class="dropdown active"><a href="my-plan-regular.jsp">My Plan</a></li>
-                    <li><a href="UserProfile..jsp">My Account</a></li>
+                    <li><a href="UserProfile.jsp">My Account</a></li>
                     <li><a href="/testWeb/LogOutServlet">Log Out</a></li>
                   </ul>
                 </nav>

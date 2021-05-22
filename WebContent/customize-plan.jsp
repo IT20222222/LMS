@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ page import="com.lms.model.User" %>
-    <%@ page import="com.lms.model.Plan" %>
+    <%@ page import="com.lms.model.RegularPlan" %>
     <% User user = (User) session.getAttribute("loggedUser");
-       Plan plan = (Plan) session.getAttribute("userPlan");
+       RegularPlan plan = (RegularPlan) session.getAttribute("userPlan");
 	    if(user == null){
 	    	response.sendRedirect("Login.jsp");
 	    }
@@ -96,7 +96,7 @@
                     <li><a href="dashboard-regular.jsp">Dashboard</a></li>
                     <li><a href="index.html">Place Order</a></li>
                     <li class="dropdown active"><a href="my-plan-regular.jsp">My Plan</a></li>
-                    <li><a href="UserProfile..jsp">My Account</a></li>
+                    <li><a href="UserProfile.jsp">My Account</a></li>
                     <li><a href="/testWeb/LogOutServlet">Log Out</a></li>
                   </ul>
                 </nav>
@@ -145,7 +145,7 @@
 					  	<td style="background-color:white;padding:10px 10px 0px 0px">
 						  	Maximum orders for a month:<br>
 							<select name="maxOrders">
-							<%!String printMaxOrders(Plan plan){
+							<%!String printMaxOrders(RegularPlan plan){
 								String maxOrders = new String("");
 								int i;
 								for(i = 1; i<=20; i++){
@@ -164,7 +164,7 @@
 						<td style="background-color:white;padding:10px 0px 0px 10px">
 							Maximum weight for an order (KG):<br>
 							<select name="maxWeight">
-							<%!String printMaxWeight(Plan plan){
+							<%!String printMaxWeight(RegularPlan plan){
 								String maxWeight = new String("");
 								int i;
 								for(i = 1; i<=10; i++){
@@ -188,7 +188,7 @@
 						<br>
 						<table class="table table-bordered" >
 						<tr><th >Service</th><th></th></tr>
-						<%!String printServices(Plan plan){
+						<%!String printServices(RegularPlan plan){
 							String services = new String("");
 							
 							if(plan.getAvailableServices().get("pressing") == "Yes"){
