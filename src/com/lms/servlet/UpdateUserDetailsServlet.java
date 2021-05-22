@@ -48,7 +48,7 @@ public class UpdateUserDetailsServlet extends HttpServlet {
 			user.setLastName(lastname);
 			user.setMobileNo(number);
 			user.setUsername(username);
-			RequestDispatcher dis = request.getRequestDispatcher("Success.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("UserProfile..jsp");
 			dis.forward(request, response);
 		}
 		else {

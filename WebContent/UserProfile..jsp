@@ -2,9 +2,10 @@
     pageEncoding="ISO-8859-1"%>
   
     <%@ page import="com.lms.model.User" %>
+    <%@ page import="com.lms.model.Plan" %>
     
     <% User user = (User) session.getAttribute("loggedUser");
-  
+  	   Plan plan = (Plan) session.getAttribute("userPlan");
 	    if(user == null){
 	    	response.sendRedirect("Login.jsp");
 	    }
@@ -157,8 +158,17 @@
 	<hr>
 	<h6 class = "heading-user"> Package Information</h6>
 	<table>
+	<%  int i; String type;
+		i = user.getPlanId();
+		if (i == 1){
+			type = "Normal";
+		}
+		else{
+			type = "Regular";
+		}
+	%>
 	<tr>
-	<td class = "form-label">Customer Type<br><input type = "text" name = "CusType" id = "cusType" onchange = "displayPackage()" readonly></td>
+	<td class = "form-label">Customer Type<br><input type = "text" name = "CusType" id = "cusType" onchange = "displayPackage()" value = "<%= type  %>"readonly></td>
 	<td class = "form-label" style = "padding-left:100px">Package(Postpaid Customers)<br><input type = "text" name = "Package" id ="pack" readonly></td>
 	</tr>
 	

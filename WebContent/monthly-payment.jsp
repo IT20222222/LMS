@@ -44,7 +44,7 @@
   ======================================================= -->
 </head>
 
-<body >
+<body onload="captcha()">
 
   <div id="wrapper">
     <!-- start header -->
@@ -91,8 +91,8 @@
                     <li><a href="dashboard-regular.jsp">Dashboard</a></li>
                     <li><a href="index.html">Place Order</a></li>
                     <li class="dropdown active"><a href="my-plan-regular.jsp">My Plan</a></li>
-                    <li><a href="UserProfile..jsp">My Account</a></li>
-                    <li><a href="/testWeb/LogOutServlet">Log Out</a></li>
+                    <li><a href="UserProfile.jsp">My Account</a></li>
+                    <li><a href="/LaundryManagementSystem/LogOutServlet">Log Out</a></li>
                   </ul>
                 </nav>
               </div>
@@ -135,7 +135,7 @@
 					  	<tr>
 					  	
 					  		<td  class="form">
-							  		<form action="mPayment" method="post">
+							  		<form id = "pay" action="mPayment" method="post">
 							  		<table width="100%">
 								  		<tr>
 								  			<td colspan=2 style="padding:15px 10px 10px 10px">
@@ -197,11 +197,42 @@
 											</td>
 										</tr>
 										<tr>
+											<td colspan=2 style="padding:0px 10px 0px 10px">
+											<hr>
+											</td>
+										</tr>
+										<tr>
+								  			<td colspan=2>
+								  				<h6><i>Captcha</i></h6>
+								  				
+								  			</td>
+								  		</tr>
+										<tr>
+										<td colspan = 2 style="padding:10px 10px 10px 10px;width:120px;background-color:#ffeb99;border-radius:5px" >
+											<table width="100%">
+											<tr>
+												<td style="padding:10px 10px 10px 10px; background-color:white; width:50%">
+												<p id="captchacode" align="center" style="font-size:26px"></p>
+												<i style="float:right; cursor:pointer" class="icon icon-refresh" onclick="captcha()"></i>
+												</td>
+												<td style="padding:10px 10px 10px 10px;  width:50%">
+												<i>Enter the captcha</i><br>
+												<input type="text" id="captcha" name="captcha" required>
+												</td>
+											</tr>
+											</table>
+										</td>
+										</tr>
+										<tr>
+										<td id = "error" colspan=2 style="padding:10px 10px 10px 10px;">
+										</td>
+										</tr>
+										<tr>
 											<td style="padding:10px 10px 10px 10px">
 												<table>
 													<tr>
 														<td style="padding-top:10px"><a href="my-plan-regular.jsp" class="btn btn-inverse">Cancel</a></td>
-														<td><input type="submit" name="payMonthlyDue"class="btn btn-danger" value="Confirm Payment"></td>
+														<td><input type="button" name="payMonthlyDue"class="btn btn-danger" value="Confirm Payment" onclick="validate()"></td>
 													</tr>
 												</table>
 											</td>
@@ -310,7 +341,7 @@
 
   <!-- Template Custom JavaScript File -->
   <script src="js/custom.js"></script>
-
+  <script src="js/captcha.js"></script>
 
 </body>
 

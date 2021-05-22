@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
- 
+ <%@taglib uri = "http://java.sun.com/jsp/jstl/core"  prefix = "c" %>
  <%@ page import="com.lms.model.Cancellation" %>
  <%@ page import="java.util.ArrayList" %>
+ <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -99,7 +100,7 @@
       </div>
     </header>
     <!-- end header -->
-
+	
     <section id="inner-headline">
       <div class="container">
         <div class="row">
@@ -117,17 +118,15 @@
         </div>
       </div>
     </section>
-
     <section id="content">
 		<div class="container">
 			<div class="row demobtn">
 				<div class="span12">
-
-					
 					<div class="row">
 					  <div class="span12">
 						<h4>Unregistered Users</h4>
 							<div id="OrderHistory">
+											
 							                <table class="table">
 							                  <thead>
 							                    <tr>
@@ -140,6 +139,9 @@
 							                      <th>
 							                        Email
 							                      </th>
+							                       <th>
+							                        Phone Number
+							                      </th>
 							                      <th>
 							                        Reason
 							                      </th>
@@ -149,27 +151,28 @@
 							                    </tr>
 							                  </thead>
 							                  <tbody>
-							                  <%ArrayList<Cancellation> can =  (ArrayList<Cancellation>)request.getAttribute("cancellationDetails");
-        									for(Cancellation canc :can){ %>
-							                  
+							                  	<c:forEach var = "can" items = "${cancellation}">				                  
 							                   <tr class="error">
 							                      <td>
 							               			1
 							                      </td>
 							                      <td>
-							                     <%=canc.getUsername()%>
+							                     ${can.getUsername()} 
 							                      </td>
 							                      <td>
-							                        ${canc.getEmail} 
+							                      ${can.getEmail()}
 							                      </td>
 							                      <td>
-							                        ${canc.getReason} 
+							                      ${can.getPhoneNumber()}
 							                      </td>
 							                      <td>
-							                        ${canc.getDescription} 
+							                      ${can.getReason()}
+							                      </td>
+							                      <td>
+							                      ${can.getDescription()}
 							                      </td>
 							                    </tr>
-							                    <%} %>
+							                   </c:forEach>
 							                  </tbody>
 							                </table>
 			                </div>
