@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
-<title>Update Regular User</title>
+<title>Update Regular User Packages</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Your page description here" />
   <meta name="author" content="" />
@@ -34,7 +34,7 @@
   ======================================================= -->
 </head>
 <body>
-	<div id="wrapper">
+<div id="wrapper">
     <!-- start header -->
     <header>
       <div class="top">
@@ -131,7 +131,7 @@
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-              <h2>Edit Packages (Regular User)</h2>
+              <h2>Update Packages (Regular User)</h2>
             </div>
           </div>
           <div class="span8">
@@ -144,65 +144,29 @@
       </div>
     </section><br><br>
 	<div class = "ProfileContainer">
-	
-	
-	<form action="#" method="post">
+
+	<form action="abs" method="post">
 	<h6 class = "heading-user">Package Details</h6>
 	<table>
+	
 	<tr>
-	<br> <td class = "form-label">Username <br> <input type = "text" name = "uid" value = ""> </td>
-	<br> <td class = "form-label" style = "padding-left:100px">Password <br> <input type = "text" name = "pw" value = ""> </td>
+	<td class = "form-label">Username<br><input type = "text" name = "uname"></td>
+	</tr>
 	<tr>
-	</tr><br>
+	<td class = "form-label">Password<br><input type = "password" name = "pword"></td>
+	</tr>
 	<tr>
-	<td class = "form-label">Maximum Weight<br><input type = "text" name = "maxweight" value = ""></td>
-	<br> <td class = "form-label" style = "padding-left:100px">Maximum Orders per month <br> <input type = "text" name = "maxorders" value = ""> </td>
+	
 	</tr>
 	</table>
-	<hr>
-	
-	<h6 class = "heading-user">Additional Details</h6>
-	<table>
-	<tr>
-	<label class="container">Washing Only			
-	  <input type="checkbox" checked="checked" name = "wo" value = "">
-	  <span class="checkmark"></span>
-	</label>
-
-	<label class="container">Washing + Dry Cleaning Only
-	  <input type="checkbox" name = "wdo" value = "">
-	  <span class="checkmark"></span>
-	</label>
-
-	<label class="container">Washing + Drying + Pressing 
-	  <input type="checkbox" name = "wdp" value = "">
-	  <span class="checkmark"></span>
-	</label>
-	
-	</tr>
-	<tr><td>
-	<label class="container">Mending
-	  <input type="checkbox" name = "mend" value = "">
-	  <span class="checkmark"></span>
-	</label>
-	<label class="container">One Day Service
-	  <input type="checkbox" name = "ods" value = "">
-	  <span class="checkmark"></span>
-	</label>
-	<label class="container">Pick and Delivery
-	  <input type="checkbox" name = "pandd" value = "">
-	  <span class="checkmark"></span>
-	</label>
-	</td></tr>
-	</table>
+	<div class = "">
+	<input type = "submit" style = "left : 15px" class = "EditButton" name = "submit" value = "Submit">
 	</div>
-	<br><br>
-	<div class = "ProfileContainer">
-	<a href = "my-plan-regular.jsp"><button style = "left : 15px" class = "EditButton" >Update</button></a>
-	
+	</form>
 	</div>
-</form>
-    <footer>
+	<br>
+	
+  	<footer>
       <div class="container">
         <div class="row">
           <div class="span4">
@@ -293,6 +257,5 @@
 
   <!-- Template Custom JavaScript File -->
   <script src="js/custom.js"></script>
-	
 </body>
 </html>
