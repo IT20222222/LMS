@@ -5,10 +5,9 @@
     <% User user = (User) session.getAttribute("loggedUser");
 		Plan plan = (Plan) session.getAttribute("userPlan");
 		
-	    if(user == null){
-	    	response.sendRedirect("Login.jsp");
-	    }
-	    else{
+		if(user == null){%>
+	   	<jsp:forward page="Login.jsp"/>
+	   <%}else{
 	    	if(plan.isCustomizable()){
 	    		response.sendRedirect("my-plan-regular.jsp");
 	    	}

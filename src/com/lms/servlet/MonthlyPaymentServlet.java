@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import com.lms.model.MonthlyPayment;
 import com.lms.model.Plan;
+import com.lms.model.RegularPlan;
 import com.lms.model.User;
 import com.lms.util.MonthlyPaymentDBUtil;
 
@@ -33,7 +34,7 @@ public class MonthlyPaymentServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		User user = (User) session.getAttribute("loggedUser");
-		Plan plan = (Plan) session.getAttribute("userPlan");
+		RegularPlan plan = (RegularPlan) session.getAttribute("userPlan");
 		@SuppressWarnings("unchecked")
 		ArrayList<MonthlyPayment> historyList = (ArrayList<MonthlyPayment>) session.getAttribute("mpHistory");
 		boolean isTrue;

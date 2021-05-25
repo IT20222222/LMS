@@ -7,21 +7,18 @@ public class Plan {
 	private String planName;
 	private int maxOrders;
 	private int maxWeight;
-	private double monthlyPayment;
 	private boolean isCustomizable;
 	private HashMap<String, String> availableServices;
-	
 
 	
 	public Plan(int planId, String planName, int maxOrders, int maxWeight, int pressing, int mending, int oneday,
-			int dryclean, int pickupDelivery, double monthlyPayment, boolean isCustomizable) {
+			int dryclean, int pickupDelivery, boolean isCustomizable) {
 		super();
 		this.planId = planId;
 		this.planName = planName;
 		this.maxOrders = maxOrders;
 		this.maxWeight = maxWeight;
 		this.availableServices = new HashMap<>();
-		this.monthlyPayment = monthlyPayment;
 		this.isCustomizable = isCustomizable;
 		
 		this.addServices(pressing, mending, oneday, dryclean, pickupDelivery);
@@ -45,10 +42,6 @@ public class Plan {
 
 	public int getMaxWeight() {
 		return maxWeight;
-	}
-
-	public double getMonthlyPayment() {
-		return monthlyPayment;
 	}
 	
 	public HashMap<String, String> getAvailableServices() {

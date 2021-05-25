@@ -5,15 +5,15 @@
     <%@ page import="java.util.ArrayList" %>
     <%@ page import="com.lms.model.Plan" %>
     <%@ page import="com.lms.model.MonthlyPayment" %>
+    <%@ page import="com.lms.model.RegularPlan" %>
     <% User user = (User) session.getAttribute("loggedUser");
-    Plan plan = (Plan) session.getAttribute("userPlan");
+    RegularPlan plan = (RegularPlan) session.getAttribute("userPlan");
     ArrayList<Order> order = (ArrayList<Order>) session.getAttribute("ordHistory");
     String date = (String) session.getAttribute("date");
     
-    if(user == null){
-    	response.sendRedirect("Login.jsp");
-    }
-    else{
+    if(user == null){%>
+    	<jsp:forward page="Login.jsp"/>
+    <%}else{
     	if(plan.isCustomizable() == false){
     		response.sendRedirect("dashboard-normal.jsp");
     	}
@@ -102,10 +102,10 @@
                 <nav>
                   <ul class="nav topnav">
                     <li><a href="index.jsp">Home</a></li>
-                    <li class="dropdown active"><a href="dashboard-regular.jsp">Dashboard</a></li>
+                    <li class="dropdown active"><a href="dashboard.jsp">Dashboard</a></li>
                     <li><a href="index.html">Place Order</a></li>
                     <li><a href="my-plan-normal.jsp">My Plan</a></li>
-                    <li><a href="UserProfile..jsp">My Account</a></li>
+                    <li><a href="UserProfile.jsp">My Account</a></li>
                     <li><a href="/testWeb/LogOutServlet">Log Out</a></li>
                   </ul>
                 </nav>

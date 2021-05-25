@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 <meta charset="ISO-8859-1">
-<title>Regular User</title>
+<title>Create Regular User Packages</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Your page description here" />
   <meta name="author" content="" />
@@ -131,7 +131,7 @@
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-              <h2>Edit Packages (Regular User)</h2>
+              <h2>Create Packages (Regular User)</h2>
             </div>
           </div>
           <div class="span8">
@@ -144,19 +144,13 @@
       </div>
     </section><br><br>
 	<div class = "ProfileContainer">
-	
-	
+
 	<form action="user" method="post">
 	<h6 class = "heading-user">Package Details</h6>
 	<table>
 	<tr>
-	<br> <td class = "form-label">Username <br> <input type = "text" name = "uid"> </td>
-	<br> <td class = "form-label" style = "padding-left:100px">Password <br> <input type = "text" name = "pw"> </td>
-	<tr>
-	</tr><br>
-	<tr>
-	<td class = "form-label">Maximum Weight<br><input type = "text" name = "maxweight"></td>
-	<br> <td class = "form-label" style = "padding-left:100px">Maximum Orders per month <br> <input type = "text" name = "maxorders"> </td>
+	<td class = "form-label">Maximum Weight<br><input type = "text" name = "mWeight"></td>
+	<td class = "form-label" style = "padding-left:100px">Maximum Orders per month <br> <input type = "text" name = "mOrder"> </td>
 	</tr>
 	</table>
 	<hr>
@@ -164,45 +158,42 @@
 	<h6 class = "heading-user">Additional Details</h6>
 	<table>
 	<tr>
-	<label class="container">Washing Only			
-	  <input type="checkbox" checked="checked">
-	  <span class="checkmark"></span>
-	</label>
-
-	<label class="container">Washing + Dry Cleaning Only
-	  <input type="checkbox">
-	  <span class="checkmark"></span>
-	</label>
-
-	<label class="container">Washing + Drying + Pressing 
-	  <input type="checkbox">
-	  <span class="checkmark"></span>
-	</label>
+	<tr>
+	<td class = "form-label">Washing Only<br><input type = "text" name = "w"></td>
+	</tr>
+	<tr>
+	<td class = "form-label">Washing + Dry Cleaning Only<br><input type = "text" name = "wd"></td>
+	</tr>
+	<tr>
+	<td class = "form-label">Washing + Drying + Pressing <br><input type = "text" name = "wdp"></td>
+	</tr>
+	<tr>
+	<td class = "form-label">Mending<br><input type = "text" name = "m"></td>
+	</tr>
+	<tr>
+	<td class = "form-label">One Day Service<br><input type = "text" name = "ods"></td>
+	</tr>
+	<tr>
+	<td class = "form-label">Pick and Delivery<br><input type = "text" name = "pad"></td>
+	</tr>
+	<tr>
+	<td class = "form-label">Username<br><input type = "text" name = "uname"></td>
+	</tr>
+	<tr>
+	<td class = "form-label">Password<br><input type = "password" name = "pword"></td>
+	</tr>
+	<tr>
 	
 	</tr>
-	<tr><td>
-	<label class="container">Mending
-	  <input type="checkbox">
-	  <span class="checkmark"></span>
-	</label>
-	<label class="container">One Day Service
-	  <input type="checkbox">
-	  <span class="checkmark"></span>
-	</label>
-	<label class="container">Pick and Delivery
-	  <input type="checkbox">
-	  <span class="checkmark"></span>
-	</label>
-	<div class = "ProfileContainer">
-	<input type = "submit" style = "left : 15px" class = "EditButton" name = "submit" value = "Submit">
-	</div>
-	</td></tr>
 	</table>
+	<div class = "">
+		<input type = "submit" style = "left : 15px" class = "EditButton" name = "submit" value = "Create">
+	</div>
 	</form>
 	</div>
 	<br>
 	
-  <footer>
+  	<footer>
       <div class="container">
         <div class="row">
           <div class="span4">

@@ -9,10 +9,9 @@
     ArrayList<Order> order = (ArrayList<Order>) session.getAttribute("ordHistory");
     String date = (String) session.getAttribute("date");
     
-    if(user == null){
-    	response.sendRedirect("Login.jsp");
-    }
-    else{
+	    if(user == null){%>
+		<jsp:forward page="Login.jsp"/>
+	<%}else{
     	if(plan.isCustomizable()){
     		response.sendRedirect("dashboard-regular.jsp");
     	}
