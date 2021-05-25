@@ -4,10 +4,9 @@
     <%@ page import="com.lms.model.RegularPlan" %>
     <% User user = (User) session.getAttribute("loggedUser");
        RegularPlan plan = (RegularPlan) session.getAttribute("userPlan");
-	    if(user == null){
-	    	response.sendRedirect("Login.jsp");
-	    }
-	    else{
+       if(user == null){%>
+	   	<jsp:forward page="Login.jsp"/>
+	   <%}else{
 	    	if(plan.isCustomizable() == false){
 	    		response.sendRedirect("my-plan-normal.jsp");
 	    	}

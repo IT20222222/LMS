@@ -9,10 +9,9 @@
        RegularPlan plan = (RegularPlan) session.getAttribute("userPlan");
        ArrayList<MonthlyPayment> mph = (ArrayList<MonthlyPayment>) session.getAttribute("mpHistory");
        
-	    if(user == null){
-	    	response.sendRedirect("Login.jsp");
-	    }
-	    else{
+       if(user == null){%>
+   	<jsp:forward page="Login.jsp"/>
+   <%}else{
 	    	if(plan.isCustomizable() == false){
 	    		response.sendRedirect("my-plan-normal.jsp");
 	    	}
