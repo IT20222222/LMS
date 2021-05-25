@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+    <%@ page import="com.lms.model.User" %>
+    <%@ page import="com.lms.model.Plan" %>
+    
+    <% User user = (User) session.getAttribute("loggedUser");
+  	   Plan plan = (Plan) session.getAttribute("userPlan");
+	    if(user == null){ 	%>
+	    	<jsp:forward page="Login.jsp" />
+	    <% } %>
 <head>
   <meta charset="utf-8">
   <title>Remember - Multipurpose bootstrap site template</title>
@@ -120,7 +129,7 @@
 	<table>
 	<tr>
 	<td class = "form-label">Username <br> <input type = "text" name = "username"> </td>
-	<td class = "form-label" style = "padding-left:100px">Password <br> <input type = "text" name = "Password"> </td>
+	<td class = "form-label" style = "padding-left:100px">Password <br> <input type = "password" name = "Password"> </td>
 	</tr>
 	</table>
 	<hr>

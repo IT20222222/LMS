@@ -6,10 +6,11 @@
     
     <% User user = (User) session.getAttribute("loggedUser");
   	   Plan plan = (Plan) session.getAttribute("userPlan");
-	    if(user == null){
-	    	response.sendRedirect("Login.jsp");
-	    }
-	%>
+	    if(user == null){ 	%>
+	    	<jsp:forward page="Login.jsp" />
+	    <% } %>
+
+	
 
 <!DOCTYPE html>
 <html lang="en">

@@ -126,6 +126,7 @@
 				  if(password != repassword){
 					  alert('Passwords mismatched , please re-enter');
 				 	 }
+			
 				  }
 				  </script>
 			
@@ -139,9 +140,9 @@
 				  <input type = "email" style = "width : 40%; float : right" name = "Email" placeholder = "Enter your email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title = "Enter a valid email" required><br><br>
 				  <input type = "text" style = "width : 40%; height: 60px" name = "Address" placeholder = "Enter your address" required><br><br>
 				  <label>Select Gender</label>
-				  <input type = "radio" id = "gender" name = "gender"  checked> Male
-				  <input type = "radio" id = "gender" name = "gender" > Female
-				  <input type = "radio" id = "gender" name = "gender" > Would not like to specify <br><br><br>
+				  <input type = "radio" id = "gender" name = "gender" value = "Male" checked> Male
+				  <input type = "radio" id = "gender" name = "gender" value = "Female" > Female
+				  <input type = "radio" id = "gender" name = "gender" value = "Other"> Would not like to specify <br><br><br>
 				  <input type = "text" style = "width : 40%;"  name = "mobile" placeholder = "Enter mobile number" pattern = "^[0-9]{10}$" title = "Enter a 10 digit phone number starting with 0" required><br><br>
 				  <label>Date of Birth</label>
 				  <input type = "date" name = "dob"><br><br>
@@ -154,7 +155,6 @@
 				  <button class = "RegisterButton" type = "reset">Reset</button>
                   <button class="RegisterButton" type= "submit" style = "float : right" onclick = "ValidatePassword()">Register</button>
 					
-                   
                   
                 
               
