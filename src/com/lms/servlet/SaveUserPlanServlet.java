@@ -32,6 +32,7 @@ public class SaveUserPlanServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		
+		//read selected options/ features
 		String[] services = request.getParameterValues("services");
 		int maxOrders = Integer.parseInt(request.getParameter("maxOrders"));
 		int maxWeight = Integer.parseInt(request.getParameter("maxWeight"));
@@ -42,17 +43,18 @@ public class SaveUserPlanServlet extends HttpServlet {
 		int pickupDelivery = 0;
 		double monthlyPayment = 0;
 		boolean isTrue;
-		User user = (User) session.getAttribute("loggedUser");
+		User user = (User) session.getAttribute("loggedUser");	//get logged user
 		
-		ArrayList<String> serv = new ArrayList<>();
+		ArrayList<String> serv = new ArrayList<>();	//create an array list
 		
+		//check if at least one service is selected
 		if(services != null) {
 			for(int i = 0; i < services.length; i++) {
-				serv.add(services[i]);
+				serv.add(services[i]);	//add selected services to an array list
 			}
 		}
 		
-		
+		//check which services are selected
 		if(serv.contains("press")) {
 			pressing = 1;
 		}
@@ -69,17 +71,20 @@ public class SaveUserPlanServlet extends HttpServlet {
 			pickupDelivery = 1;
 		}
 		
+		//calculate monthly payment according to the selected services
 		monthlyPayment = PlanDBUtil.calculateMonthlyPayment(maxOrders, maxWeight, pressing, mending, oneday, dryclean, pickupDelivery);
 		
+		//save user's new plan 
 		isTrue = PlanDBUtil.saveUserPlan(user, maxOrders, maxWeight, pressing, mending, oneday, dryclean, pickupDelivery, monthlyPayment);
 		
 		if (isTrue == true) {
-				session.removeAttribute("userPlan");
+				session.removeAttribute("userPlan");	//remove user plan attribute
 
-				Plan plan = PlanDBUtil.getUserPlan(user);
+				Plan plan = PlanDBUtil.getUserPlan(user);	//get user's new plan details from the db
 				
-				session.setAttribute("userPlan", plan);
+				session.setAttribute("userPlan", plan);	//set new plan attribute
 				
+				//display success message
 				out.println("<script type='text/javascript'>");
 				out.println("alert('Successfull!');");
 				out.println("location='my-plan-regular.jsp'");
@@ -87,6 +92,7 @@ public class SaveUserPlanServlet extends HttpServlet {
 
 			
 		} else {
+			//display error message
 			out.println("<script type='text/javascript'>");
 			out.println("alert('Error!');");
 			out.println("location='my-plan-regular.jsp'");

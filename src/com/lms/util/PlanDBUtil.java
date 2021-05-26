@@ -81,13 +81,16 @@ public class PlanDBUtil {
 		boolean isSuccess = false;
 		
 		try {
-			con = DBConnectorUtil.getConnection();
-			stmt = con.createStatement();
 			
-			String sql = "delete from customized_plan where Plan_ID="+user.getPlanId()+" and User_ID="+user.getId()+"";
-			int r = stmt.executeUpdate(sql);
+			con = DBConnectorUtil.getConnection();	//create connection
+			stmt = con.createStatement();	//create sql statement
+			
+			String sql = "delete from customized_plan where Plan_ID =" + user.getPlanId() + " and User_ID =" + user.getId() + "";	//sql query
+			int r = stmt.executeUpdate(sql);	//execute query
+			
 			if(r > 0) {
-				String sql2 = "update user_profile set Plan_ID=1 where User_ID="+user.getId();
+				//update user-profile table
+				String sql2 = "update user_profile set Plan_ID=1 where User_ID =" + user.getId();	
 				stmt.executeUpdate(sql2);
 				
 				if(r > 0) {
@@ -95,7 +98,7 @@ public class PlanDBUtil {
 				}
 			}
 			
-			con.close();
+			con.close();	//close connection
 			
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -110,8 +113,9 @@ public class PlanDBUtil {
 		boolean isSuccess = false;
 		
 		try {
-			con = DBConnectorUtil.getConnection();
-			stmt = con.createStatement();
+			
+			con = DBConnectorUtil.getConnection();	//create connection
+			stmt = con.createStatement();	//create sql statement
 			String sql = "update customized_plan set pressing="+pressing+", mending="+mending+", oneday="+oneday+", dryclean="+dryclean+", pickup_delivery="+pickupDelivery+
 					", Max_Orders="+maxOrders+", Max_Weight="+maxWeight+", Monthly_Payment="+monthlyPayment+" where User_ID="+user.getId()+" and Plan_ID="+user.getPlanId();
 			
@@ -124,7 +128,7 @@ public class PlanDBUtil {
 				isSuccess = false;
 			}
 			
-			con.close();
+			con.close();	//close connection
 		
 		}catch(Exception e) {
 			e.printStackTrace();

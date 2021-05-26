@@ -89,7 +89,7 @@
         <div class="row nomargin">
           <div class="span4">
             <div class="logo">
-              <h1><a href="index.html"><i class="icon-tint"></i> Remember</a></h1>
+              <h1><a href="index.html"><i class="icon-tint"></i> WonderLaundry</a></h1>
             </div>
           </div>
           <div class="span8">

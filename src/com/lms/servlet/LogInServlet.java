@@ -40,43 +40,46 @@ public class LogInServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 		
-		String userName = request.getParameter("usr");
-		String password = request.getParameter("pwd");
+		String userName = request.getParameter("usr");	//read entered username
+		String password = request.getParameter("pwd");	//read entered password
 		boolean isTrue;
 		
-		isTrue = UserDBUtil.validate(userName, password);
+		isTrue = UserDBUtil.validate(userName, password);	//validate username and passowrd
 		
+		//check if the user is valid or not
 		if (isTrue == true) {
-			User user = UserDBUtil.getUser(userName);
-			Plan plan = PlanDBUtil.getUserPlan(user);
+			User user = UserDBUtil.getUser(userName);	//get user's details from db
+			Plan plan = PlanDBUtil.getUserPlan(user);	//get user's plan details from db
 
 	
 			HttpSession session = request.getSession();
 			
-			session.setAttribute("loggedUser", user);
-			session.setAttribute("userPlan", plan);
+			session.setAttribute("loggedUser", user);	//set logged user attribute
+			session.setAttribute("userPlan", plan);	//set user plan attribute
 			
+			//checks if the user is a regular user
 			if(plan.getPlanId() == 2) {
-				ArrayList<MonthlyPayment> mp = MonthlyPaymentDBUtil.getMonthlyPaymentHistory(user);
-				session.setAttribute("mpHistory", mp);
+				ArrayList<MonthlyPayment> mp = MonthlyPaymentDBUtil.getMonthlyPaymentHistory(user);	//get monthly payment details from db
+				session.setAttribute("mpHistory", mp);	//set monthly payment history attribute
 			}
 			
-		    ArrayList<Order> orderHistory = OrderDBUtil.getOrderHistory(user);
-			session.setAttribute("ordHistory", orderHistory);
+		    ArrayList<Order> orderHistory = OrderDBUtil.getOrderHistory(user);	//get user's order history from db
+			session.setAttribute("ordHistory", orderHistory); //set order hsitory attribute
 			
-			 Date date = Calendar.getInstance().getTime();  
-             DateFormat dateFormat = new SimpleDateFormat("yyyy-MM");  
-             String strDate = dateFormat.format(date);
+			 Date date = Calendar.getInstance().getTime(); //get current date time 
+             DateFormat dateFormat = new SimpleDateFormat("yyyy-MM");  //get the current year & month
+             String strDate = dateFormat.format(date); //convert the date to a string object
              
-			session.setAttribute("date", strDate);
+			session.setAttribute("date", strDate);	//set current date as an session attribute
 			
-			response.sendRedirect("dashboard-normal.jsp");
+			response.sendRedirect("dashboard-normal.jsp");	//redirect user to dashboard page
 			
 			
 			
 			
 			
 		} else {
+			//display error message
 			out.println("<script type='text/javascript'>");
 			out.println("alert('Your username or password is incorrect');");
 			out.println("location='Login.jsp'");

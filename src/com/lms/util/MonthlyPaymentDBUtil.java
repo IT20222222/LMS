@@ -43,12 +43,14 @@ public class MonthlyPaymentDBUtil {
 		monthlyPaymentHistory.clear();
 		
 		try {
-			con = DBConnectorUtil.getConnection();
-			stmt = con.createStatement();
+			
+			con = DBConnectorUtil.getConnection();	//create connection
+			stmt = con.createStatement();	//create sql statement
 			String sql = "select * from monthly_payment where User_ID="+user.getId()+"";
 			rs = stmt.executeQuery(sql); //execute sql query
 			
 			while(rs.next()) {
+				//retrieve monthly payment details
 				int id = rs.getInt("User_ID");
 				String month  = rs.getString("month");
 				String date = rs.getString("date");
@@ -58,12 +60,12 @@ public class MonthlyPaymentDBUtil {
 				monthlyPaymentHistory.add(new MonthlyPayment(id, month, date, amount, status));
 			}
 			
-			con.close();
+			con.close();	//close connection
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 		
-		return monthlyPaymentHistory;
+		return monthlyPaymentHistory;	//return monthly paymnet history
 	}
 	
 	public static boolean checkMonth(ArrayList<MonthlyPayment> paymentHistory) {
