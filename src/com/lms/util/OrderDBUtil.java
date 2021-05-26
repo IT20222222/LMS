@@ -19,12 +19,14 @@ public class OrderDBUtil {
 		orderHistory.clear();
 		
 		try {
-			con = DBConnectorUtil.getConnection();
-			stmt = con.createStatement();
-			String sql = "select * from user_order where User_ID="+user.getId()+"";
+			
+			con = DBConnectorUtil.getConnection();	//create connection
+			stmt = con.createStatement();	//create sql statement
+			String sql = "select * from user_order where User_ID="+user.getId()+"";	
 			rs = stmt.executeQuery(sql);
 			
 			while(rs.next()) {
+				//retrieving order details
 				int OrderID = rs.getInt("Order_ID");
 				int UserID = rs.getInt("User_ID");
 				String date = rs.getString("date");
@@ -34,12 +36,12 @@ public class OrderDBUtil {
 				orderHistory.add(new Order(OrderID, UserID, date, payment, status));
 			}
 			
-			con.close();
+			con.close();	//close connection
 		}
 		catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		return orderHistory;
+		return orderHistory;	//return order history
 	}
 }

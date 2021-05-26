@@ -39,20 +39,20 @@ public class AddUserServlet extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("Password");
 		
-		/*
+		
 		boolean exists = UserDBUtil.validateUsername(username);
-		if (exists == true) {
+		if (exists == false) {
 			out.println("<script type='text/javascript'>");
 			out.println("alert('Username already exists , please enter a different username');");
 			out.println("</script>");  
 		}
-		else { */
+		else { 
 		
 			boolean isTrue;
 			isTrue = UserDBUtil.addUser(firstName , lastName , NIC , email , address , gender , MobileNumber , DOB , username , password , 1);
 		
 				if (isTrue == true) {
-						RequestDispatcher dis = request.getRequestDispatcher("Success.jsp");
+						RequestDispatcher dis = request.getRequestDispatcher("Login.jsp");
 						dis.forward(request,response);
 						}
 				else {
@@ -61,6 +61,8 @@ public class AddUserServlet extends HttpServlet {
 						}
 		
 		
-	}
+			}
 
+	}
+	
 }

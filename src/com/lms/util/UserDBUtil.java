@@ -70,12 +70,13 @@ public class UserDBUtil {
 			
 			try {
 				
-				con = DBConnectorUtil.getConnection();
-				stmt = con.createStatement();
-				String sql = "select * from user_profile where username='"+userName+"'";
-				rs = stmt.executeQuery(sql);
+				con = DBConnectorUtil.getConnection();	//create connection
+				stmt = con.createStatement(); //create a sql statement
+				String sql = "select * from user_profile where username='"+userName+"'";	//sql query
+				rs = stmt.executeQuery(sql);	//execute sql query
 				
 				if(rs.next()) {
+					//retrieving user details
 					String firstName = rs.getString("First_Name");
 				    String lastName = rs.getString("Last_Name");
 				    String NIC = rs.getString("NIC");
@@ -89,6 +90,7 @@ public class UserDBUtil {
 				    int planId = rs.getInt("Plan_ID");
 				    int userId= rs.getInt("User_ID");
 					
+				    //creating a user object
 					user = new User(userId, firstName, lastName, NIC, email, address, gender, mobileNo, DOB, username, password, planId);
 				}
 				
@@ -99,7 +101,7 @@ public class UserDBUtil {
 				
 			}
 			
-			return user;	
+			return user;	//return user object
 		}
 	
 	public static boolean addUser(String Firstname , String Lastname , String NIC , String email, String address, String gender , int mobile , String dob , String username , String password , int pid) {

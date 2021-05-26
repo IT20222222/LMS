@@ -6,10 +6,11 @@
     
     <% User user = (User) session.getAttribute("loggedUser");
   	   Plan plan = (Plan) session.getAttribute("userPlan");
-	    if(user == null){
-	    	response.sendRedirect("Login.jsp");
-	    }
-	%>
+	    if(user == null){ 	%>
+	    	<jsp:forward page="Login.jsp" />
+	    <% } %>
+
+	
 
 <!DOCTYPE html>
 <html lang="en">
@@ -167,9 +168,19 @@
 			type = "Regular";
 		}
 	%>
+	
+	<% boolean isCustom = plan.isCustomizable();
+		String Custom;
+		if (isCustom == true){
+			Custom = "Customized";
+		}
+		else{
+			Custom = "Customizable";
+		}
+	%>
 	<tr>
 	<td class = "form-label">Customer Type<br><input type = "text" name = "CusType" id = "cusType" onchange = "displayPackage()" value = "<%= type  %>"readonly></td>
-	<td class = "form-label" style = "padding-left:100px">Package(Postpaid Customers)<br><input type = "text" name = "Package" id ="pack" readonly></td>
+	<td class = "form-label" style = "padding-left:100px">Customizability<br><input type = "text" name = "Package" id ="pack" value = "<%= Custom %>" readonly></td>
 	</tr>
 	
 	</table>

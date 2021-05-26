@@ -33,21 +33,24 @@ public class MonthlyPaymentServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		
-		User user = (User) session.getAttribute("loggedUser");
-		RegularPlan plan = (RegularPlan) session.getAttribute("userPlan");
+		User user = (User) session.getAttribute("loggedUser");	//get logged user
+		RegularPlan plan = (RegularPlan) session.getAttribute("userPlan");	//get user's plan
 		@SuppressWarnings("unchecked")
-		ArrayList<MonthlyPayment> historyList = (ArrayList<MonthlyPayment>) session.getAttribute("mpHistory");
+		ArrayList<MonthlyPayment> historyList = (ArrayList<MonthlyPayment>) session.getAttribute("mpHistory");	//get payment history
 		boolean isTrue;
 		
+		//checks if the user has already paid the monthly payment for the current month
 		if(MonthlyPaymentDBUtil.checkMonth(historyList)) {
-			isTrue = MonthlyPaymentDBUtil.pay(user, plan.getMonthlyPayment());
+			isTrue = MonthlyPaymentDBUtil.pay(user, plan.getMonthlyPayment());	//process monthly payment
 			
+			//checks if the payment was successful
 			if (isTrue == true) {
 
-				session.removeAttribute("mpHistory");
-				ArrayList<MonthlyPayment> mp = MonthlyPaymentDBUtil.getMonthlyPaymentHistory(user);
-				session.setAttribute("mpHistory", mp);
+				session.removeAttribute("mpHistory");	//remove monthly payment history attribute
+				ArrayList<MonthlyPayment> mp = MonthlyPaymentDBUtil.getMonthlyPaymentHistory(user);	//retrieve monthly payment history from db
+				session.setAttribute("mpHistory", mp);	//set monthly payment history attribute
 				
+				//display success message
 				out.println("<script type='text/javascript'>");
 				out.println("alert('Successfull!');");
 				out.println("location='my-plan-regular.jsp'");
@@ -56,6 +59,7 @@ public class MonthlyPaymentServlet extends HttpServlet {
 				
 				
 			} else {
+				//display error message
 				out.println("<script type='text/javascript'>");
 				out.println("alert('Error!');");
 				out.println("location='my-plan-regular.jsp'");

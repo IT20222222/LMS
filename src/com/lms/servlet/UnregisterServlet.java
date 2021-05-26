@@ -55,7 +55,7 @@ public class UnregisterServlet extends HttpServlet {
 		
 			//Checking whether the query works 
 			if(isTrue == true && isTrue2 == true ) {
-				RequestDispatcher dis1 = request.getRequestDispatcher("Success.jsp");
+				RequestDispatcher dis1 = request.getRequestDispatcher("index.jsp");
 				dis1.forward(request, response);
 			}
 			else {
