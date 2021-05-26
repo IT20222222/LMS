@@ -154,7 +154,7 @@
     <section id="content">
      
 	 
-<div class="containerr">
+<div class="containerr" style = "padding-left : 100px">
   <form action = "InsertOrder" method ="post">
     <div class="roww">
       <h4>Customer Type</h4>

@@ -89,6 +89,7 @@ h2.errortitle {
 .container{
 	padding:0 20px 0 20px;
 	position:relative;
+
 }
 
 
@@ -146,7 +147,7 @@ header{
 header .top {
 	padding:10px 0 10px;
 	margin:0 0 30px;
-	background: url(../img/top-pattern-150.png) repeat;
+	background-color : #004d99;
 -webkit-box-shadow: 0 4px 4px -2px #222;
    -moz-box-shadow: 0 4px 4px -2px #222;
         box-shadow: 0 4px 4px -2px #222;
