@@ -11,7 +11,7 @@ import java.util.List;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 
-import com.lms.model.Order;
+import com.lms.model.PlaceOrder;
 
 
 public class PlaceOrderUtil {
@@ -82,11 +82,11 @@ public class PlaceOrderUtil {
 		return isSuccess;
 	}
 	
-	public static List<Order> getorderDetails(String Id)
+	public static List<PlaceOrder> getorderDetails(String Id)
 	{
 		int convertedID = Integer.parseInt(Id);
 		
-		ArrayList<Order> ord = new ArrayList();
+		ArrayList<PlaceOrder> ord = new ArrayList();
 		
 		try {
 			
@@ -108,7 +108,7 @@ public class PlaceOrderUtil {
 				
 				
 				
-				Order o = new Order(Order_ID,CustomerType,Date,OrderMethod,Location,PaymentAmount);
+				PlaceOrder o = new PlaceOrder(Order_ID,CustomerType,Date,OrderMethod,Location,PaymentAmount);
 				ord.add(o);
 				
 			}

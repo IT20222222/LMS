@@ -1,6 +1,6 @@
 package com.lms.model;
 
-public class Order {
+public class PlaceOrder {
 
 	private String Order_ID;
 	private String CustomerType;
@@ -9,7 +9,7 @@ public class Order {
 	private String Location;
 	private String PaymentAmount;
 	
-	public Order(String Order_ID, String CustomerType, String Date, String OrderMethod, String Location,
+	public PlaceOrder(String Order_ID, String CustomerType, String Date, String OrderMethod, String Location,
 			String PaymentAmount) {
 		super();
 		this.Order_ID = Order_ID;

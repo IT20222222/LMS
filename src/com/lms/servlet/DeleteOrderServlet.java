@@ -1,5 +1,5 @@
 package com.lms.servlet;
-import com.lms.model.Order;
+import com.lms.model.PlaceOrder;
 
 import java.io.IOException;
 import java.util.List;
@@ -33,7 +33,7 @@ public class DeleteOrderServlet extends HttpServlet {
 			dispatcher.forward(request, response);
 		}
 		else {
-			List<Order>orddetails = PlaceOrderUtil.getorderDetails(id);
+			List<PlaceOrder>orddetails = PlaceOrderUtil.getorderDetails(id);
 			request.setAttribute("orddetails", orddetails);
 			
 			RequestDispatcher dispatcher = request.getRequestDispatcher("OrderDetail.jsp");

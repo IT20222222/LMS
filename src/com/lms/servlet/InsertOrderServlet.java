@@ -1,5 +1,5 @@
 package com.lms.servlet;
-import com.lms.model.Order;
+import com.lms.model.PlaceOrder;
 
 import com.lms.model.User;
 

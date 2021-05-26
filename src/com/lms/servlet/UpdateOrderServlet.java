@@ -1,5 +1,5 @@
 package com.lms.servlet;
-import com.lms.model.Order;
+import com.lms.model.PlaceOrder;
 import com.lms.model.User;
 
 import java.io.IOException;
@@ -41,14 +41,14 @@ public class UpdateOrderServlet extends HttpServlet {
 		
 		if(isTrue == true) {
 			
-			List<Order> ordDetails = PlaceOrderUtil.getorderDetails(Order_ID);
+			List<PlaceOrder> ordDetails = PlaceOrderUtil.getorderDetails(Order_ID);
 			request.setAttribute("ordDetails", ordDetails);
 			
 			RequestDispatcher dis = request.getRequestDispatcher("OrderDetail.jsp");
 			dis.forward(request, response);
 		}
 		else {
-			List<Order> ordDetails = PlaceOrderUtil.getorderDetails(Order_ID);
+			List<PlaceOrder> ordDetails = PlaceOrderUtil.getorderDetails(Order_ID);
 			request.setAttribute("ordDetails", ordDetails);
 			
 			RequestDispatcher dis = request.getRequestDispatcher("OrderDetail.jsp");
