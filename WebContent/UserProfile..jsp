@@ -17,7 +17,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Remember - Multipurpose bootstrap site template</title>
+  <title>WonderLaundry - Your best Laundry Experience</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Your page description here" />
   <meta name="author" content="" />
@@ -82,7 +82,7 @@
         <div class="row nomargin">
           <div class="span4">
             <div class="logo">
-              <h1><a href="index.html"><i class="icon-tint"></i> Remember</a></h1>
+              <h1><a href="index.html"><i class="icon-tint"></i> WonderLaundry</a></h1>
             </div>
           </div>
           <div class="span8">
@@ -200,16 +200,16 @@
           <div class="span4">
             <div class="widget">
               <div class="footer_logo">
-                <h3><a href="index.html"><i class="icon-tint"></i> Remember</a></h3>
+                <h3><a href="index.html"><i class="icon-tint"></i> Wonder Laundry</a></h3>
               </div>
               <address>
 							  <strong>Remember company Inc.</strong><br>
-  							Somestreet KW 101, Park Village W.01<br>
-  							Jakarta 13426 Indonesia
+  							Kohuwala Road 101, Kohuwala<br>
+  							Colombo 13426 Srilanka
   						</address>
               <p>
-                <i class="icon-phone"></i> (123) 456-7890 - (123) 555-7891 <br>
-                <i class="icon-envelope-alt"></i> email@domainname.com
+                <i class="icon-phone"></i> (96) 456-7890 - (96) 555-7891 <br>
+                <i class="icon-envelope-alt"></i> wonderlaundry@gmail.com
               </p>
             </div>
           </div>
@@ -243,7 +243,7 @@
           <div class="row">
             <div class="span6">
               <div class="copyright">
-                <p><span>&copy; Remember Inc. All right reserved</span></p>
+                <p><span>&copy; WonderLaundry Inc. All right reserved</span></p>
               </div>
 
             </div>
