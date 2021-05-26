@@ -72,54 +72,7 @@
           </div>
           <div class="span8">
             <div class="navbar navbar-static-top">
-              <div class="navigation">
-                <nav>
-                  <ul class="nav topnav">
-                    <li class="active">
-                      <a href="index.html">Home</a>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#">Features <i class="icon-angle-down"></i></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="typography.html">Typography</a></li>
-                        <li><a href="components.html">Components</a></li>
-                        <li><a href="icons.html">Icons</a></li>
-                        <li><a href="icon-variations.html">Icon variations</a></li>
-
-                      </ul>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#">Pages <i class="icon-angle-down"></i></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="about.html">About us</a></li>
-                        <li><a href="pricingbox.html">Pricing boxes</a></li>
-                        <li><a href="404.html">404</a></li>
-                      </ul>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#">Portfolio <i class="icon-angle-down"></i></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="portfolio-2cols.html">Portfolio 2 columns</a></li>
-                        <li><a href="portfolio-3cols.html">Portfolio 3 columns</a></li>
-                        <li><a href="portfolio-4cols.html">Portfolio 4 columns</a></li>
-                        <li><a href="portfolio-detail.html">Portfolio detail</a></li>
-                      </ul>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#">Blog <i class="icon-angle-down"></i></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="blog-left-sidebar.html">Blog left sidebar</a></li>
-                        <li><a href="blog-right-sidebar.html">Blog right sidebar</a></li>
-                        <li><a href="post-left-sidebar.html">Post left sidebar</a></li>
-                        <li><a href="post-right-sidebar.html">Post right sidebar</a></li>
-                      </ul>
-                    </li>
-                    <li>
-                      <a href="contact.html">Contact </a>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
+              
               <!-- end navigation -->
             </div>
           </div>
@@ -132,74 +85,14 @@
     <section id="intro">
       <div class="intro-content">
         <h2>Admin Dashboard</h2>
-        <h3>Admin Priviages</h3>
         <div>
-          <a href="#content" class="btn-get-started scrollto">Customize</a>
+          <a href="#offer" class="btn-get-started scrollto">Privileges</a>
         </div>
       </div>
     </section>
     <!-- /section intro -->
 
-    <section id="content">
-      <div class="container">
-
-
-        <div class="row">
-          <div class="span12">
-            <div class="row">
-              <div class="span3">
-                <div class="box aligncenter">
-                  <div class="icon">
-                    <span class="badge badge-info badge-circled">1</span>
-                    <i class="ico icon-dropbox icon-5x"></i>
-                  </div>
-                  <div class="text">
-                    <h4><strong>Clean and Shine</strong></h4>
-                    <p>
-                      
-                    </p>
-                    
-                  </div>
-                </div>
-              </div>
-
-              <div class="span3">
-                <div class="box aligncenter">
-                  <div class="icon">
-                    <span class="badge badge-success badge-circled">2</span>
-                    <i class="ico icon-bitbucket icon-5x"></i>
-                  </div>
-                  <div class="text">
-                    <h4><strong>Long Lasting Fragrance</h4>
-                    <p>
-                      
-                    </p>
-                    
-                  </div>
-                </div>
-              </div>
-              <div class="span3">
-                <div class="box aligncenter">
-                  <div class="icon">
-                    <span class="badge badge-warning badge-circled">3</span>
-                    <i class="ico icon-rocket icon-5x"></i>
-                  </div>
-                  <div class="text">
-                    <h4><strong>Save Your Time</strong></h4>
-                    <p>
-                      
-                    </p>
-                    
-                  </div>
-                </div>
-              </div>
-              
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
+  
 
     <section id="offer">
       <div class="container">
@@ -208,7 +101,7 @@
             <div class="row">
               <div class="span12">
                 <div class="aligncenter">
-                  <h3>Package Customization</h3>
+                  <h3>Admin Privileges</h3>
 				
                 </div>
               </div>
@@ -278,78 +171,7 @@
       </div>
     </section>
 
-    <section id="works">
-      <div class="container">
-        <div class="row">
-          <div class="span12">
-            <h3>Recent works</h3>
-            <div class="row">
-
-              <div class="grid cs-style-3">
-                <div class="span3">
-                  <div class="item">
-                    <figure>
-                      <div><img src="img/dummies/works/1.jpg" alt=""></div>
-                      <figcaption>
-                        <h3>Portfolio name</h3>
-                        <p>
-                          <a href="img/dummies/works/big.png" data-pretty="prettyPhoto[gallery1]" title="Portfolio caption here"><i class="icon-zoom-in icon-circled icon-bglight icon-2x active"></i></a>
-                          <a href="#"><i class="icon-file icon-circled icon-bglight icon-2x active"></i></a>
-                        </p>
-                      </figcaption>
-                    </figure>
-                  </div>
-                </div>
-                <div class="span3">
-                  <div class="item">
-                    <figure>
-                      <div><img src="img/dummies/works/2.jpg" alt=""></div>
-                      <figcaption>
-                        <h3>Portfolio name</h3>
-                        <p>
-                          <a href="img/dummies/works/big.png" data-pretty="prettyPhoto[gallery1]" title="Portfolio caption here"><i class="icon-zoom-in icon-circled icon-bglight icon-2x active"></i></a>
-                          <a href="#"><i class="icon-file icon-circled icon-bglight icon-2x active"></i></a>
-                        </p>
-                      </figcaption>
-                    </figure>
-                  </div>
-                </div>
-                <div class="span3">
-                  <div class="item">
-                    <figure>
-                      <div><img src="img/dummies/works/3.jpg" alt=""></div>
-                      <figcaption>
-                        <h3>Portfolio name</h3>
-                        <p>
-                          <a href="img/dummies/works/big.png" data-pretty="prettyPhoto[gallery1]" title="Portfolio caption here"><i class="icon-zoom-in icon-circled icon-bglight icon-2x active"></i></a>
-                          <a href="#"><i class="icon-file icon-circled icon-bglight icon-2x active"></i></a>
-                        </p>
-                      </figcaption>
-                    </figure>
-                  </div>
-                </div>
-                <div class="span3">
-                  <div class="item">
-                    <figure>
-                      <div><img src="img/dummies/works/4.jpg" alt=""></div>
-                      <figcaption>
-                        <h3>Portfolio name</h3>
-                        <p>
-                          <a href="img/dummies/works/big.png" data-pretty="prettyPhoto[gallery1]" title="Portfolio caption here"><i class="icon-zoom-in icon-circled icon-bglight icon-2x active"></i></a>
-                          <a href="#"><i class="icon-file icon-circled icon-bglight icon-2x active"></i></a>
-                        </p>
-                      </figcaption>
-                    </figure>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
+   
     <footer>
       <div class="container">
         <div class="row">

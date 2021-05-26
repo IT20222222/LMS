@@ -81,18 +81,7 @@
           </div>
           <div class="span8">
             <div class="navbar navbar-static-top">
-              <div class="navigation">
-                <nav>
-                  <ul class="nav topnav">
-                    <li><a href="index.jsp">Home</a></li>
-                    <li class="dropdown active"><a href="dashboard.jsp">Dashboard</a></li>
-                    <li><a href="index.html">Place Order</a></li>
-                    <li><a href="my-plan-normal.jsp">My Plan</a></li>
-                    <li><a href="UserProfile..jsp">My Account</a></li>
-                    <li><a href="/testWeb/LogOutServlet">Log Out</a></li>
-                  </ul>
-                </nav>
-              </div>
+
               <!-- end navigation -->
             </div>
           </div>
@@ -106,13 +95,13 @@
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-              <h2>Dashboard <span  class="font-icon-dashboard"></span></h2>
+              <h2>Admin Dashboard <span  class="font-icon-dashboard"></span></h2>
             </div>
           </div>
           <div class="span8">
             <ul class="breadcrumb">
-              <li><a href="index.jsp">Home</a> <i class="icon-angle-right"></i></li>
-              <li class="active">Dashboard</li>
+              <li><a href="index.jsp">Admin Dashboard</a> <i class="icon-angle-right"></i></li>
+              <li class="active">Unregistered Users</li>
             </ul>
           </div>
         </div>
