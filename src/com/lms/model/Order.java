@@ -41,20 +41,21 @@ public class Order {
 		return status;
 	}
 	
+	//to get the month of the order
 	public String getMonth() {
 		String month = null;
 		
 		try {
 			
-			Date date1=new SimpleDateFormat("yyyy-MM-dd").parse(this.date);  
-	        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM");
-	        month = dateFormat.format(date1);
+			Date date1=new SimpleDateFormat("yyyy-MM-dd").parse(this.date); 	//create a date object using order's date 
+	        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM");	//create a date format object
+	        month = dateFormat.format(date1);	//convert date to a string
 		}
 		catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-        return month;
+        return month;	//return month
 	}
 	
 	

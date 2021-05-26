@@ -27,30 +27,34 @@ public class PlanUnregisterServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		
-		User user = (User) session.getAttribute("loggedUser");
-		String password = request.getParameter("pwd");
+		User user = (User) session.getAttribute("loggedUser");	//get logged user
+		String password = request.getParameter("pwd");	//get entered password
 		boolean isTrue;
 
-		isTrue = UserDBUtil.validate(user.getUsername(), password);
+		isTrue = UserDBUtil.validate(user.getUsername(), password);	//validate password
 		
+		//check if password is valid or not
 		if (isTrue == true) {
 			
+			//unregisters the user from his/her current plan and checks if it was successful
 			if(PlanDBUtil.unregisterPlan(user)) {
-				session.removeAttribute("loggedUser");
-				session.removeAttribute("userPlan");
+				session.removeAttribute("loggedUser");	//remove user attribute
+				session.removeAttribute("userPlan");	//remove user plan attribute
 
-				User newuser = UserDBUtil.getUser(user.getUsername());
-				Plan plan = PlanDBUtil.getUserPlan(newuser);
+				User newuser = UserDBUtil.getUser(user.getUsername());	//get new user details from db
+				Plan plan = PlanDBUtil.getUserPlan(newuser);	//get new plan details from db
 				
-				session.setAttribute("userPlan", plan);
-				session.setAttribute("loggedUser", newuser);
+				session.setAttribute("userPlan", plan); //set plan attribute
+				session.setAttribute("loggedUser", newuser);	//set logged user
 				
+				//display success message
 				out.println("<script type='text/javascript'>");
 				out.println("alert('Successfully unregistered!');");
 				out.println("location='my-plan-normal.jsp'");
 				out.println("</script>");
 			}
 			else {
+				//display error message
 				out.println("<script type='text/javascript'>");
 				out.println("alert('An unknown error has occured!');");
 				out.println("location='unregister.jsp'");
@@ -59,6 +63,7 @@ public class PlanUnregisterServlet extends HttpServlet {
 			
 			
 		} else {
+			//display password incorrect message
 			out.println("<script type='text/javascript'>");
 			out.println("alert('Your password is incorrect');");
 			out.println("location='unregister.jsp'");
