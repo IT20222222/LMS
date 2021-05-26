@@ -2,13 +2,9 @@ package com.lms.util;
 
 import java.sql.Connection;
 
-
-
-
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 
 import com.lms.model.PlaceOrder;
@@ -21,7 +17,7 @@ public class PlaceOrderUtil {
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
 
-	public static boolean orderinsert(String Order_ID, int Customer_ID, String CustomerType, String Date, String OrderMethod, String Location, String PaymentAmount) {
+	public static boolean orderinsert(String CustomerType, String Date, String OrderMethod, String Location, String PaymentAmount) {
 		
 		boolean isSuccess = false;
 		
@@ -29,7 +25,7 @@ public class PlaceOrderUtil {
 		try {
 			con = DBConnectorUtil.getConnection();
 			stmt = con.createStatement();
-			String sql ="insert into insertorder values (0,'"+Customer_ID+"','"+CustomerType+"','"+Date+"','"+OrderMethod+"','"+Location+"','"+PaymentAmount+"')";
+			String sql ="insert into order values (0,'"+CustomerType+"','"+Date+"','"+OrderMethod+"','"+Location+"','"+PaymentAmount+"')";
 			int rs =stmt.executeUpdate(sql);
 			
 			
@@ -86,7 +82,7 @@ public class PlaceOrderUtil {
 	{
 		int convertedID = Integer.parseInt(Id);
 		
-		ArrayList<PlaceOrder> ord = new ArrayList();
+		ArrayList<PlaceOrder> ord = new ArrayList<PlaceOrder>();
 		
 		try {
 			

@@ -79,12 +79,12 @@
 	
 	
 	<servlet>
-		<servlet-name>InsertOrder</servlet-name>
+		<servlet-name>InsertOrderServlet</servlet-name>
 		<servlet-class>com.lms.servlet.InsertOrderServlet</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
-		<servlet-name>InsertOrder</servlet-name>
+		<servlet-name>InsertOrderServlet</servlet-name>
 		<url-pattern>/InsertOrder</url-pattern>
 	</servlet-mapping>
 	

@@ -2,14 +2,14 @@ package com.lms.model;
 
 public class PlaceOrder {
 
-	private String Order_ID;
+	private int Order_ID;
 	private String CustomerType;
 	private String Date;
 	private String OrderMethod;
 	private String Location;
 	private String PaymentAmount;
 	
-	public PlaceOrder(String Order_ID, String CustomerType, String Date, String OrderMethod, String Location,
+	public PlaceOrder(int Order_ID, String CustomerType, String Date, String OrderMethod, String Location,
 			String PaymentAmount) {
 		super();
 		this.Order_ID = Order_ID;
@@ -21,7 +21,7 @@ public class PlaceOrder {
 	
 	}
 
-	public String getId() {
+	public int getId() {
 		return Order_ID;
 	}
 

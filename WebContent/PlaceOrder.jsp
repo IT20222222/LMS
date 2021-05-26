@@ -159,7 +159,7 @@
     <div class="roww">
       <h4>Customer Type</h4>
     <div class="input-groupp">
-        <input type="radio" name="CustomerType" value="prepaid" id="prepaid" checked="true"/>
+        <input type="radio" name="CustomerType" value="prepaid" id="prepaid" />
         <label for="prepaid"><span><i class="fa fa-cc-visa"></i>Prepaid Customer</span></label>
         <input type="radio" name="CustomerType" value="postpaid" id="postpaid"/>
         <label for="postpaid"> <span><i class="fa fa-cc-paypal"></i>Postpaid Customer</span></label>
@@ -170,14 +170,9 @@
       <div class="col-halff">
         <h4>Date to collect or drop the order</h4>
         <div class="input-groupp">
-          <div class="col-thirdd">
-            <input type="text" name ="Date" placeholder="DD"/>
-          </div>
-          <div class="col-thirdd">
-            <input type="text" name ="Date" placeholder="MM"/>
-          </div>
-          <div class="col-thirdd">
-            <input type="text" name ="Date" placeholder="YYYY"/>
+           <div class="col-half">
+            <input type="date" name ="Date" />
+         
           </div>
         </div>
       </div>
@@ -186,7 +181,7 @@
 	   <div class="roww">
       <h4>Method of the Order</h4>
     <div class="input-groupp">
-        <input type="radio" name="OrderMethod" value="home" id="home" checked="true"/>
+        <input type="radio" name="OrderMethod" value="home" id="home" />
         <label for="home"><span><i class="fa fa-cc-visa"></i>Collect From Home</span></label>
         <input type="radio" name="OrderMethod" value="shop" id="shop"/>
         <label for="shop"> <span><i class="fa fa-cc-paypal"></i>Drop At Shop</span></label>
@@ -204,7 +199,7 @@
     	    <div class="roww">
       <h4>Additional Details</h4>
 	     <div class="input-groupp ">
-        <input type="textArea" name ="details" placeholder="More details"/>
+        <input type="textbox" name ="details" placeholder="More details"/>
         <div class="input-iconn"><i class="fa fa-user"></i></div>
       </div>
     </div>
@@ -212,7 +207,7 @@
     	    <div class="roww">
       <h4>Payment Amount</h4>
 	     <div class="input-groupp ">
-        <input type="textArea" name ="PaymentAmount" placeholder="amount"/>
+        <input type="textbox" name ="PaymentAmount" placeholder="amount"/>
         <div class="input-iconn"><i class="fa fa-user"></i></div>
       </div>
     </div>
@@ -220,27 +215,28 @@
     <div class="roww">
       <h4>Payment Details</h4>
       <div class="input-groupp">
-        <input type="radio" name="payment-method" value="card" id="payment-method-card" checked="true"/>
+        <input type="radio" name="payment-method" value="card" id="payment-method-card" />
         <label for="payment-method-card"><span><i class="fa fa-cc-visa"></i>Credit Card</span></label>
         <input type="radio" name="payment-method" value="paypal" id="payment-method-paypal"/>
         <label for="payment-method-paypal"> <span><i class="fa fa-cc-paypal"></i>Paypal</span></label>
       </div>
       <div class="input-groupp ">
-        <input type="text" name ="number" placeholder="Card Number"/>
+        <input type="textbox" name ="number" placeholder="Card Number"/>
         <div class="input-iconn"><i class="fa fa-credit-card"></i></div>
       </div>
       <div class="col-half">
         <div class="input-groupp ">
-          <input type="text" name ="cvc" placeholder="Card CVC"/>
+          <input type="textbox" name ="cvc" placeholder="Card CVC"/>
           <div class="input-iconn"><i class="fa fa-user"></i></div>
         </div>
       </div>
       <div class="col-half">
         <div class="input-groupp">
-		<input type= "date" name ="expdate" placeholder="exp date"/>
+		<input type= "textbox" name ="expdate" placeholder="exp date"/>
         </div>
       </div>
     </div>
+    
     <div class="roww">
       <h4>Terms and Conditions</h4>
       <div class="input-groupp">
