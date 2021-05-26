@@ -1,61 +1,60 @@
 package com.lms.model;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-
 public class Order {
-	private int OrderID;
-	private int UserID;
-	private String date;
-	private double payment;
-	private String status;
+
+	private String Order_ID;
+	private String CustomerType;
+	private String Date;
+	private String OrderMethod;
+	private String Location;
+	private String PaymentAmount;
 	
-	public Order(int orderID, int userID, String date, double payment, String status) {
+	public Order(String Order_ID, String CustomerType, String Date, String OrderMethod, String Location,
+			String PaymentAmount) {
 		super();
-		OrderID = orderID;
-		UserID = userID;
-		this.date = date;
-		this.payment = payment;
-		this.status = status;
-	}
-
-	public int getOrderID() {
-		return OrderID;
-	}
-
-	public int getUserID() {
-		return UserID;
-	}
-
-	public String getDate() {
-		return date;
-	}
-
-	public double getPayment() {
-		return payment;
-	}
-
-	public String getStatus() {
-		return status;
-	}
+		this.Order_ID = Order_ID;
+		this.CustomerType = CustomerType;
+		this.Date = Date;
+		this.OrderMethod = OrderMethod;
+		this.Location = Location;
+		this.PaymentAmount = PaymentAmount;
 	
-	public String getMonth() {
-		String month = null;
-		
-		try {
-			
-			Date date1=new SimpleDateFormat("yyyy-MM-dd").parse(this.date);  
-	        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM");
-	        month = dateFormat.format(date1);
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-        return month;
 	}
+
+	public String getId() {
+		return Order_ID;
+	}
+
+	
+	public String getCustomer() {
+		return CustomerType;
+	}
+
+	
+
+	public String getDay() {
+		return Date;
+	}
+
+
+
+	public String getOrdermethod() {
+		return OrderMethod;
+	}
+
+	
+	public String getLocation() {
+		return Location;
+	}
+
+	
+
+	public String getDetails() {
+		return PaymentAmount;
+	}
+
+	
+
 	
 	
 	
