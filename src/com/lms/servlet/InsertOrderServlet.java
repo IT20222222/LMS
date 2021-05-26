@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
 import com.lms.util.PlaceOrderUtil;
 
 
-@WebServlet("/InsertOrder")
+@WebServlet("/Insert")
 public class InsertOrderServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
