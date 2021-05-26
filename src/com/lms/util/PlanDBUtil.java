@@ -42,7 +42,7 @@ public class PlanDBUtil {
 					double monthlyPayment =  rs.getDouble("Monthly_Payment");
 					
 					plan = new Plan(planId, planName, maxOrders, maxWeight, pressing, mending, 
-							oneday, dryclean, pickupDelivery, monthlyPayment, false);	//create plan object
+							oneday, dryclean, pickupDelivery,  false);	//create plan object
 				}
 				else {
 					//sql query for customized plans
@@ -61,7 +61,7 @@ public class PlanDBUtil {
 						int pickupDelivery =  rs.getInt("pickup_delivery");
 						double monthlyPayment =  rs.getDouble("Monthly_Payment");
 						
-						plan = new Plan(planId, planName, maxOrders, maxWeight, pressing, mending, 
+						plan = new RegularPlan(planId, planName, maxOrders, maxWeight, pressing, mending, 
 								oneday, dryclean, pickupDelivery, monthlyPayment, true);	//create plan object
 					}
 				}

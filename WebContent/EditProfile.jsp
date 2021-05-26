@@ -6,16 +6,13 @@
     pageEncoding="ISO-8859-1"%>
     <%@ page import="com.lms.model.User" %>
 
-<%@taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>    
+  
 
- <% User user = (User) session.getAttribute("loggedUser");
-		
-		
-	    if(user == null){
-	    	response.sendRedirect("Login.jsp");
-	    }
-	    
-	%>
+    
+    <% User user = (User) session.getAttribute("loggedUser");
+	    if(user == null){ 	%>
+	    	<jsp:forward page="Login.jsp" />
+	    <% } %>
 	
 	
 <head>
@@ -135,8 +132,8 @@
 	<h6 class = "heading-user">User Information</h6>
 	<table>
 	<tr>
-	<td class = "form-label">Username <br> <input type = "text" name = "username" value = "<%= user.getUsername() %>"> </td>
-	<td class = "form-label" style = "padding-left:100px">Email Address <br> <input type = "text" name = "Email" value = "<%= user.getEmail() %>"> </td>
+	<td class = "form-label">Username <br> <input type = "text" name = "username" value = "<%= user.getUsername() %>" readonly></td>
+	<td class = "form-label" style = "padding-left:100px">Email Address <br> <input type = "text" name = "Email" value = "<%= user.getEmail() %>"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title = "Enter a valid email"> </td>
 	</tr>
 	<tr>
 	<td class = "form-label">First Name<br><input type = "text" name = "firstname" value = "<%= user.getFirstName() %>"></td>
@@ -148,7 +145,7 @@
 	<table>
 	<tr>
 	<td class = "form-label">Address<br><input type = "text" name = "address" value = "<%= user.getAddress() %>"></td>
-	<td class = "form-label" style = "padding-left:100px">Phone Number<br><input type = "text" name = "number" value = "<%= user.getMobileNo() %>"></td>
+	<td class = "form-label" style = "padding-left:100px">Phone Number<br><input type = "text" name = "number" value = "<%= user.getMobileNo() %>"  pattern = "^[0-9]{10}$" title = "Enter a 10 digit phone number starting with 0" ></td>
 	</tr>
 	</table>
 	
