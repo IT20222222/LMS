@@ -1,8 +1,7 @@
 package com.lms.model;
 
-import com.lms.util.Generate;
 
-public class User implements Generate {
+public class User { 
 	private int id;
     private String firstName;
     private String lastName;
@@ -104,10 +103,6 @@ public class User implements Generate {
 		return planId;
 	}
 	
-	public void GenerateID() {
-		ID++;
-		this.id = ID;
-	}
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}

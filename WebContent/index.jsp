@@ -67,7 +67,7 @@
         <div class="row nomargin">
           <div class="span4">
             <div class="logo">
-              <h1><a href="index.html"><i class="icon-tint"></i> Remember</a></h1>
+              <h1><a href="index.html"><i class="icon-tint"></i> LaundryMart</a></h1>
             </div>
           </div>
           <div class="span8">
@@ -131,8 +131,8 @@
     <!-- section intro -->
     <section id="intro">
       <div class="intro-content">
-        <h2>Welcome to Remember!</h2>
-        <h3>Lorem ipsum dolor sit amet, elit persecuti efficiendi</h3>
+        <h2>Welcome to WonderLaundry!</h2>
+        <h3>The best Laundry experience in town!</h3>
         <div>
           <a href="#content" class="btn-get-started scrollto">Get Started</a>
         </div>

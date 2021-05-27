@@ -109,13 +109,10 @@ public class UserDBUtil implements UserInterface{
 		
 		isSuccess = false;
 		
-		User user2 = new User();
-		user2.GenerateID();
-		int idno = user2.getId();
 		try {	
 		con = DBConnectorUtil.getConnection();
 		stmt = con.createStatement();
-		String sql2 = "INSERT INTO user_profile values ('"+idno+"', '"+Firstname+"' , '"+Lastname+"' , '"+NIC+"' , '"+email+"' , '"+address+"' , '"+gender+"' , '"+mobile+"' , '"+dob+"' , '"+username+"' , '"+password+"' , '"+pid+"' )";
+		String sql2 = "INSERT INTO user_profile values (0, '"+Firstname+"' , '"+Lastname+"' , '"+NIC+"' , '"+email+"' , '"+address+"' , '"+gender+"' , '"+mobile+"' , '"+dob+"' , '"+username+"' , '"+password+"' , '"+pid+"' )";
 		int rs2 = stmt.executeUpdate(sql2);
 		
 		
