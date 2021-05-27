@@ -26,7 +26,7 @@ public class UpdateUserDetailsServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	
-		
+		//Obtaining User Entered Information
 		String username = request.getParameter("username");
 		String firstname = request.getParameter("firstname");
 		String lastname = request.getParameter("lastname");
@@ -34,13 +34,14 @@ public class UpdateUserDetailsServlet extends HttpServlet {
 		String address = request.getParameter("address");
 		int number = Integer.parseInt(request.getParameter("number"));
 		
+		//Calling the update customer method to update user details in the database.
 		UserInterface UserInterface = new UserDBUtil();
 		boolean isTrue = UserInterface.updateCustomer(username, firstname, lastname, address, number , email);
 		
 		HttpSession session = request.getSession();
 		User user = (User)session.getAttribute("loggedUser");
 
-		
+		//Getting the current user session and setting the updated attributes to the class.
 		
 		if(isTrue == true) {
 			

@@ -25,18 +25,13 @@ public class getCancellationDetails extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		//Getting cancellation Details from the Database
 		UserInterface UserInterface = new UserDBUtil();
 		ArrayList<Cancellation> cancellationDetails = UserInterface.getCancellationDetails();
 		
-	/*	if (cancellationDetails == null) {
-			response.sendRedirect("Unsuccess.jsp");
-		}
-		else {
-			response.sendRedirect("Success.jsp"); 
-		} */
-		
+		//Set the retrieved List object to an attribute.
 		request.setAttribute("cancellation", cancellationDetails); 
-		RequestDispatcher dis = request.getRequestDispatcher("ViewUnregistered.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("ViewUnregistered.jsp"); //Redirecting the user to the view unregistered customers page
 		dis.forward(request,response);
 	}
 

@@ -16,13 +16,13 @@ public class UserDBUtil implements UserInterface{
 	private static ResultSet rs = null;
 	public static final Logger log = Logger.getLogger(UserDBUtil.class.getName());
 	
-	public boolean validate(String username, String password) {
+	public boolean validate(String username, String password) {			//Method to validate user entered user_name and password
 			
 			try {
-				con = DBConnectorUtil.getConnection();
-				stmt = con.createStatement();
-				String sql = "select * from user_profile where username='"+username+"' and password='"+password+"'";
-				rs = stmt.executeQuery(sql);
+				con = DBConnectorUtil.getConnection();	//Create Connection
+				stmt = con.createStatement(); //Create SQL statement
+				String sql = "select * from user_profile where username='"+username+"' and password='"+password+"'";	//SQL query
+				rs = stmt.executeQuery(sql);	//Execute Query
 				
 				if (rs.next()) {
 					isSuccess = true;
@@ -40,7 +40,7 @@ public class UserDBUtil implements UserInterface{
 		}
 	
 	
-	public boolean validateUsername(String username) {
+	public boolean validateUsername(String username) {		//Method to validate user entered user_name.
 		
 		try {
 			con = DBConnectorUtil.getConnection();
@@ -65,7 +65,7 @@ public class UserDBUtil implements UserInterface{
 		return isSuccess;
 	}
 		
-	public User getUser(String userName) {
+	public User getUser(String userName) {	
 			
 			User user = null;
 			
@@ -105,7 +105,7 @@ public class UserDBUtil implements UserInterface{
 			return user;	//return user object
 		}
 	
-	public  boolean addUser(String Firstname , String Lastname , String NIC , String email, String address, String gender , int mobile , String dob , String username , String password , int pid) {
+	public  boolean addUser(String Firstname , String Lastname , String NIC , String email, String address, String gender , int mobile , String dob , String username , String password , int pid) { //Method to add a user to the database upon successful registration.
 		
 		isSuccess = false;
 		
@@ -134,63 +134,8 @@ public class UserDBUtil implements UserInterface{
 		
 	}
 	
-	public  List<User> getProfileData (String  username){
-		
-		isSuccess = false;
-		
-		ArrayList<User> user = new ArrayList<User>();
-		
-		try {
-			con = DBConnectorUtil.getConnection();
-			stmt = con.createStatement();
-			String sql3 = "SELECT * FROM user_profile WHERE Username = '"+username+"'";
-			rs = stmt.executeQuery(sql3);
-			
-			int pid = rs.getInt(12);
-			
-			
-			while(rs.next()) {
-				
-				int uid = rs.getInt(1);
-				String fname = rs.getString(2);
-				String lname = rs.getString(3);
-				String NIC = rs.getString(4); 
-				String email = rs.getString(5);
-				String Address = rs.getString(6);
-				String gender = rs.getString(7);
-				int  mob = rs.getInt(8);
-				String dob = rs.getString(9);
-				String username1 = rs.getString(10);
-				String password = rs.getString(11); 
-				
-				if(pid > 0) {
-			
-						User u = new User(uid , fname , lname , NIC , email , Address , gender , mob , dob , username1 , password , pid);
-						user.add(u);
-				
-						}
-				else  {
-					
-						User u2 = new User(uid , fname , lname , NIC , email , Address , gender , mob , dob , username1 , password);
-						user.add(u2);
-					}
-			
-				}
-			
-			
-			
-			}
-		
-		
-		catch(Exception e){
-			e.printStackTrace();
-		}
-		
-		
-		return user;
-	}
 	
-	public  boolean updateCustomer(String username , String fname , String lname , String Address , int pnumber , String email) {
+	public  boolean updateCustomer(String username , String fname , String lname , String Address , int pnumber , String email) {	//Method to update user information
 		
 		isSuccess = false;
 		
@@ -216,7 +161,7 @@ public class UserDBUtil implements UserInterface{
 	}
 
 	
-	public  boolean DeleteUser(int id) {
+	public  boolean DeleteUser(int id) {	//Method to unregister a user.
 		
 		
 		isSuccess = false;
@@ -245,7 +190,7 @@ public class UserDBUtil implements UserInterface{
 		return isSuccess;
 	}
 	
-	public  boolean setCancellationDetails(int mobileNo , String username , String email , String reason , String description ) {
+	public  boolean setCancellationDetails(int mobileNo , String username , String email , String reason , String description ) {	//Method to set cancellation Details
 		
 		isSuccess = false;
 		try {
@@ -274,7 +219,7 @@ public class UserDBUtil implements UserInterface{
 		return isSuccess;
 	}
 	
-	public  ArrayList<Cancellation> getCancellationDetails(){
+	public  ArrayList<Cancellation> getCancellationDetails(){		//Method to retrieve cancellation details.
 		
 		
 		ArrayList<Cancellation> cancellation = new ArrayList<Cancellation>();

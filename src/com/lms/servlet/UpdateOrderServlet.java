@@ -24,12 +24,12 @@ public class UpdateOrderServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-
-		HttpSession session = request.getSession();
-		User user = (User)session.getAttribute("loggedUser");
+		
+		HttpSession session = request.getSession();				//Obtaining the current session.
+		User user = (User)session.getAttribute("loggedUser");	//Getting the logged in information through the attribute set at login.
 		int Customer_ID = user.getId();
 		
-		String Order_ID = request.getParameter("Order_ID");
+		String Order_ID = request.getParameter("Order_ID");			//Obtaining User entered Information
 		String CustomerType = request.getParameter("CustomerType");
 		String Date = request.getParameter("Date");
 		String OrderMethod = request.getParameter("OrderMethod");
@@ -37,6 +37,7 @@ public class UpdateOrderServlet extends HttpServlet {
 		String PaymentAmount = request.getParameter("PaymentAmount");
 		boolean isTrue;
 		
+		//Calling the update order method to update details.
 		isTrue = PlaceOrderUtil.updateorder(Order_ID, Customer_ID, CustomerType, Date, OrderMethod, Location, PaymentAmount);
 		
 		if(isTrue == true) {
