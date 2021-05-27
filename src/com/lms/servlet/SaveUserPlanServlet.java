@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import com.lms.model.Plan;
 import com.lms.model.User;
+import com.lms.util.IPlan;
 import com.lms.util.PlanDBUtil;
 import com.lms.util.UserDBUtil;
 
@@ -31,6 +32,8 @@ public class SaveUserPlanServlet extends HttpServlet {
 		response.setContentType("text/html");
 		
 		HttpSession session = request.getSession();
+		
+		IPlan PlanInterface = new PlanDBUtil();
 		
 		//read selected options/ features
 		String[] services = request.getParameterValues("services");
@@ -72,15 +75,15 @@ public class SaveUserPlanServlet extends HttpServlet {
 		}
 		
 		//calculate monthly payment according to the selected services
-		monthlyPayment = PlanDBUtil.calculateMonthlyPayment(maxOrders, maxWeight, pressing, mending, oneday, dryclean, pickupDelivery);
+		monthlyPayment = PlanInterface.calculateMonthlyPayment(maxOrders, maxWeight, pressing, mending, oneday, dryclean, pickupDelivery);
 		
 		//save user's new plan 
-		isTrue = PlanDBUtil.saveUserPlan(user, maxOrders, maxWeight, pressing, mending, oneday, dryclean, pickupDelivery, monthlyPayment);
+		isTrue = PlanInterface.saveUserPlan(user, maxOrders, maxWeight, pressing, mending, oneday, dryclean, pickupDelivery, monthlyPayment);
 		
 		if (isTrue == true) {
 				session.removeAttribute("userPlan");	//remove user plan attribute
 
-				Plan plan = PlanDBUtil.getUserPlan(user);	//get user's new plan details from the db
+				Plan plan = PlanInterface.getUserPlan(user);	//get user's new plan details from the db
 				
 				session.setAttribute("userPlan", plan);	//set new plan attribute
 				

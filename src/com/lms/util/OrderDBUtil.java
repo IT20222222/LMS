@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 import com.lms.model.Order;
 import com.lms.model.User;
 
-public class OrderDBUtil {
+public class OrderDBUtil implements IOrder{
 	private static boolean isSuccess;
 	private static Connection con = null;
 	private static Statement stmt = null;
@@ -17,7 +17,7 @@ public class OrderDBUtil {
 	public static final Logger log = Logger.getLogger(OrderDBUtil.class.getName());
 	private static ArrayList<Order> orderHistory = new ArrayList<>();
 	
-	public static ArrayList<Order> getOrderHistory(User user) {
+	public ArrayList<Order> getOrderHistory(User user) {
 		orderHistory.clear();
 		
 		try {

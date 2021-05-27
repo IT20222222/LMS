@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.logging.Logger;
 import java.time.LocalDate;
 
-public class MonthlyPaymentDBUtil {
+public class MonthlyPaymentDBUtil implements IMonthlyPayment {
 	private static Connection con = null;
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
@@ -18,7 +18,7 @@ public class MonthlyPaymentDBUtil {
 	private static LocalDate date = LocalDate.now();
 	public static final Logger log = Logger.getLogger(MonthlyPaymentDBUtil.class.getName());
 	
-	public static boolean pay(User user, double amount) {
+	public boolean pay(User user, double amount) {
 		
 		try {
 			con = DBConnectorUtil.getConnection();
@@ -41,7 +41,7 @@ public class MonthlyPaymentDBUtil {
 		return isSuccess;
 	}
 	
-	public static ArrayList<MonthlyPayment> getMonthlyPaymentHistory(User user) {
+	public ArrayList<MonthlyPayment> getMonthlyPaymentHistory(User user) {
 		monthlyPaymentHistory.clear();
 		
 		try {
@@ -70,7 +70,7 @@ public class MonthlyPaymentDBUtil {
 		return monthlyPaymentHistory;	//return monthly paymnet history
 	}
 	
-	public static boolean checkMonth(ArrayList<MonthlyPayment> paymentHistory) {
+	public boolean checkMonth(ArrayList<MonthlyPayment> paymentHistory) {
 		boolean isTrue = true;
 		String currentMonth = date.getMonth().toString();
 		
