@@ -14,7 +14,7 @@ public class UserDBUtil{
 	private static Connection con = null;
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
-	public static final Logger log = Logger.getLogger(OrderDBUtil.class.getName());
+	public static final Logger log = Logger.getLogger(UserDBUtil.class.getName());
 	
 	public static boolean validate(String username, String password) {
 			
