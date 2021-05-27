@@ -1,9 +1,13 @@
 package com.lms.util;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 import com.lms.model.*;
 public interface UserInterface {
+	
+	public static final Logger log = Logger.getLogger(UserInterface.class.getName());
+	
 	public boolean addUser(String Firstname , String Lastname , String NIC , String email, String address, String gender , int mobile , String dob , String username , String password , int pid);
 	
 	public List<User> getProfileData (String  username);
