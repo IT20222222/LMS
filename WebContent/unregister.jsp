@@ -94,9 +94,9 @@
                   <ul class="nav topnav">
                     <li><a href="index.jsp">Home</a></li>
                     <li><a href="dashboard-regular.jsp">Dashboard</a></li>
-                    <li><a href="index.html">Place Order</a></li>
+                    <li><a href="PlaceOrder.jsp">Place Order</a></li>
                     <li class="dropdown active"><a href="my-plan-regular.jsp">My Plan</a></li>
-                    <li><a href="UserProfile.jsp">My Account</a></li>
+                    <li><a href="UserProfile..jsp">My Account</a></li>
                     <li><a href="/testWeb/LogOutServlet">Log Out</a></li>
                   </ul>
                 </nav>
@@ -181,16 +181,16 @@
           <div class="span4">
             <div class="widget">
               <div class="footer_logo">
-                <h3><a href="index.html"><i class="icon-tint"></i> Remember</a></h3>
+                <h3><a href="index.html"><i class="icon-tint"></i> WonderLaundry</a></h3>
               </div>
               <address>
-							  <strong>Remember company Inc.</strong><br>
-  							Somestreet KW 101, Park Village W.01<br>
-  							Jakarta 13426 Indonesia
+							  <strong>WonderLaundry</strong><br>
+  							125 Philip Gunawardena Mawatha<br>
+  							Colombo 04, Sri Lanka.
   						</address>
               <p>
-                <i class="icon-phone"></i> (123) 456-7890 - (123) 555-7891 <br>
-                <i class="icon-envelope-alt"></i> email@domainname.com
+                <i class="icon-phone"></i> +94 117 774 400 <br>
+                <i class="icon-envelope-alt"></i> contact@wonderlaundry.lk
               </p>
             </div>
           </div>
@@ -224,7 +224,7 @@
           <div class="row">
             <div class="span6">
               <div class="copyright">
-                <p><span>&copy; Remember Inc. All right reserved</span></p>
+                <p><span>&copy; WonderLaundry. All right reserved</span></p>
               </div>
 
             </div>

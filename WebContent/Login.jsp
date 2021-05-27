@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-  <title>Remember - Multipurpose bootstrap site template</title>
+  <title>Login - WonderLaundry</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Your page description here" />
   <meta name="author" content="" />
@@ -26,7 +26,7 @@
   <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
   <link rel="shortcut icon" href="ico/favicon.png" />
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Login - WonderLaundry</title>
 </head>
 <body>
 	<div class = "loginForm">

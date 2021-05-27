@@ -71,11 +71,11 @@ ul.styledlist li:before {
 
 /* logo icon */
 .logo h1 [class^="icon-"] {
-	color:#8fc04e;
+	color:#fff;
 }
 
 .footer_logo h3 [class^="icon-"] {
-	color:#8fc04e;
+	color:#fff;
 }
 
 /* CTA */
