@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDBUtil {
+public class UserDBUtil implements UserInterface{
 	private static boolean isSuccess;
 	private static Connection con = null;
 	private static Statement stmt = null;
@@ -104,7 +104,7 @@ public class UserDBUtil {
 			return user;	//return user object
 		}
 	
-	public static boolean addUser(String Firstname , String Lastname , String NIC , String email, String address, String gender , int mobile , String dob , String username , String password , int pid) {
+	public boolean addUser(String Firstname , String Lastname , String NIC , String email, String address, String gender , int mobile , String dob , String username , String password , int pid) {
 		
 		isSuccess = false;
 		
@@ -136,7 +136,7 @@ public class UserDBUtil {
 		
 	}
 	
-	public static List<User> getProfileData (String  username){
+	public  List<User> getProfileData (String  username){
 		
 		isSuccess = false;
 		
@@ -192,7 +192,7 @@ public class UserDBUtil {
 		return user;
 	}
 	
-	public static boolean updateCustomer(String username , String fname , String lname , String Address , int pnumber , String email) {
+	public boolean updateCustomer(String username , String fname , String lname , String Address , int pnumber , String email) {
 		
 		isSuccess = false;
 		
@@ -218,7 +218,7 @@ public class UserDBUtil {
 	}
 
 	
-	public static boolean DeleteUser(int id) {
+	public boolean DeleteUser(int id) {
 		
 		
 		isSuccess = false;
@@ -247,7 +247,7 @@ public class UserDBUtil {
 		return isSuccess;
 	}
 	
-	public static boolean setCancellationDetails(int mobileNo , String username , String email , String reason , String description ) {
+	public boolean setCancellationDetails(int mobileNo , String username , String email , String reason , String description ) {
 		
 		isSuccess = false;
 		try {
@@ -276,7 +276,7 @@ public class UserDBUtil {
 		return isSuccess;
 	}
 	
-	public static ArrayList<Cancellation> getCancellationDetails(){
+	public ArrayList<Cancellation> getCancellationDetails(){
 		
 		
 		ArrayList<Cancellation> cancellation = new ArrayList<Cancellation>();

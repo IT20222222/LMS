@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import com.lms.model.Cancellation;
 import com.lms.util.UserDBUtil;
+import com.lms.util.UserInterface;
 
 /**
  * Servlet implementation class getCancellationDetails
@@ -24,7 +25,8 @@ public class getCancellationDetails extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ArrayList<Cancellation> cancellationDetails = UserDBUtil.getCancellationDetails();
+		UserInterface UserInterface = new UserDBUtil();
+		ArrayList<Cancellation> cancellationDetails = UserInterface.getCancellationDetails();
 		
 	/*	if (cancellationDetails == null) {
 			response.sendRedirect("Unsuccess.jsp");

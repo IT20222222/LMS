@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.lms.util.UserDBUtil;
+import com.lms.util.UserInterface;
 
 /**
  * Servlet implementation class AddUser
@@ -49,7 +50,9 @@ public class AddUserServlet extends HttpServlet {
 		else { 
 		
 			boolean isTrue;
-			isTrue = UserDBUtil.addUser(firstName , lastName , NIC , email , address , gender , MobileNumber , DOB , username , password , 1);
+			UserInterface UserInterface = new UserDBUtil();
+			
+			isTrue = UserInterface.addUser(firstName , lastName , NIC , email , address , gender , MobileNumber , DOB , username , password , 1);
 		
 				if (isTrue == true) {
 						RequestDispatcher dis = request.getRequestDispatcher("Login.jsp");

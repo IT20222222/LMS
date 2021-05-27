@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import com.lms.model.User;
 import com.lms.util.UserDBUtil;
+import com.lms.util.UserInterface;
 
 
 @WebServlet("/UnregisterServlet")
@@ -47,10 +48,11 @@ public class UnregisterServlet extends HttpServlet {
 		if(credentials == true) {  //If credentials are correct , the deletion will take place.
 			
 			//Deleting User information
-			boolean isTrue = UserDBUtil.DeleteUser(id);
+			UserInterface UserInterface = new UserDBUtil();
+			boolean isTrue = UserInterface.DeleteUser(id);
 			
 			//Sending User Cancellation Details to the Database
-			boolean isTrue2 = UserDBUtil.setCancellationDetails(mobileNo, username2, email, reason, description);
+			boolean isTrue2 = UserInterface.setCancellationDetails(mobileNo, username2, email, reason, description);
 			
 		
 			//Checking whether the query works 
