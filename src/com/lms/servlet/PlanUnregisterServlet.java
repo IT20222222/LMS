@@ -27,22 +27,25 @@ public class PlanUnregisterServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		
+		IPlan PlanInterface = new PlanDBUtil();
+		UserInterface UserInterface = new UserDBUtil();
+		
 		User user = (User) session.getAttribute("loggedUser");	//get logged user
 		String password = request.getParameter("pwd");	//get entered password
 		boolean isTrue;
 
-		isTrue = UserDBUtil.validate(user.getUsername(), password);	//validate password
+		isTrue = UserInterface.validate(user.getUsername(), password);	//validate password
 		
 		//check if password is valid or not
 		if (isTrue == true) {
 			
 			//unregisters the user from his/her current plan and checks if it was successful
-			if(PlanDBUtil.unregisterPlan(user)) {
+			if(PlanInterface.unregisterPlan(user)) {
 				session.removeAttribute("loggedUser");	//remove user attribute
 				session.removeAttribute("userPlan");	//remove user plan attribute
 
-				User newuser = UserDBUtil.getUser(user.getUsername());	//get new user details from db
-				Plan plan = PlanDBUtil.getUserPlan(newuser);	//get new plan details from db
+				User newuser = UserInterface.getUser(user.getUsername());	//get new user details from db
+				Plan plan = PlanInterface.getUserPlan(newuser);	//get new plan details from db
 				
 				session.setAttribute("userPlan", plan); //set plan attribute
 				session.setAttribute("loggedUser", newuser);	//set logged user

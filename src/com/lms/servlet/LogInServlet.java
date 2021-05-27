@@ -45,13 +45,16 @@ public class LogInServlet extends HttpServlet {
 		boolean isTrue;
 		
 		UserInterface UserInterface = new UserDBUtil();
+		IPlan PlanInterface = new PlanDBUtil();
+		IOrder OrderInterface = new OrderDBUtil();
+		IMonthlyPayment MonthlyPaymentInterface = new MonthlyPaymentDBUtil();
 		
 		isTrue = UserInterface.validate(userName, password);	//validate username and passowrd
 		
 		//check if the user is valid or not
 		if (isTrue == true) {
 			User user = UserInterface.getUser(userName);	//get user's details from db
-			Plan plan = PlanDBUtil.getUserPlan(user);	//get user's plan details from db
+			Plan plan = PlanInterface .getUserPlan(user);	//get user's plan details from db
 
 	
 			HttpSession session = request.getSession();
@@ -61,11 +64,11 @@ public class LogInServlet extends HttpServlet {
 			
 			//checks if the user is a regular user
 			if(plan.getPlanId() == 2) {
-				ArrayList<MonthlyPayment> mp = MonthlyPaymentDBUtil.getMonthlyPaymentHistory(user);	//get monthly payment details from db
+				ArrayList<MonthlyPayment> mp = MonthlyPaymentInterface.getMonthlyPaymentHistory(user);	//get monthly payment details from db
 				session.setAttribute("mpHistory", mp);	//set monthly payment history attribute
 			}
 			
-		    ArrayList<Order> orderHistory = OrderDBUtil.getOrderHistory(user);	//get user's order history from db
+		    ArrayList<Order> orderHistory = OrderInterface.getOrderHistory(user);	//get user's order history from db
 			session.setAttribute("ordHistory", orderHistory); //set order hsitory attribute
 			
 			 Date date = Calendar.getInstance().getTime(); //get current date time 

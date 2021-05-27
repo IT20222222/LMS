@@ -7,13 +7,13 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class PlanDBUtil {
+public class PlanDBUtil implements IPlan {
 	private static Connection con = null;
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
 	public static final Logger log = Logger.getLogger(PlanDBUtil.class.getName());
 	
-	public static Plan getUserPlan(User user) {
+	public Plan getUserPlan(User user) {
 		Plan plan = null;
 		String planName;
 		int isCustomizable;
@@ -79,7 +79,7 @@ public class PlanDBUtil {
 		return plan; //return plan object
 	}
 	
-	public static boolean unregisterPlan(User user){
+	public boolean unregisterPlan(User user){
 		boolean isSuccess = false;
 		
 		try {
@@ -109,7 +109,7 @@ public class PlanDBUtil {
 		return isSuccess;
 	}
 	
-	public static boolean saveUserPlan(User user, int maxOrders, int maxWeight, int pressing, int mending, int oneday,
+	public boolean saveUserPlan(User user, int maxOrders, int maxWeight, int pressing, int mending, int oneday,
 			int dryclean, int pickupDelivery, double monthlyPayment) {
 		
 		boolean isSuccess = false;
@@ -139,7 +139,7 @@ public class PlanDBUtil {
 		return isSuccess;
 	}
 	
-	public static double calculateMonthlyPayment(int maxOrders, int maxWeight, int pressing, int mending, int oneday,
+	public double calculateMonthlyPayment(int maxOrders, int maxWeight, int pressing, int mending, int oneday,
 			int dryclean, int pickupDelivery) {
 		
 		double monthlyPayment = 0;

@@ -15,6 +15,7 @@ import com.lms.model.MonthlyPayment;
 import com.lms.model.Plan;
 import com.lms.model.RegularPlan;
 import com.lms.model.User;
+import com.lms.util.IMonthlyPayment;
 import com.lms.util.MonthlyPaymentDBUtil;
 
 /**
@@ -33,6 +34,8 @@ public class MonthlyPaymentServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		
+		IMonthlyPayment MonthlyPaymentInterface = new MonthlyPaymentDBUtil();
+		
 		User user = (User) session.getAttribute("loggedUser");	//get logged user
 		RegularPlan plan = (RegularPlan) session.getAttribute("userPlan");	//get user's plan
 		@SuppressWarnings("unchecked")
@@ -40,14 +43,14 @@ public class MonthlyPaymentServlet extends HttpServlet {
 		boolean isTrue;
 		
 		//checks if the user has already paid the monthly payment for the current month
-		if(MonthlyPaymentDBUtil.checkMonth(historyList)) {
-			isTrue = MonthlyPaymentDBUtil.pay(user, plan.getMonthlyPayment());	//process monthly payment
+		if(MonthlyPaymentInterface.checkMonth(historyList)) {
+			isTrue = MonthlyPaymentInterface.pay(user, plan.getMonthlyPayment());	//process monthly payment
 			
 			//checks if the payment was successful
 			if (isTrue == true) {
 
 				session.removeAttribute("mpHistory");	//remove monthly payment history attribute
-				ArrayList<MonthlyPayment> mp = MonthlyPaymentDBUtil.getMonthlyPaymentHistory(user);	//retrieve monthly payment history from db
+				ArrayList<MonthlyPayment> mp = MonthlyPaymentInterface.getMonthlyPaymentHistory(user);	//retrieve monthly payment history from db
 				session.setAttribute("mpHistory", mp);	//set monthly payment history attribute
 				
 				//display success message
