@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 import com.lms.model.Order;
 import com.lms.model.User;
@@ -13,6 +14,7 @@ public class OrderDBUtil {
 	private static Connection con = null;
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
+	public static final Logger log = Logger.getLogger(OrderDBUtil.class.getName());
 	private static ArrayList<Order> orderHistory = new ArrayList<>();
 	
 	public static ArrayList<Order> getOrderHistory(User user) {
