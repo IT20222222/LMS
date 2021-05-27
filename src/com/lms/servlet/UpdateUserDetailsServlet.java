@@ -34,8 +34,7 @@ public class UpdateUserDetailsServlet extends HttpServlet {
 		String address = request.getParameter("address");
 		int number = Integer.parseInt(request.getParameter("number"));
 		
-		UserInterface UserInterface = new UserDBUtil();
-		boolean isTrue = UserInterface.updateCustomer(username, firstname, lastname, address, number , email);
+		boolean isTrue = UserDBUtil.updateCustomer(username, firstname, lastname, address, number , email);
 		
 		HttpSession session = request.getSession();
 		User user = (User)session.getAttribute("loggedUser");
@@ -62,9 +61,6 @@ public class UpdateUserDetailsServlet extends HttpServlet {
 
 
 
-	private void User(String firstname, String lastname, String email, String address, int number, String username) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 }

@@ -25,8 +25,7 @@ public class getCancellationDetails extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		UserInterface UserInterface = new UserDBUtil();
-		ArrayList<Cancellation> cancellationDetails = UserInterface.getCancellationDetails();
+		ArrayList<Cancellation> cancellationDetails = UserDBUtil.getCancellationDetails();
 		
 	/*	if (cancellationDetails == null) {
 			response.sendRedirect("Unsuccess.jsp");

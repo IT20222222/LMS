@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDBUtil implements UserInterface{
+public class UserDBUtil{
 	private static boolean isSuccess;
 	private static Connection con = null;
 	private static Statement stmt = null;
@@ -104,14 +104,14 @@ public class UserDBUtil implements UserInterface{
 			return user;	//return user object
 		}
 	
-	public boolean addUser(String Firstname , String Lastname , String NIC , String email, String address, String gender , int mobile , String dob , String username , String password , int pid) {
+	public static boolean addUser(String Firstname , String Lastname , String NIC , String email, String address, String gender , int mobile , String dob , String username , String password , int pid) {
 		
 		isSuccess = false;
 		
 		User user2 = new User();
 		user2.GenerateID();
 		int idno = user2.getId();
-		try {
+		try {	
 		con = DBConnectorUtil.getConnection();
 		stmt = con.createStatement();
 		String sql2 = "INSERT INTO user_profile values ('"+idno+"', '"+Firstname+"' , '"+Lastname+"' , '"+NIC+"' , '"+email+"' , '"+address+"' , '"+gender+"' , '"+mobile+"' , '"+dob+"' , '"+username+"' , '"+password+"' , '"+pid+"' )";
@@ -136,7 +136,7 @@ public class UserDBUtil implements UserInterface{
 		
 	}
 	
-	public  List<User> getProfileData (String  username){
+	public static  List<User> getProfileData (String  username){
 		
 		isSuccess = false;
 		
@@ -192,7 +192,7 @@ public class UserDBUtil implements UserInterface{
 		return user;
 	}
 	
-	public boolean updateCustomer(String username , String fname , String lname , String Address , int pnumber , String email) {
+	public static boolean updateCustomer(String username , String fname , String lname , String Address , int pnumber , String email) {
 		
 		isSuccess = false;
 		
@@ -218,7 +218,7 @@ public class UserDBUtil implements UserInterface{
 	}
 
 	
-	public boolean DeleteUser(int id) {
+	public static  boolean DeleteUser(int id) {
 		
 		
 		isSuccess = false;
@@ -247,7 +247,7 @@ public class UserDBUtil implements UserInterface{
 		return isSuccess;
 	}
 	
-	public boolean setCancellationDetails(int mobileNo , String username , String email , String reason , String description ) {
+	public static boolean setCancellationDetails(int mobileNo , String username , String email , String reason , String description ) {
 		
 		isSuccess = false;
 		try {
@@ -276,12 +276,11 @@ public class UserDBUtil implements UserInterface{
 		return isSuccess;
 	}
 	
-	public ArrayList<Cancellation> getCancellationDetails(){
+	public static ArrayList<Cancellation> getCancellationDetails(){
 		
 		
 		ArrayList<Cancellation> cancellation = new ArrayList<Cancellation>();
 		try {
-			
 			con = DBConnectorUtil.getConnection();
 			stmt = con.createStatement();
 			String sql6 = "SELECT * FROM account_deletion";

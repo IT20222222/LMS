@@ -50,9 +50,8 @@ public class AddUserServlet extends HttpServlet {
 		else { 
 		
 			boolean isTrue;
-			UserInterface UserInterface = new UserDBUtil();
 			
-			isTrue = UserInterface.addUser(firstName , lastName , NIC , email , address , gender , MobileNumber , DOB , username , password , 1);
+			isTrue = UserDBUtil.addUser(firstName , lastName , NIC , email , address , gender , MobileNumber , DOB , username , password , 1);
 		
 				if (isTrue == true) {
 						RequestDispatcher dis = request.getRequestDispatcher("Login.jsp");

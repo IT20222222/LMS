@@ -48,11 +48,10 @@ public class UnregisterServlet extends HttpServlet {
 		if(credentials == true) {  //If credentials are correct , the deletion will take place.
 			
 			//Deleting User information
-			UserInterface UserInterface = new UserDBUtil();
-			boolean isTrue = UserInterface.DeleteUser(id);
+			boolean isTrue = UserDBUtil.DeleteUser(id);
 			
 			//Sending User Cancellation Details to the Database
-			boolean isTrue2 = UserInterface.setCancellationDetails(mobileNo, username2, email, reason, description);
+			boolean isTrue2 = UserDBUtil.setCancellationDetails(mobileNo, username2, email, reason, description);
 			
 		
 			//Checking whether the query works 
