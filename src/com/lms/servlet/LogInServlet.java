@@ -44,11 +44,13 @@ public class LogInServlet extends HttpServlet {
 		String password = request.getParameter("pwd");	//read entered password
 		boolean isTrue;
 		
-		isTrue = UserDBUtil.validate(userName, password);	//validate username and passowrd
+		UserInterface UserInterface = new UserDBUtil();
+		
+		isTrue = UserInterface.validate(userName, password);	//validate username and passowrd
 		
 		//check if the user is valid or not
 		if (isTrue == true) {
-			User user = UserDBUtil.getUser(userName);	//get user's details from db
+			User user = UserInterface.getUser(userName);	//get user's details from db
 			Plan plan = PlanDBUtil.getUserPlan(user);	//get user's plan details from db
 
 	

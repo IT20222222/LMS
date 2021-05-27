@@ -34,7 +34,8 @@ public class UpdateUserDetailsServlet extends HttpServlet {
 		String address = request.getParameter("address");
 		int number = Integer.parseInt(request.getParameter("number"));
 		
-		boolean isTrue = UserDBUtil.updateCustomer(username, firstname, lastname, address, number , email);
+		UserInterface UserInterface = new UserDBUtil();
+		boolean isTrue = UserInterface.updateCustomer(username, firstname, lastname, address, number , email);
 		
 		HttpSession session = request.getSession();
 		User user = (User)session.getAttribute("loggedUser");

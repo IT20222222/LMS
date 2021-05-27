@@ -40,8 +40,10 @@ public class AddUserServlet extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("Password");
 		
+		UserInterface UserInterface = new UserDBUtil();
 		
-		boolean exists = UserDBUtil.validateUsername(username);
+		
+		boolean exists = UserInterface.validateUsername(username);
 		if (exists == false) {
 			out.println("<script type='text/javascript'>");
 			out.println("alert('Username already exists , please enter a different username');");
@@ -50,8 +52,7 @@ public class AddUserServlet extends HttpServlet {
 		else { 
 		
 			boolean isTrue;
-			
-			isTrue = UserDBUtil.addUser(firstName , lastName , NIC , email , address , gender , MobileNumber , DOB , username , password , 1);
+			isTrue = UserInterface.addUser(firstName , lastName , NIC , email , address , gender , MobileNumber , DOB , username , password , 1);
 		
 				if (isTrue == true) {
 						RequestDispatcher dis = request.getRequestDispatcher("Login.jsp");

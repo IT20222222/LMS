@@ -15,4 +15,10 @@ public interface UserInterface {
 	public boolean setCancellationDetails(int mobileNo , String username , String email , String reason , String description );
 	
 	public ArrayList<Cancellation> getCancellationDetails();
+	
+	public boolean validateUsername(String username);
+	
+	public boolean validate(String username, String password);
+	
+	public User getUser(String userName);
 }

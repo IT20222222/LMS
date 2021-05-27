@@ -38,20 +38,21 @@ public class UnregisterServlet extends HttpServlet {
 		String reason = request.getParameter("reason");
 		String description = request.getParameter("description");
 		
-		
+		UserInterface UserInterface = new UserDBUtil();
 		//Checking whether the credentials given are correct to process deletion.
 		
 		String username = request.getParameter("username");
 		String password = request.getParameter("Password");
-		boolean credentials = UserDBUtil.validate(username, password);
+		boolean credentials = UserInterface.validate(username, password);
 		
 		if(credentials == true) {  //If credentials are correct , the deletion will take place.
 			
+			
 			//Deleting User information
-			boolean isTrue = UserDBUtil.DeleteUser(id);
+			boolean isTrue = UserInterface.DeleteUser(id);
 			
 			//Sending User Cancellation Details to the Database
-			boolean isTrue2 = UserDBUtil.setCancellationDetails(mobileNo, username2, email, reason, description);
+			boolean isTrue2 = UserInterface.setCancellationDetails(mobileNo, username2, email, reason, description);
 			
 		
 			//Checking whether the query works 
