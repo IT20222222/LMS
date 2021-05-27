@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Logger;
 import java.time.LocalDate;
 
 public class MonthlyPaymentDBUtil {
@@ -15,6 +16,7 @@ public class MonthlyPaymentDBUtil {
 	private static ArrayList<MonthlyPayment> monthlyPaymentHistory = new ArrayList<>();
 	private static boolean isSuccess = false;
 	private static LocalDate date = LocalDate.now();
+	public static final Logger log = Logger.getLogger(MonthlyPaymentDBUtil.class.getName());
 	
 	public static boolean pay(User user, double amount) {
 		

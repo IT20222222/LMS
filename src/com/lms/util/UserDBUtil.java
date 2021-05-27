@@ -7,13 +7,14 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class UserDBUtil{
 	private static boolean isSuccess;
 	private static Connection con = null;
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
-	
+	public static final Logger log = Logger.getLogger(OrderDBUtil.class.getName());
 	
 	public static boolean validate(String username, String password) {
 			

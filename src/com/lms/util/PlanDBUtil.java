@@ -1,6 +1,7 @@
 package com.lms.util;
 
 import com.lms.model.*;
+import java.util.logging.*;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -10,6 +11,7 @@ public class PlanDBUtil {
 	private static Connection con = null;
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
+	public static final Logger log = Logger.getLogger(PlanDBUtil.class.getName());
 	
 	public static Plan getUserPlan(User user) {
 		Plan plan = null;
