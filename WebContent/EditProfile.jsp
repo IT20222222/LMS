@@ -95,7 +95,7 @@
                     <li><a href="index.html">Place Order</a></li>
                     <li><a href="my-plan.jsp">My Plan</a></li>
                     <li class="dropdown active"><a href="UserProfile.jsp">My Account</a></li>
-                    <li><a href="index.html">Log Out</a></li>
+                    <li><a href="index.html">Logout</a></li>
                   </ul>
                 </nav>
               </div>

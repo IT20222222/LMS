@@ -119,16 +119,7 @@
 		   <div class = "RegContainer">
             <h3 align = "center">Register to a new Account</h3><hr><br><br><br>
 
-				<script type = text/javascript>
-				  function ValidatePassword(){
-				  var password = document.getElementById('Password').value;
-				  var repassword = document.getElementById('RePassword').value;
-				  if(password != repassword){
-					  alert('Passwords mismatched , please re-enter');
-				 	 }
-			
-				  }
-				  </script>
+ 
 			
             <form id="contactform" action="RegUser" method="post" role="form" class="contactForm">
 
@@ -153,10 +144,9 @@
 				  
 
 				  <button class = "RegisterButton" type = "reset">Reset</button>
-                  <button class="RegisterButton" type= "submit" style = "float : right" onclick = "ValidatePassword()">Register</button>
+                  <button class="RegisterButton" type= "submit" style = "float : right" onClick="window.location.href='Login.jsp';" >Register</button>
 					
-                  
-                
+
               
             </form>
 			</div>

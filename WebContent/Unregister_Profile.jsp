@@ -157,7 +157,7 @@
 	<tr>
 	</table>
 	<br><br>
-	<button style = "left : 450px ; position : relative ; top : 10px ; width : 400px "class = "UnregButton" type = "submit">Unregister</button>
+	<button style = "left : 80px ; position : relative ; top : 10px ; width : 400px "class = "UnregButton" type = "submit">Unregister</button>
 	</form>
 	</div>
 	<br><br><br>

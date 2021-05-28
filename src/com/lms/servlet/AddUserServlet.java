@@ -56,12 +56,13 @@ public class AddUserServlet extends HttpServlet {
 			isTrue = UserInterface.addUser(firstName , lastName , NIC , email , address , gender , MobileNumber , DOB , username , password , 1);
 		
 				if (isTrue == true) {
-						RequestDispatcher dis = request.getRequestDispatcher("Login.jsp");	//Redirect to the Login page upon successful registration.
-						dis.forward(request,response);
+					RequestDispatcher dis = request.getRequestDispatcher("Login.jsp");			//Redirect to the Login page upon successful registration
+				    dis.forward(request, response);	
+					
 						}
 				else {
-						RequestDispatcher dis2 = request.getRequestDispatcher("Unsuccess.jsp");
-						dis2.forward(request,response);
+						RequestDispatcher dis = request.getRequestDispatcher("Unsuccess.jsp");
+						dis.forward(request,response);
 						}
 		
 		

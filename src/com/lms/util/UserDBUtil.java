@@ -107,7 +107,7 @@ public class UserDBUtil implements UserInterface{
 	
 	public  boolean addUser(String Firstname , String Lastname , String NIC , String email, String address, String gender , int mobile , String dob , String username , String password , int pid) { //Method to add a user to the database upon successful registration.
 		
-		isSuccess = false;
+		isSuccess = true;
 		
 		try {	
 		con = DBConnectorUtil.getConnection();
@@ -118,12 +118,12 @@ public class UserDBUtil implements UserInterface{
 		
 		if(rs2 > 0) {
 			isSuccess = true;
-		}
+		 }
 		
 		else {
 			isSuccess = false;
 			
-		}
+		  }
 		
 		}
 		catch(Exception e) {
